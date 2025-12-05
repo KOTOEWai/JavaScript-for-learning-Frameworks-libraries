@@ -1,6 +1,6 @@
 
 ## 📑 Table of Contents
-- [JavaScript Lexical Structure](#JavaScript Lexical Structure)
+- [JavaScript-Lexical-Structure](#JavaScript-Lexical-Structure)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -9,7 +9,7 @@
 - [License](#license)
 
 
-## JavaScript Lexical Structure
+## JavaScript-Lexical-Structure
 
 JavaScript's **lexical structure** describes the basic building blocks of the language — the rules for writing code, forming tokens, naming variables, writing comments, and more. This document explains each part clearly.
 
