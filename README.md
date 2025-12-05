@@ -1,7 +1,7 @@
 
 ## 📑 Table of Contents
-- [JavaScript-Lexical-Structure](#JavaScript-Lexical-Structure)
-- [Features](#features)
+- [LexicalStructure](#LexicalStructure)
+- [Expressions](#Expressions)
 - [Installation](#installation)
 - [Usage](#usage)
 - [API](#api)
@@ -9,7 +9,7 @@
 - [License](#license)
 
 
-## JavaScript-Lexical-Structure
+## LexicalStructure
 
 JavaScript's **lexical structure** describes the basic building blocks of the language — the rules for writing code, forming tokens, naming variables, writing comments, and more. This document explains each part clearly.
 
@@ -276,4 +276,316 @@ Understanding these rules helps you write cleaner and more predictable JavaScrip
 
 ---
 
+
+# Expressions
+
+JavaScript **expressions** are pieces of code that produce a value. They are the building blocks of statements and logic in JavaScript.
+
+This README covers all major types of expressions with clear explanations and examples.
+
+---
+
+## 1. What Is an Expression?
+
+An **expression** is any valid unit of code that **evaluates to a value**.
+
+Examples:
+
+```js
+5          // number expression
+"Hi"       // string expression
+x + y      // arithmetic expression
+sayHello() // function call expression
+```
+
+---
+
+## 2. Primary Expressions
+
+These are the simplest expressions that represent literal values or keywords.
+
+### Examples:
+
+```js
+42
+true
+"hello"
+null
+undefined
+this
+```
+
+### Identifier Reference
+
+```js
+name;
+count;
+```
+
+---
+
+## 3. Object & Array Initializer Expressions
+
+### Object Literal
+
+```js
+let user = {
+  name: "Aye",
+  age: 20,
+};
+```
+
+### Array Literal
+
+```js
+let numbers = [1, 2, 3];
+```
+
+---
+
+## 4. Arithmetic Expressions
+
+Perform mathematical operations.
+
+```js
+x + y
+x - y
+x * 2
+x / 10
+x % 3
+x ** 2
+```
+
+---
+
+## 5. String Expressions
+
+Involves string concatenation or template literals.
+
+```js
+"Hello" + " World"
+`User: ${username}`
+```
+
+---
+
+## 6. Logical Expressions
+
+Use `&&`, `||`, and `!`.
+
+```js
+true && false
+isLoggedIn || hasToken
+!isAdmin
+```
+
+Logical operators return **values**, not booleans only.
+
+```js
+"A" && "B"  // "B"
+"A" || "B"  // "A"
+```
+
+---
+
+## 7. Comparison Expressions
+
+```js
+x > y
+x < y
+x >= y
+x === y
+x !== y
+```
+
+They return `true` or `false`.
+
+---
+
+## 8. Assignment Expressions
+
+These assign values and return the assigned value.
+
+```js
+x = 10
+x += 5
+x -= 2
+x *= 3
+```
+
+Example:
+
+```js
+let a;
+console.log(a = 5); // prints 5
+```
+
+---
+
+## 9. Function Call Expressions
+
+Calling a function is an expression.
+
+```js
+doSomething()
+alert("Hi")
+sum(10, 20)
+```
+
+Even methods:
+
+```js
+user.getName()
+```
+
+---
+
+## 10. Optional Chaining Expression
+
+Safely access nested properties.
+
+```js
+user?.address?.city
+```
+
+---
+
+## 11. Member Access Expressions
+
+Access properties:
+
+### Dot notation
+
+```js
+user.name
+```
+
+### Bracket notation
+
+```js
+user["name"]
+```
+
+---
+
+## 12. Conditional (Ternary) Expression
+
+Short "if...else" that returns a value.
+
+```js
+let status = age >= 18 ? "Adult" : "Child";
+```
+
+---
+
+## 13. Arrow Function Expressions
+
+Functions used as expressions.
+
+```js
+const add = (a, b) => a + b;
+```
+
+Arrow function without body braces implicitly returns:
+
+```js
+const double = x => x * 2;
+```
+
+---
+
+## 14. Spread & Rest Expressions
+
+### Spread
+
+```js
+let newArr = [...oldArr];
+```
+
+### Rest
+
+```js
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b);
+}
+```
+
+---
+
+## 15. Comma Operator Expression
+
+Evaluates multiple expressions but returns the last one.
+
+```js
+let x = (1, 2, 3); // x = 3
+```
+
+Rarely used.
+
+---
+
+## 16. `new` Expression
+
+Used to create instances.
+
+```js
+let date = new Date();
+let user = new User("Aye");
+```
+
+---
+
+## 17. `typeof`, `void`, and `delete` Expressions
+
+### typeof
+
+```js
+typeof 123 // "number"
+```
+
+### void
+
+```js
+void 0 // undefined
+```
+
+### delete
+
+```js
+delete obj.key
+```
+
+---
+
+## 18. Await Expression
+
+Used in async functions.
+
+```js
+let data = await fetch("/api");
+```
+
+---
+
+## 19. Grouping Expressions
+
+Control evaluation order.
+
+```js
+(2 + 3) * 4
+```
+
+---
+
+## Summary
+
+JavaScript expressions:
+
+* Always produce a **value**
+* Can be simple (like `5`) or complex (like `user?.profile?.name ?? "Unknown"`)
+* Form the core of JavaScript logic
+
+Understanding expressions helps you write more powerful and flexible code.
+
+---
 
