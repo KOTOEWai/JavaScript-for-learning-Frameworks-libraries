@@ -886,3 +886,250 @@ Understanding data types helps prevent bugs and write cleaner, more predictable 
 ---
 
 
+# Variables
+
+Variables are one of the most fundamental parts of JavaScript. They allow you to store, update, and reuse values inside your programs.
+
+---
+
+## 1. What Is a Variable?
+
+A **variable** is a named container for storing data.
+
+```js
+let message = "Hello World";
+```
+
+---
+
+## 2. Variable Declaration Keywords
+
+JavaScript has **3 ways** to declare variables:
+
+### ✔ `var`
+
+### ✔ `let`
+
+### ✔ `const`
+
+Each behaves differently.
+
+---
+
+## 3. `let`
+
+Introduced in ES6, used for **block-scoped** variables.
+
+```js
+let age = 20;
+age = 21; // reassign allowed
+```
+
+### Features:
+
+* Block scoped `{}`
+* Can be reassigned
+* Cannot be redeclared in the same scope
+
+Example:
+
+```js
+if (true) {
+  let x = 10;
+}
+console.log(x); // ❌ Error (x is block-scoped)
+```
+
+---
+
+## 4. `const`
+
+Also block-scoped, but **cannot be reassigned**.
+
+```js
+const PI = 3.14;
+// PI = 3.15; ❌ Error
+```
+
+### Important:
+
+`const` does **not** make objects immutable.
+
+```js
+const user = { name: "Aye" };
+user.name = "Ko"; // ✔ allowed
+```
+
+You cannot reassign a new object:
+
+```js
+user = {}; // ❌ not allowed
+```
+
+---
+
+## 5. `var`
+
+Function-scoped and older keyword.
+
+```js
+var name = "Aye";
+```
+
+### Problems with `var`:
+
+* Not block scoped
+* Can be redeclared
+* Causes unexpected behavior due to **hoisting**
+
+Example:
+
+```js
+if (true) {
+  var x = 10;
+}
+console.log(x); // ✔ 10 (var ignores block scope)
+```
+
+Use `let` or `const` instead.
+
+---
+
+## 6. Scope
+
+Scope determines **where a variable can be used**.
+
+### Types:
+
+1. **Block Scope** (`let`, `const`)
+2. **Function Scope** (`var`)
+3. **Global Scope**
+
+Example:
+
+```js
+function test() {
+  var a = 1;  // function scoped
+  let b = 2;  // block scoped
+}
+
+console.log(a); // ❌
+console.log(b); // ❌
+```
+
+---
+
+## 7. Hoisting
+
+Hoisting means declarations are moved to the top of their scope.
+
+### `var` is hoisted with **undefined** value:
+
+```js
+console.log(x); // undefined
+var x = 10;
+```
+
+### `let` and `const` are hoisted but in **Temporal Dead Zone (TDZ)**:
+
+```js
+console.log(y); // ❌ Error
+let y = 10;
+```
+
+---
+
+## 8. Initialization vs Declaration
+
+```js
+let x;       // declaration
+x = 5;       // initialization
+
+let y = 10;  // declared + initialized
+```
+
+---
+
+## 9. Naming Variables
+
+Variable names must follow rules.
+
+### Valid:
+
+```js
+let name;
+let _counter;
+let $money;
+let age2;
+```
+
+### Invalid:
+
+```js
+let 1age;   // cannot start with number
+let @name;  // symbols not allowed
+```
+
+### Best Practices:
+
+* Use camelCase → `userName`
+* Use descriptive names → `totalPrice`
+* Constants in ALL_CAPS → `MAX_USERS`
+
+---
+
+## 10. `let` vs `const` vs `var`
+
+| Feature    | var             | let   | const |
+| ---------- | --------------- | ----- | ----- |
+| Scope      | Function        | Block | Block |
+| Redeclare? | ✔ Yes           | ❌ No  | ❌ No  |
+| Reassign?  | ✔ Yes           | ✔ Yes | ❌ No  |
+| Hoisting   | Yes (undefined) | TDZ   | TDZ   |
+
+### Recommended:
+
+* Use **const** by default
+* Use **let** when value will change
+* Avoid **var**
+
+---
+
+## 11. Global Variables
+
+Variables declared outside functions.
+
+```js
+let a = 10; // global
+```
+
+Global variables can cause bugs — use only when needed.
+
+---
+
+## 12. Reassignment Examples
+
+```js
+let count = 1;
+count = 2; // ✔ allowed
+
+const PI = 3.14;
+PI = 3.2; // ❌ not allowed
+```
+
+---
+
+## Summary
+
+JavaScript variables:
+
+* Store values for reuse
+* Declared using `var`, `let`, or `const`
+* `let` & `const` are block-scoped
+* `var` is function-scoped and outdated
+* `const` prevents reassignment
+* Hoisting affects how variables behave
+
+Understanding variables helps you control data flow and avoid bugs.
+
+---
