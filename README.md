@@ -4,6 +4,7 @@
 - [Expressions](#Expressions)
 - [DataTypes](#DataTypes)
 - [Variables](#Variables)
+- [Operators](#Operators)
 
 
 ## LexicalStructure
@@ -1151,7 +1152,7 @@ Understanding variables helps you control data flow and avoid bugs.
 
 
 
-# JavaScript Operators
+# Operators
 
 
 ## **1. What Are Operators?**
@@ -1371,17 +1372,7 @@ Shortcut:
 
 ---
 
-## **14. Summary**
 
-Operators help you:
 
-* Calculate values
-* Compare data
-* Assign variables
-* Write conditions
-* Work with strings and numbers
-* Handle optional & null values
-
----
 
 
