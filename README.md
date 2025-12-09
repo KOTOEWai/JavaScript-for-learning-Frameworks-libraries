@@ -7,6 +7,7 @@
 - [Operators](#Operators)
 - [Conditions](#Conditions)
 - [Loops](#Loops)
+- [Functions](#Functions)
 
 
 ## LexicalStructure
@@ -1913,4 +1914,331 @@ You now know:
 * break/continue
 
 ---
+
+#  Functions
+
+A complete guide to JavaScript functions — definitions, types, parameters, return values, arrow functions, scopes, closures, and more.
+
+---
+
+## **1. What Is a Function?**
+
+A function is a reusable block of code designed to perform a task.
+
+Example:
+
+```js
+function greet() {
+  console.log("Hello!");
+}
+```
+
+---
+
+## **2. Why Use Functions?**
+
+Functions help you:
+
+* Avoid repeating code
+* Organize logic
+* Make code cleaner
+* Create modular programs
+* Return values from operations
+
+---
+
+## **3. Function Declaration**
+
+Also called a **named function**.
+
+```js
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3)); // 5
+```
+
+### Features:
+
+* Hoisted (usable before declaration)
+
+---
+
+## **4. Function Expression**
+
+Function stored in a variable.
+
+```js
+const multiply = function (a, b) {
+  return a * b;
+};
+```
+
+### Features:
+
+* Not hoisted
+* Can be anonymous or named
+
+---
+
+## **5. Arrow Functions**
+
+Short syntax introduced in ES6.
+
+```js
+const greet = () => {
+  console.log("Hi!");
+};
+```
+
+Short single-line form:
+
+```js
+const square = n => n * n;
+```
+
+### Differences from normal functions:
+
+* No `this` binding
+* No `arguments` object
+* Great for callbacks
+
+---
+
+## **6. Parameters vs Arguments**
+
+**Parameters** → variables written in function definition
+**Arguments** → values passed when calling
+
+Example:
+
+```js
+function hello(name) { // parameter
+  console.log("Hello", name);
+}
+
+hello("Toe"); // argument
+```
+
+---
+
+## **7. Default Parameters**
+
+```js
+function greet(name = "Guest") {
+  console.log("Hello", name);
+}
+```
+
+---
+
+## **8. Rest Parameters (...args)**
+
+Used when the number of arguments is unknown.
+
+```js
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+```
+
+---
+
+## **9. Return Statement**
+
+Functions can return a value.
+
+```js
+function add(a, b) {
+  return a + b;
+}
+```
+
+If no `return` → returns `undefined`.
+
+---
+
+## **10. Anonymous Functions**
+
+Functions without a name.
+
+Used in callbacks:
+
+```js
+setTimeout(function () {
+  console.log("Done");
+}, 1000);
+```
+
+---
+
+## **11. Callback Functions**
+
+A function passed as an argument to another function.
+
+```js
+function process(callback) {
+  callback();
+}
+
+process(() => console.log("Running!"));
+```
+
+---
+
+## **12. Higher-Order Functions**
+
+Functions that:
+
+* Take another function as an argument, or
+* Return a function
+
+Example:
+
+```js
+function createMultiplier(x) {
+  return function (y) {
+    return x * y;
+  };
+}
+
+const double = createMultiplier(2);
+console.log(double(5)); // 10
+```
+
+---
+
+## **13. Function Scope**
+
+Functions create their own scope.
+
+```js
+function test() {
+  let x = 10;
+}
+// x is not accessible here
+```
+
+---
+
+## **14. Block Scope vs Function Scope**
+
+* `let` & `const` → block scoped
+* `var` → function scoped
+
+```js
+if (true) {
+  let a = 10; // block
+  var b = 20; // function
+}
+// b is still accessible
+```
+
+---
+
+## **15. Closures**
+
+A closure is when a function remembers variables from its outer scope.
+
+```js
+function outer() {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2
+```
+
+Closures are used in:
+
+* Private variables
+* Factory functions
+* Module patterns
+
+---
+
+## **16. Named vs Anonymous Functions**
+
+### Named function
+
+```js
+function sayHi() {}
+```
+
+### Anonymous function
+
+```js
+const sayHi = function() {}
+```
+
+---
+
+## **17. Immediately Invoked Function Expression (IIFE)**
+
+Runs immediately after creation.
+
+```js
+(function () {
+  console.log("I am an IIFE");
+})();
+```
+
+---
+
+## **18. Pure vs Impure Functions**
+
+### Pure
+
+* No side effects
+* Same input → same output
+
+```js
+function add(a, b) {
+  return a + b;
+}
+```
+
+### Impure
+
+```js
+let x = 1;
+function addToX(y) {
+  x += y; // modifies outside variable
+}
+```
+
+---
+
+## **19. Functions as Objects**
+
+Functions in JavaScript are **first-class citizens**:
+
+* Can be stored in variables
+* Can be passed as arguments
+* Can be returned from functions
+
+---
+
+## **20. Summary**
+
+You learned:
+
+* Function declarations & expressions
+* Arrow functions
+* Parameters, arguments, return values
+* Scope & closures
+* Callbacks & higher-order functions
+* IIFE, pure functions, rest parameters
+
+Functions are the foundation of JavaScript. Mastering them = mastering JS.
+
+---
+
+
 
