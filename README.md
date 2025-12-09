@@ -1250,13 +1250,14 @@ console.log(5 === "5"); // false
 ---
 
 ## **6. Logical Operators**
+```js
+| Operator | Meaning | Example                   |   
+| -------- | ------- | ------------------------- | 
+| `&&`     | AND     | `true && false` → `false` |    
+| `||`     | OR      | `true || false`→`true`    |         
+| `!`      | NOT     | `!true` → `false`         |      
 
-| Operator | Meaning | Example                   |    |       |   |               |
-| -------- | ------- | ------------------------- | -- | ----- | - | ------------- |
-| `&&`     | AND     | `true && false` → `false` |    |       |   |               |
-| `        |         | `                         | OR | `true |   | false`→`true` |
-| `!`      | NOT     | `!true` → `false`         |    |       |   |               |
-
+```
 Example:
 
 ```js
