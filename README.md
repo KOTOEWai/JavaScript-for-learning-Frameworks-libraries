@@ -1009,13 +1009,23 @@ Scope determines **where a variable can be used**.
 Example:
 
 ```js
-function test() {
-  var a = 1;  // function scoped
-  let b = 2;  // block scoped
+let globalVar = "I am global"; // Global scope
+
+function exampleFunction() {
+  var functionVar = "I am function-scoped"; // Function scope (var)
+
+  if (true) {
+    let blockVar = "I am block-scoped"; // Block scope (let)
+    console.log(blockVar); // Accessible here
+  }
+
+  // console.log(blockVar); // Error: blockVar is not defined here
+  console.log(functionVar); // Accessible here
 }
 
-console.log(a); // ❌
-console.log(b); // ❌
+exampleFunction();
+console.log(globalVar); // Accessible here
+// console.log(functionVar); // Error: functionVar is not defined here
 ```
 
 ---
