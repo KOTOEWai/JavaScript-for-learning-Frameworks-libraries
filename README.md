@@ -10,6 +10,7 @@
 - [Functions](#Functions)
 - [Objects](#Objects)
 - [Arrays](#Arrays)
+- [Asynchronous](#Asynchronous-JavaScript)
 
 ## LexicalStructure
 
@@ -2708,3 +2709,254 @@ Use arrays when you need **ordered data**, such as:
 * loops & transformations
 
 ---
+
+
+# Asynchronous-JavaScript
+
+## 📌 Introduction
+
+JavaScript is **single-threaded**, but it can perform non-blocking operations using **asynchronous programming**.
+
+Async JS allows tasks like:
+
+* Fetching data from a server
+* Reading files
+* Timers
+* Events
+
+to run **without blocking** the main thread.
+
+---
+
+## 📌 Why Asynchronous JavaScript?
+
+Without async code:
+
+* Long operations freeze the page
+* UI becomes unresponsive
+* Slow APIs block execution
+
+Async JS lets the browser handle tasks in the background.
+
+---
+
+# 1. The Event Loop
+
+The **Event Loop** is the system that manages asynchronous operations.
+
+JavaScript uses:
+
+* **Call Stack** → executes code
+* **Web APIs** → timers, fetch, DOM
+* **Callback Queue** → completed tasks
+* **Event Loop** → sends tasks to stack when it's empty
+
+This enables async behavior even though JS has one thread.
+
+---
+
+# 2. Callbacks
+
+A **callback** is a function passed as an argument.
+
+```js
+function getData(callback) {
+  setTimeout(() => {
+    callback("Done!");
+  }, 1000);
+}
+
+getData(result => {
+  console.log(result);
+});
+```
+
+### ❌ Callback Hell
+
+Nested callbacks become hard to read:
+
+```js
+a(() => {
+  b(() => {
+    c(() => {
+      d();
+    });
+  });
+});
+```
+
+---
+
+# 3. Promises
+
+A **Promise** represents a value that will be available in the future.
+
+### States:
+
+* **pending**
+* **fulfilled**
+* **rejected**
+
+### Example
+
+```js
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success"), 1000);
+});
+
+promise.then(result => console.log(result));
+```
+
+### `.catch()` for errors
+
+```js
+promise.catch(err => console.error(err));
+```
+
+### `.finally()`
+
+```js
+promise.finally(() => console.log("Done"));
+```
+
+---
+
+# 4. Async / Await
+
+Introduced in ES2017, **async/await** lets you write asynchronous code like synchronous code.
+
+### Example
+
+```js
+async function loadData() {
+  const result = await fetch("/api/data");
+  const data = await result.json();
+  console.log(data);
+}
+
+loadData();
+```
+
+### Try/Catch for errors
+
+```js
+async function run() {
+  try {
+    const res = await fetch("/invalid");
+  } catch (err) {
+    console.log("Error:", err);
+  }
+}
+```
+
+---
+
+# 5. Microtasks vs Macrotasks
+
+### Microtasks
+
+* Promise callbacks (`then`, `catch`)
+
+### Macrotasks
+
+* `setTimeout`
+* `setInterval`
+
+Execution order:
+
+1. Call Stack
+2. **All microtasks**
+3. One macrotask
+4. Repeat
+
+---
+
+# 6. Common Asynchronous Functions
+
+### `setTimeout`
+
+```js
+setTimeout(() => console.log("Hi"), 1000);
+```
+
+### `setInterval`
+
+```js
+setInterval(() => console.log("Tick"), 1000);
+```
+
+### `fetch`
+
+```js
+fetch("/api").then(res => res.json()).then(data => console.log(data));
+```
+
+---
+
+# 7. Parallel, Sequential, and Race
+
+### Sequential
+
+```js
+await task1();
+await task2();
+```
+
+### Parallel
+
+```js
+await Promise.all([task1(), task2()]);
+```
+
+### Race
+
+```js
+Promise.race([task1(), task2()]);
+```
+
+---
+
+# 8. Error Handling
+
+### Promise error
+
+```js
+promise.catch(err => console.error(err));
+```
+
+### Async/await error
+
+```js
+try {
+  await something();
+} catch (err) {
+  console.error(err);
+}
+```
+
+---
+
+# 9. Real-World Examples
+
+### Fetching API Data
+
+```js
+async function getUsers() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  return res.json();
+}
+```
+
+### File Reading (Node.js)
+
+```js
+const fs = require("fs/promises");
+
+async function readFile() {
+  const data = await fs.readFile("text.txt", "utf8");
+  console.log(data);
+}
+```
+
+
+
