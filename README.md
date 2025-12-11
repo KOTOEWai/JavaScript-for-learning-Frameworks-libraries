@@ -9,6 +9,7 @@
 - [Loops](#Loops)
 - [Functions](#Functions)
 - [Objects](#Objects)
+- [Arrays](#Arrays)
 
 ## LexicalStructure
 
@@ -2490,3 +2491,220 @@ const product = {
 
 ---
 
+# Arrays
+
+## 📌 What is an Array?
+
+An **array** is a special data structure in JavaScript used to store **ordered collections** of values.
+
+```js
+const numbers = [1, 2, 3];
+const mixed = ["Hello", 42, true, null];
+```
+
+Arrays are **mutable**, **dynamic**, and **zero‑indexed**.
+
+---
+
+## 📌 Array Indexing
+
+* Index starts from **0**
+
+```js
+const fruits = ["apple", "banana", "mango"];
+console.log(fruits[0]); // apple
+console.log(fruits[2]); // mango
+```
+
+* Accessing an out‑of‑range index returns **undefined**.
+
+---
+
+## 📌 Creating Arrays
+
+### 1. Using Array literal (recommended)
+
+```js
+const arr = [1, 2, 3];
+```
+
+### 2. Using `new Array()`
+
+```js
+const arr = new Array(5); // creates empty array of length 5
+```
+
+---
+
+## 📌 Common Array Methods
+
+### 🔹 Add & Remove
+
+| Action       | Method      | Example          |
+| ------------ | ----------- | ---------------- |
+| Add end      | `push()`    | `arr.push(10)`   |
+| Remove end   | `pop()`     | `arr.pop()`      |
+| Add start    | `unshift()` | `arr.unshift(5)` |
+| Remove start | `shift()`   | `arr.shift()`    |
+
+```js
+const nums = [1,2,3];
+nums.push(4);      // [1,2,3,4]
+nums.pop();        // [1,2,3]
+```
+
+---
+
+### 🔹 Searching
+
+| Method       | Description            |
+| ------------ | ---------------------- |
+| `indexOf()`  | Returns index of value |
+| `includes()` | Returns true/false     |
+
+```js
+const colors = ["red", "blue", "green"];
+colors.includes("blue"); // true
+```
+
+---
+
+### 🔹 Transforming Arrays
+
+#### `map()` – returns new array
+
+```js
+[1, 2, 3].map(n => n * 2); // [2, 4, 6]
+```
+
+#### `filter()` – keeps only matching items
+
+```js
+[1, 2, 3, 4].filter(n => n % 2 === 0); // [2, 4]
+```
+
+#### `reduce()` – accumulates to a single value
+
+```js
+[1, 2, 3].reduce((total, n) => total + n, 0); // 6
+```
+
+---
+
+## 📌 Looping Through Arrays
+
+### 1. `for` loop
+
+```js
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+```
+
+### 2. `for...of`
+
+```js
+for (const item of arr) {
+  console.log(item);
+}
+```
+
+### 3. `forEach()`
+
+```js
+arr.forEach(item => console.log(item));
+```
+
+---
+
+## 📌 Array Destructuring
+
+```js
+const [a, b] = [10, 20];
+console.log(a); // 10
+```
+
+Skip items:
+
+```js
+const [first, , third] = [1,2,3];
+```
+
+---
+
+## 📌 Spread & Rest
+
+### Spread (expand array)
+
+```js
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4];
+```
+
+### Rest (collect values)
+
+```js
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b);
+}
+```
+
+---
+
+## 📌 Useful Utility Methods
+
+### `slice()` – non-destructive
+
+```js
+arr.slice(1, 3); // returns part of array
+```
+
+### `splice()` – destructive
+
+```js
+arr.splice(1, 1); // removes item at index 1
+```
+
+### `join()` – convert array to string
+
+```js
+["a","b"].join("-"); // "a-b"
+```
+
+### `sort()`
+
+```js
+[3,1,2].sort(); // [1,2,3]
+```
+
+### `reverse()`
+
+```js
+[1,2,3].reverse(); // [3,2,1]
+```
+
+---
+
+## 📌 Multidimensional Arrays
+
+```js
+const matrix = [
+  [1, 2],
+  [3, 4]
+];
+console.log(matrix[1][0]); // 3
+```
+
+---
+
+## 📌 When to Use Arrays?
+
+Use arrays when you need **ordered data**, such as:
+
+* lists of items
+* API responses
+* user inputs
+* numeric operations
+* loops & transformations
+
+---
