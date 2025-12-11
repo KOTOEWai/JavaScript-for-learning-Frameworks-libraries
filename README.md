@@ -11,6 +11,7 @@
 - [Objects](#Objects)
 - [Arrays](#Arrays)
 - [Asynchronous](#Asynchronous-JavaScript)
+- [TypeCasting](#TypeCasting )
 
 ## LexicalStructure
 
@@ -2958,5 +2959,185 @@ async function readFile() {
 }
 ```
 
+
+# TypeCasting 
+
+## 📌 Introduction
+
+JavaScript is a **dynamically typed language**, meaning variables can change their type at runtime.
+Type casting (also called **type coercion**) is the process of **converting one data type to another**.
+
+JavaScript performs two types of type casting:
+
+* **Implicit (Automatic) Type Coercion**
+* **Explicit (Manual) Type Conversion**
+
+---
+
+# 1. Implicit Type Coercion (Automatic)
+
+JavaScript automatically converts types during operations.
+
+## 🔹 String Coercion
+
+When one operand is a string → JS converts the other to **string**.
+
+```js
+"5" + 3;   // "53"
+5 + "3";   // "53"
+```
+
+## 🔹 Number Coercion
+
+When using `-`, `*`, `/`, `%`, JS converts both values to **numbers**.
+
+```js
+"10" - 2;   // 8
+"6" * "2"; // 12
+"20" / 5;   // 4
+```
+
+## 🔹 Boolean Coercion
+
+Values are converted to **true/false** in logical contexts.
+
+Falsy values:
+
+```
+false, 0, "", null, undefined, NaN
+```
+
+Everything else → `true`
+
+```js
+Boolean(0);      // false
+Boolean("Hi");  // true
+```
+
+---
+
+# 2. Explicit Type Conversion (Manual)
+
+You convert types using built-in functions.
+
+---
+
+# 2.1 Convert to Number
+
+Use:
+
+* `Number(value)`
+* `parseInt(value)`
+* `parseFloat(value)`
+* Unary `+value`
+
+```js
+Number("10");     // 10
+parseInt("10px"); // 10
+parseFloat("9.5"); // 9.5
++"5";             // 5
+```
+
+### ❗ Invalid conversions
+
+```js
+Number("hello"); // NaN
+```
+
+---
+
+# 2.2 Convert to String
+
+Use:
+
+* `String(value)`
+* `.toString()`
+
+```js
+String(123);     // "123"
+(100).toString(); // "100"
+```
+
+---
+
+# 2.3 Convert to Boolean
+
+Use:
+
+* `Boolean(value)`
+* `!!value`
+
+```js
+Boolean(1);  // true
+Boolean(0);  // false
+!!"hi";     // true
+```
+
+---
+
+# 3. Common Coercion Scenarios
+
+### 🔹 With `+` operator
+
+* If one operand = string → convert to string
+
+```js
+1 + "2"; // "12"
+```
+
+### 🔹 With comparison `==`
+
+JavaScript tries to convert values to the same type
+
+```js
+"5" == 5; // true
+true == 1; // true
+false == 0; // true
+```
+
+### 🔹 Strict comparison `===`
+
+No type coercion
+
+```js
+"5" === 5; // false
+```
+
+---
+
+# 4. Type Coercion Table
+
+| Expression      | Result |
+| --------------- | ------ |
+| `true + 1`      | 2      |
+| `false + 1`     | 1      |
+| `"5" * 2`       | 10     |
+| `"5" + 2`       | "52"   |
+| `null + 1`      | 1      |
+| `undefined + 1` | NaN    |
+
+---
+
+# 5. Checking Types
+
+```js
+typeof "hello"; // "string"
+typeof 50;      // "number"
+typeof true;    // "boolean"
+typeof null;    // "object" (known JS bug)
+typeof []       // "object"
+```
+
+---
+
+# 6. Best Practices
+
+✔ Use **explicit conversion** instead of relying on coercion
+✔ Avoid using loose equality (`==`)
+✔ Use strict equality (`===`)
+✔ Use `Number()` instead of `parseInt()` when possible
+✔ Be careful with `+` → it triggers string coercion
+
+---
 
 
