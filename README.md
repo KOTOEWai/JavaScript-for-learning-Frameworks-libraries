@@ -17,7 +17,7 @@
 - [OOP](#OOPConpects)
 - [JSON](#JSON)
 - [FetchAPI](#FetchAPI)
-- [ES6+(Modern JavaScript)](#ES6+)
+- [ES6+(Modern JavaScript)](#ES6)
 
 ## LexicalStructure
 
@@ -4312,7 +4312,7 @@ export async function GET() {
 * Works great with async/await
 
 ---
-# ES6+
+# ES6
 
 ES6+ refers to **ECMAScript 2015 (ES6) and all versions after it**.
 It introduced many powerful features that make JavaScript cleaner, faster, and easier to write.
