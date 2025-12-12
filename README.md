@@ -14,6 +14,9 @@
 - [TypeCasting](#TypeCasting)
 - [Modules](#Modules)
 - [ErrorHandling](#ErrorHandling)
+- [OOP](#OOPConpects)
+- [JSON](#JSON)
+- [FetchAPI](#FetchAPI )
 
 ## LexicalStructure
 
@@ -3617,4 +3620,694 @@ throw new ValidationError("Invalid email format");
 
 
 
+#  OOPConpects
 
+JavaScript supports **Object-Oriented Programming (OOP)** using prototypes and ES6 classes.
+
+---
+
+## 🚀 What is OOP?
+
+OOP is a programming paradigm that organizes code into **objects** — each object contains data (properties) and behavior (methods).
+
+JavaScript implements OOP using:
+
+* **Objects**
+* **Prototypes**
+* **Constructor functions**
+* **Classes (ES6)**
+
+---
+
+# ✅ Core OOP Concepts
+
+## 1. **Classes**
+
+A `class` is a blueprint for creating objects.
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+const p1 = new Person("John", 20);
+p1.greet();
+```
+
+---
+
+## 2. **Objects**
+
+Objects are instances created from classes.
+
+```js
+const user = new Person("Alice", 25);
+```
+
+---
+
+## 3. **Constructor**
+
+The `constructor()` method initializes object properties.
+
+```js
+class Car {
+  constructor(brand, year) {
+    this.brand = brand;
+    this.year = year;
+  }
+}
+```
+
+---
+
+## 4. **Encapsulation**
+
+Encapsulation hides internal details and protects data.
+
+Modern JS supports **private fields**:
+
+```js
+class BankAccount {
+  #balance = 0; // private
+
+  deposit(amount) {
+    this.#balance += amount;
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+}
+```
+
+---
+
+## 5. **Abstraction**
+
+Abstraction shows only essential features and hides complexity.
+
+```js
+class CoffeeMachine {
+  start() {
+    this._heatWater();
+    console.log("Coffee ready!");
+  }
+
+  _heatWater() { // Pretend private
+    console.log("Heating...");
+  }
+}
+```
+
+---
+
+## 6. **Inheritance**
+
+One class can inherit properties & methods from another.
+
+```js
+class Animal {
+  speak() {
+    console.log("Animal sound");
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log("Woof!");
+  }
+}
+
+const d = new Dog();
+d.speak();
+```
+
+---
+
+## 7. **Polymorphism**
+
+Child classes can override parent class methods.
+
+Example above: `Dog.speak()` overrides `Animal.speak()`.
+
+Another example:
+
+```js
+class Shape {
+  area() {
+    return 0;
+  }
+}
+
+class Circle extends Shape {
+  constructor(r) {
+    super();
+    this.r = r;
+  }
+
+  area() {
+    return Math.PI * this.r * this.r;
+  }
+}
+```
+
+---
+
+## 8. **The "this" Keyword**
+
+`this` refers to the current object instance.
+
+```js
+class User {
+  constructor(name) {
+    this.name = name; // "this" = current object
+  }
+}
+```
+
+---
+
+## 9. **Static Methods**
+
+Static methods belong to the class (not instances).
+
+```js
+class MathUtils {
+  static add(a, b) {
+    return a + b;
+  }
+}
+
+MathUtils.add(5, 3); // OK
+```
+
+---
+
+## 10. **Prototypes (Behind the Scenes)**
+
+Before ES6 classes, OOP in JS used prototypes.
+
+```js
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.greet = function () {
+  console.log("Hello " + this.name);
+};
+```
+
+---
+
+# 🔥 Summary Table
+
+| Concept        | Description                       |
+| -------------- | --------------------------------- |
+| Class          | Blueprint for objects             |
+| Object         | Instance of a class               |
+| Constructor    | Initializes properties            |
+| Encapsulation  | Hiding data, using private fields |
+| Abstraction    | Hiding complexity                 |
+| Inheritance    | Reusing parent class features     |
+| Polymorphism   | Overriding methods                |
+| Static methods | Methods used on class, not object |
+| Prototype      | JS's underlying OOP system        |
+
+---
+
+# 📘 Real-World Example
+
+```js
+class User {
+  constructor(username) {
+    this.username = username;
+  }
+
+  login() {
+    console.log(this.username + " logged in");
+  }
+}
+
+class Admin extends User {
+  deleteUser(user) {
+    console.log(`Admin deleted ${user.username}`);
+  }
+}
+
+const admin = new Admin("Admin1");
+const user = new User("Tom");
+
+admin.login();
+admin.deleteUser(user);
+```
+
+---
+
+
+# JSON
+
+JSON is one of the most important data formats in modern web development.
+It is used to store, exchange, and transport data between servers, APIs, and applications.
+
+---
+
+## 📌 What is JSON?
+
+JSON stands for **JavaScript Object Notation**.
+
+It is:
+
+* A **text-based** data format
+* Lightweight
+* Easy for humans to read
+* Easy for machines to parse
+* Language-independent (not only for JavaScript)
+
+Example JSON:
+
+```json
+{
+  "name": "John",
+  "age": 25,
+  "isStudent": false,
+  "skills": ["HTML", "CSS", "JavaScript"]
+}
+```
+
+---
+
+## 📦 JSON vs JavaScript Object
+
+### JSON
+
+```json
+{
+  "name": "John",
+  "age": 25
+}
+```
+
+* Keys are always **strings** (double quotes)
+* Cannot contain functions
+* Only supports values: string, number, object, array, boolean, null
+
+### JavaScript Object
+
+```js
+const user = {
+  name: "John",
+  age: 25,
+  greet() {
+    console.log("Hello");
+  }
+};
+```
+
+* Keys can be without quotes
+* Can contain methods & variables
+
+---
+
+## 💡 Valid JSON Data Types
+
+| Type    | Example      |
+| ------- | ------------ |
+| String  | "Hello"      |
+| Number  | 10, 2.5      |
+| Boolean | true / false |
+| Object  | { "a": 1 }   |
+| Array   | [1, 2, 3]    |
+| Null    | null         |
+
+⛔ JSON does **not** support:
+
+* Functions
+* Comments
+* Undefined
+* Date objects (must be a string)
+
+---
+
+# 🔄 Converting JSON in JavaScript
+
+## 1. `JSON.stringify()` → Convert JS object to JSON string
+
+```js
+const user = {
+  name: "Alice",
+  age: 20
+};
+
+const jsonData = JSON.stringify(user);
+console.log(jsonData);
+// "{"name":"Alice","age":20}""
+```
+
+This is often used when:
+
+* Sending data to a server
+* Saving data in localStorage
+
+---
+
+## 2. `JSON.parse()` → Convert JSON string to JS object
+
+```js
+const json = '{"name":"Alice","age":20}';
+
+const obj = JSON.parse(json);
+console.log(obj.name); // Alice
+```
+
+Used when:
+
+* Receiving data from API
+* Reading from localStorage
+
+---
+
+## 🖥️ Real API Example
+
+```js
+fetch("https://api.example.com/user")
+  .then(res => res.json()) // parse JSON response
+  .then(data => console.log(data));
+```
+
+---
+
+# 📁 JSON in Local Storage
+
+```js
+const user = { name: "Tom", age: 30 };
+
+// Save
+localStorage.setItem("user", JSON.stringify(user));
+
+// Read
+const data = JSON.parse(localStorage.getItem("user"));
+console.log(data.name);
+```
+
+---
+
+# 🚫 Common Errors
+
+### ❌ 1. Using single quotes in JSON
+
+```json
+{
+  'name': 'John'  // ❌ invalid
+}
+```
+
+JSON requires **double quotes**.
+
+---
+
+### ❌ 2. Trailing commas
+
+```json
+{
+  "name": "John",
+  "age": 30,   // ❌ invalid
+}
+```
+
+---
+
+### ❌ 3. Comments not allowed
+
+```json
+{
+  "name": "John" // ❌ comments not allowed
+}
+```
+
+---
+
+# 📌 JSON.stringify Additional Options
+
+### Pretty Format
+
+```js
+const json = JSON.stringify(user, null, 2);
+console.log(json);
+```
+
+Output:
+
+```json
+{
+  "name": "Alice",
+  "age": 20
+}
+```
+
+---
+
+# 🔥 Summary
+
+| Feature     | Description                                  |
+| ----------- | -------------------------------------------- |
+| JSON        | Data exchange format                         |
+| stringify() | JS → JSON string                             |
+| parse()     | JSON string → JS object                      |
+| Data types  | string, number, object, array, boolean, null |
+| Used in     | APIs, databases, configs, localStorage       |
+
+---
+
+# FetchAPI 
+
+The **Fetch API** is a modern, promise-based way to make HTTP requests in JavaScript.
+It is widely used in web development for calling APIs, sending data to servers, and retrieving JSON.
+
+---
+
+# 🚀 What is Fetch API?
+
+`fetch()` is a built-in browser function that allows you to request resources over the network.
+
+Basic syntax:
+
+```js
+fetch(url, options?)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+```
+
+---
+
+# 📌 1. Basic GET Request
+
+```js
+fetch("https://api.example.com/users")
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
+```
+
+---
+
+# 📌 2. Using Async/Await (Recommended)
+
+```js
+async function getUsers() {
+  try {
+    const res = await fetch("https://api.example.com/users");
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
+---
+
+# 📌 3. POST Request (Send Data)
+
+```js
+async function createUser() {
+  const newUser = {
+    name: "John",
+    age: 22
+  };
+
+  const res = await fetch("https://api.example.com/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newUser)
+  });
+
+  const data = await res.json();
+  console.log(data);
+}
+```
+
+---
+
+# 📌 4. PUT Request (Update Data)
+
+```js
+fetch("https://api.example.com/users/1", {
+  method: "PUT",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name: "Updated User" })
+})
+  .then(res => res.json())
+  .then(data => console.log(data));
+```
+
+---
+
+# 📌 5. DELETE Request
+
+```js
+await fetch("https://api.example.com/users/1", {
+  method: "DELETE"
+});
+```
+
+---
+
+# 📌 6. Handling Errors Correctly
+
+`fetch()` **does NOT** throw errors for HTTP status codes like `404` or `500`.
+You must check them manually:
+
+```js
+async function loadData() {
+  try {
+    const res = await fetch("https://api.example.com/data");
+
+    if (!res.ok) {
+      throw new Error(`HTTP Error: ${res.status}`);
+    }
+
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Fetch Error:", error);
+  }
+}
+```
+
+---
+
+# 📌 7. Sending Headers
+
+```js
+fetch(url, {
+  headers: {
+    "Authorization": "Bearer token123",
+    "Content-Type": "application/json"
+  }
+});
+```
+
+---
+
+# 📌 8. Fetching Text, Blob, FormData, etc.
+
+### Text
+
+```js
+const res = await fetch("/info.txt");
+const text = await res.text();
+```
+
+### Blob (images/files)
+
+```js
+const res = await fetch("/image.png");
+const blob = await res.blob();
+```
+
+### FormData
+
+```js
+const formData = new FormData();
+formData.append("photo", fileInput.files[0]);
+
+await fetch("/upload", {
+  method: "POST",
+  body: formData
+});
+```
+
+---
+
+# 📌 9. Abort Fetch Request
+
+Cancel a long-running request:
+
+```js
+const controller = new AbortController();
+
+fetch(url, { signal: controller.signal });
+
+controller.abort();
+```
+
+---
+
+# 📌 10. Fetch Options Summary
+
+| Option  | Description                            |
+| ------- | -------------------------------------- |
+| method  | GET, POST, PUT, DELETE                 |
+| headers | Additional metadata (JSON, Auth, etc.) |
+| body    | Request payload                        |
+| signal  | AbortController for canceling          |
+
+---
+
+# 📌 11. Real-World Example: Pagination
+
+```js
+async function loadPage(page) {
+  const res = await fetch(`/api/users?page=${page}`);
+  const data = await res.json();
+  console.log(data);
+}
+```
+
+---
+
+# 📦 12. Fetch in Next.js (App Router)
+
+```js
+export async function GET() {
+  const res = await fetch("https://api.example.com/products", {
+    cache: "no-store"
+  });
+  const data = await res.json();
+  return Response.json(data);
+}
+```
+
+---
+
+# 🔥 Summary
+
+* `fetch()` is Promise-based
+* Supports GET, POST, PUT, DELETE
+* Use `res.json()` to convert API response
+* Must manually check `res.ok`
+* Supports headers, FormData, Blob, File uploads
+* Works great with async/await
+
+---
