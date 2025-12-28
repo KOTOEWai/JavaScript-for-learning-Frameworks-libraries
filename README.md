@@ -291,7 +291,7 @@ Understanding these rules helps you write cleaner and more predictable JavaScrip
 
 JavaScript **expressions** are pieces of code that produce a value. They are the building blocks of statements and logic in JavaScript.
 
-
+JavaScript မှာ Expression ဆိုတာ တန်ဖိုးတစ်ခု (Value) ထွက်လာအောင် လုပ်ပေးတဲ့ Code အစိတ်အပိုင်းလေးတွေကို ခေါ်တာပါ။ လွယ်လွယ်ပြောရရင် တွက်ချက်မှုတစ်ခု လုပ်လိုက်လို့ဖြစ်စေ၊ ခေါ်ယူလိုက်လို့ဖြစ်စေ အဖြေတစ်ခုခု ထွက်လာရင် အဲဒါ Expression ပါပဲ။
 
 ---
 
