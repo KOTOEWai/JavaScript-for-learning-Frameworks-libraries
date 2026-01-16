@@ -25,7 +25,63 @@ JavaScript's **lexical structure** describes the basic building blocks of the la
 
 ---
 
+
 ## 1. What is Lexical Structure?
+
+```
+JavaScript ရဲ့ Lexical Structure ဆိုတာ အခြေခံကျတဲ့ စည်းမျဉ်းတွေ (Grammar Rules) ဖြစ်ပါတယ်။ Programming language တစ်ခုမှာ စာလုံးတွေကို ဘယ်လိုပေါင်းရမယ်၊
+ဘယ်လိုရေးရမယ်ဆိုတဲ့ အခြေခံ "သဒ္ဒါ" လို့ ပြောလို့ရပါတယ်။
+
+၁။ Case Sensitivity (အကြီးအသေး ခွဲခြားခြင်း)
+
+JavaScript ဟာ Case-sensitive ဖြစ်ပါတယ်။ ဆိုလိုတာက စာလုံးအကြီးအသေး ကွာခြားရင် အဓိပ္ပာယ် မတူတော့ပါဘူး။
+
+let name = "Aung Aung";
+let Name = "Su Su";
+let NAME = "Kyaw Kyaw";
+// ဒီသုံးခုလုံးဟာ variable သီးခြားစီ ဖြစ်ပါတယ်။
+
+၂။ Whitespace and Line Breaks
+JavaScript မှာ ကွက်လပ် (Space) တွေနဲ့ စာကြောင်းဆင်းတာ (Line break) တွေကို များသောအားဖြင့် လျစ်လျူရှုပါတယ်။ ဒါကြောင့် ကုဒ်တွေကို ဖတ်ရလွယ်အောင် စီရေးလို့ရပါတယ်။
+
+// အတူတူပါပဲ
+let x=5;
+let x  =   5;
+
+၃။ Literals (တိုက်ရိုက်တန်ဖိုးများ)
+Literals ဆိုတာ ကုဒ်ထဲမှာ တိုက်ရိုက်ရေးသားလိုက်တဲ့ data တန်ဖိုးတွေ ဖြစ်ပါတယ်။
+
+123 (Number literal)
+
+"Hello" (String literal)
+
+true (Boolean literal)
+
+{a: 1} (Object literal)
+
+၄။ Identifiers (အမည်ပေးခြင်း စည်းမျဉ်း)
+
+Variables တွေ၊ Functions တွေကို နာမည်ပေးတဲ့အခါ လိုက်နာရမယ့် စည်းမျဉ်းတွေပါ။
+
+အစစာလုံးကို အက္ခရာ (letter)၊ underscore (_) ဒါမှမဟုတ် dollar sign ($) နဲ့ စရပါမယ်။
+
+ကိန်းဂဏန်း (0-9) နဲ့ စလို့ မရပါ။
+
+Reserved Keywords (ဥပမာ- if, while, return) တွေကို သုံးလို့မရပါ။
+
+၆။ Semicolons (;)
+JavaScript မှာ statement တစ်ခုပြီးတိုင်း semicolon ထည့်လေ့ရှိပါတယ်။ အခုခေတ်မှာ JavaScript က အလိုအလျောက် ထည့်ပေးတဲ့စနစ် (Automatic Semicolon Insertion)
+ပါဝင်ပေမဲ့ အမှားနည်းအောင် ကိုယ်တိုင်ထည့်တာက အကောင်းဆုံး အလေ့အကျင့်ပါ။
+
+၇။ Unicode
+JavaScript ကုဒ်တွေကို Unicode character set နဲ့ ရေးသားထားတာဖြစ်လို့ variable name တွေမှာ မြန်မာစာအပါအဝင် ဘာသာစကားအမျိုးမျိုးကို သုံးလို့ရပါတယ်။
+
+let နာမည် = "မောင်မောင်";
+console.log(နာမည်); // Output: မောင်မောင်
+
+
+
+```
 
 Lexical structure defines **how JavaScript source code is read and broken into tokens**. It includes:
 
@@ -296,6 +352,74 @@ JavaScript မှာ Expression ဆိုတာ တန်ဖိုးတစ်�
 ---
 
 ## 1. What Is an Expression?
+
+```
+JavaScript မှာ Expression ဆိုတာ တန်ဖိုးတစ်ခုခု (Value) ထွက်လာအောင် တွက်ချက်ပေးတဲ့ Code အပိုင်းအစကို ခေါ်တာပါ။
+
+အရိုးရှင်းဆုံး မှတ်သားချင်ရင် - "တစ်ခုခုကို တွက်ချက်ပြီး အဖြေ (Value) တစ်ခု ပြန်ပေးရင် အဲဒါ Expression ပဲ" လို့ မှတ်နိုင်ပါတယ်။
+
+၁။ Expression အမျိုးအစားများ
+
+JavaScript မှာ Expression အမျိုးအစား အများကြီးရှိပါတယ်။
+
+Arithmetic Expressions: ကိန်းဂဏန်း တွက်ချက်မှုများ။
+
+5 + 5 (အဖြေ 10 ထွက်သည်)
+
+10 * 2 (အဖြေ 20 ထွက်သည်)
+
+String Expressions: စာသားများ ပေါင်းစပ်ခြင်း။
+
+"Hello " + "World" (အဖြေ "Hello World" ထွက်သည်)
+
+Logical Expressions: ဟုတ်/မဟုတ် စစ်ဆေးခြင်း။
+
+10 > 5 (အဖြေ true ထွက်သည်)
+
+Primary Expressions: အခြေခံ တန်ဖိုးများ။
+
+true, 22, "Mg Mg" (၎င်းတို့ကိုယ်တိုင်သည်လည်း expression များ ဖြစ်သည်)
+
+၂။ Expression vs Statement (အရေးကြီးသော ကွာခြားချက်)
+
+Programming မှာ Expression နဲ့ Statement ကို မှားတတ်ကြပါတယ်။
+
+Expression: တန်ဖိုးတစ်ခုကို ပြန်ပေးတယ်။ ဥပမာ- 2 + 2
+
+Statement: အလုပ်တစ်ခုကို လုပ်ဆောင်တယ်။ ဥပမာ- let x = 10; (ဒါက variable ကြေညာတဲ့ statement ဖြစ်ပြီး ဘာတန်ဖိုးမှ ပြန်မပေးပါဘူး)
+
+၃။ React မှာ Expression ကို ဘယ်လိုသုံးသလဲ?
+
+React (JSX) ရေးတဲ့အခါ JavaScript Expression တွေကို Curly Braces { } ထဲမှာ ထည့်ရေးရပါတယ်။
+
+
+
+function Welcome() {
+  const name = "Aung Aung";
+  
+  return (
+    <div>
+      {/* ဤသည်မှာ Expression ဖြစ်သည် */}
+      <h1>မင်္ဂလာပါ {name}</h1> 
+      
+      {/* ဤသည်မှာလည်း Expression ဖြစ်သည် */}
+      <p>၅ ပေါင်း ၅ သည် {5 + 5} ဖြစ်သည်။</p>
+    </div>
+  );
+}
+
+၄။ Ternary Operator (Expression အဖြစ်သုံးသော If-Else)
+React မှာ if-else statement ကို JSX ထဲမှာ ရေးလို့မရပါဘူး (ဘာလို့လဲဆိုတော့ သူက statement ဖြစ်လို့ပါ)။ ဒါကြောင့် အဖြေပြန်ပေးတဲ့ Ternary Expression ကို သုံးရပါတယ်။
+
+JavaScript
+
+{isLoggedIn ? "Welcome Back!" : "Please Log In"}
+အနှစ်ချုပ်
+Expression သည် တန်ဖိုး (Value) တစ်ခုကို ထုတ်ပေးသည်။
+
+React ၏ JSX ထဲတွင် Expression များကိုသာ { } ဖြင့် သုံးနိုင်သည်။
+
+```
 
 An **expression** is any valid unit of code that **evaluates to a value**.
 
