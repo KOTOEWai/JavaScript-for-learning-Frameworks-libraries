@@ -1,5 +1,6 @@
 
 ## 📑 Table of Contents
+- [JavaScript Execution Model](#javaScript-execution-model)
 - [LexicalStructure](#LexicalStructure)
 - [Expressions](#Expressions)
 - [DataTypes](#DataTypes)
@@ -18,6 +19,14 @@
 - [JSON](#JSON)
 - [FetchAPI](#FetchAPI)
 - [ES6+(Modern JavaScript)](#ES6)
+- [Hoisting](#Hoisting)
+
+
+## JavaScript Execution Model
+
+<img width="691" height="478" alt="image" src="https://github.com/user-attachments/assets/7dd32f98-cae3-4ce2-9c47-967549653772" />
+
+
 
 ## LexicalStructure
 
@@ -604,6 +613,71 @@ Understanding expressions helps you write more powerful and flexible code.
 JavaScript has a flexible and dynamic type system. Every value in JavaScript belongs to a **data type**, and understanding them is essential for writing clean, predictable code.
 
 ---
+
+```
+JavaScript မှာ Data Types ဆိုတာ ကွန်ပျူတာက ဒေတာတွေကို ဘယ်လိုအမျိုးအစားအဖြစ် မှတ်သားမလဲဆိုတဲ့ သတ်မှတ်ချက် ဖြစ်ပါတယ်။ 
+JavaScript မှာ ဒေတာအမျိုးအစားတွေကို အဓိက အုပ်စုကြီး (၂) စု ခွဲထားပါတယ်။
+
+၁။ Primitive Data Types (အခြေခံ အမျိုးအစားများ)
+ဒါတွေက တန်ဖိုးတစ်ခုတည်းကိုပဲ သိမ်းဆည်းနိုင်ပြီး ပြောင်းလဲလို့မရတဲ့ (Immutable) အခြေခံအမျိုးအစား ၇ ခု ဖြစ်ပါတယ်။
+
+String: စာသားများ။ (ဥပမာ- "Hello", 'Mingalarbar')
+
+Number: ကိန်းဂဏန်းများ (Integer ရော Float ပါ ပါဝင်သည်)။ (ဥပမာ- 25, 3.14)
+
+Boolean: ဟုတ်/မဟုတ်။ (true သို့မဟုတ် false)
+
+Undefined: Variable တစ်ခုကို ကြေညာထားပြီး တန်ဖိုးမထည့်ရသေးတဲ့ အခြေအနေ။
+
+Null: တမင်တကာ "ဘာမှမရှိဘူး" လို့ သတ်မှတ်ထားတဲ့ တန်ဖိုး (Empty value)။
+
+Symbol: ထူးခြားပြီး တစ်ခုတည်းသော identifier အဖြစ် သုံးပါတယ်။ (ES6)
+
+BigInt: အလွန်ကြီးမားတဲ့ ကိန်းဂဏန်းတွေ သိမ်းဖို့ သုံးပါတယ်။
+
+
+၂။ Non-Primitive (Reference) Data Types
+
+ဒါတွေကတော့ ရှုပ်ထွေးတဲ့ ဒေတာပုံစံတွေဖြစ်ပြီး တန်ဖိုးအများကြီးကို စုစည်းသိမ်းဆည်းနိုင်ပါတယ်။
+
+1. Object: Key-value အတွဲလိုက် သိမ်းဆည်းတဲ့ ဒေတာပုံစံ။
+
+const person = { name: "Aung Aung", age: 20 };
+
+
+2. Array: စာရင်း (List) ပုံစံ သိမ်းဆည်းတာဖြစ်ပြီး တကယ်တော့ Object အမျိုးအစားထဲကပါပဲ။
+
+const fruits = ["Apple", "Banana", "Orange"];
+
+
+3. Function: အလုပ်လုပ်ဆောင်ချက်တွေကို သိမ်းဆည်းထားတဲ့ အမျိုးအစား။
+
+၃။ Static vs Dynamic Typing
+
+JavaScript ဟာ Dynamic Typed Language ဖြစ်ပါတယ်။ ဆိုလိုတာက Variable တစ်ခုကို ဘာ အမျိုးအစားလဲဆိုတာ ကြိုပြောစရာမလိုဘဲ ထည့်လိုက်တဲ့ တန်ဖိုးပေါ်မူတည်ပြီး အမျိုးအစားက အလိုအလျောက် ပြောင်းလဲသွားပါတယ်။
+
+let x = 5;       // x က Number ဖြစ်သွားပြီ
+x = "Hello";     // အခု x က String ဖြစ်သွားပြန်ပြီ
+
+၄။ typeof Operator
+
+Variable တစ်ခုက ဘာ Data Type လဲဆိုတာကို သိချင်ရင် typeof ကို သုံးပြီး စစ်ဆေးနိုင်ပါတယ်။
+
+typeof 10;        // "number"
+typeof "hi";     // "string"
+typeof true;      // "boolean"
+typeof undefined; // "undefined"
+typeof null;      // "object" (bug)
+typeof {};        // "object"
+typeof [];        // "object"
+typeof function(){}; // "function"
+
+
+Primitive တွေက ရိုးရှင်းပြီး Memory ထဲမှာ တိုက်ရိုက်သိမ်းတယ်။
+
+Reference (Objects) တွေက ရှုပ်ထွေးပြီး Memory ထဲမှာ Reference (လိပ်စာ) အနေနဲ့ သိမ်းတယ်။
+
+```
 
 ## 1. Overview of Data Types
 
@@ -4589,4 +4663,299 @@ await Promise.all([p1, p2]);
 | Modules           | import/export          |
 
 ---
+
+# BrowserAPIs 
+
+Browser APIs (Application Programming Interfaces) are built-in features provided by web browsers that allow JavaScript to interact with the browser and the environment.
+
+They let you:
+
+* Manipulate the DOM
+* Handle user events
+* Store data
+* Work with multimedia
+* Access device features
+* Fetch network resources
+
+---
+
+# 🌳 1. DOM (Document Object Model) API
+
+The DOM API lets JavaScript interact with HTML elements.
+
+### Select Elements
+
+```js
+document.getElementById("title");
+document.querySelector(".item");
+```
+
+### Modify Elements
+
+```js
+const title = document.querySelector("h1");
+title.textContent = "Updated Title";
+title.style.color = "blue";
+```
+
+### Create & Append Elements
+
+```js
+const div = document.createElement("div");
+div.textContent = "Hello";
+document.body.appendChild(div);
+```
+
+---
+
+# 🎯 2. Events API
+
+Handle clicks, input, submit, keyboard, scroll, etc.
+
+```js
+document.querySelector("button").addEventListener("click", () => {
+  console.log("Button clicked!");
+});
+```
+
+---
+
+# 💾 3. Storage API (localStorage & sessionStorage)
+
+### localStorage
+
+* Stores data **permanently** (until deleted)
+
+```js
+localStorage.setItem("theme", "dark");
+localStorage.getItem("theme");
+```
+
+### sessionStorage
+
+* Stores data for **one tab session**
+
+```js
+sessionStorage.setItem("token", "123");
+```
+
+---
+
+# 🌐 4. Fetch API
+
+Used to make HTTP requests.
+
+```js
+fetch("/api/data")
+  .then(res => res.json())
+  .then(data => console.log(data));
+```
+
+---
+
+# ⏱️ 5. Timers (setTimeout, setInterval)
+
+```js
+setTimeout(() => {
+  console.log("Runs once after 2 seconds");
+}, 2000);
+
+setInterval(() => {
+  console.log("Repeats every second");
+}, 1000);
+```
+
+---
+
+# 🎥 6. Geolocation API
+
+Retrieve user location (with permission).
+
+```js
+navigator.geolocation.getCurrentPosition(pos => {
+  console.log(pos.coords.latitude, pos.coords.longitude);
+});
+```
+
+---
+
+# 🎤 7. Media Devices & Camera API
+
+Access camera/microphone.
+
+```js
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(stream => console.log(stream));
+```
+
+---
+
+# 🔊 8. Audio & Video API
+
+Control audio and video elements.
+
+```js
+document.querySelector("video").play();
+document.querySelector("audio").pause();
+```
+
+---
+
+# 🗂️ 9. Clipboard API
+
+Copy text to clipboard.
+
+```js
+navigator.clipboard.writeText("Copied!");
+```
+
+Paste (with permission):
+
+```js
+navigator.clipboard.readText().then(text => console.log(text));
+```
+
+---
+
+# 🖼️ 10. Canvas API
+
+Used for drawing graphics.
+
+```js
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "red";
+ctx.fillRect(10, 10, 100, 100);
+```
+
+---
+
+# 🌐 11. History API
+
+Manage browser navigation.
+
+```js
+history.pushState({ page: 1 }, "Title", "?page=1");
+```
+
+---
+
+# 💨 12. Web Storage API
+
+Includes:
+
+* `localStorage`
+* `sessionStorage`
+* `Cookies` (via document.cookie)
+
+---
+
+# 🕸️ 13. WebSocket API
+
+Real-time communication.
+
+```js
+const socket = new WebSocket("ws://example.com");
+socket.onmessage = event => console.log(event.data);
+```
+
+---
+
+# 🔔 14. Notification API
+
+Show system notifications.
+
+```js
+Notification.requestPermission().then(() => {
+  new Notification("Hello!");
+});
+```
+
+---
+
+# 🔄 15. Intersection Observer API
+
+Detect when elements enter the viewport.
+
+```js
+const observer = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    console.log("Element visible");
+  }
+});
+
+observer.observe(document.querySelector("#target"));
+```
+
+---
+
+# 🧭 16. URL & URLSearchParams API
+
+```js
+const url = new URL(window.location);
+console.log(url.searchParams.get("id"));
+```
+
+---
+
+# 🔥 Summary Table
+
+| API          | Purpose                       |
+| ------------ | ----------------------------- |
+| DOM API      | Work with HTML elements       |
+| Events API   | User interactions             |
+| Storage API  | localStorage / sessionStorage |
+| Fetch API    | Make network requests         |
+| Geolocation  | Get location                  |
+| MediaDevices | Camera/Mic access             |
+| Canvas       | Draw graphics                 |
+| WebSocket    | Real-time data                |
+| Notification | System notifications          |
+| Timers       | setTimeout, setInterval       |
+| URL API      | Parse/manipulate URLs         |
+
+---
+
+#  Hoisting
+
+Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their scope during the compilation phase.
+
+
+⚠️ Important:
+
+JavaScript hoists declarations, not initializations.
+
+
+## Function Hoisting
+
+Function Declaration (Hoisted ✅)
+
+```js
+sayHello();
+
+function sayHello() {
+  console.log("Hello!");
+}
+
+```
+✅ This works because function declarations are fully hoisted.
+
+---
+
+## Function Expression (Not Hoisted ❌)
+
+```js
+sayHello();
+
+const sayHello = function () {
+  console.log("Hello!");
+};
+```
+ReferenceError: Cannot access 'sayHello' before initialization
+
+---
+
+
+
+## Variable Hoisting
 
