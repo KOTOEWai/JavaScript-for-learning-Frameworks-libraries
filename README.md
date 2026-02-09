@@ -5304,7 +5304,8 @@ Hoisting ဆိုတာ JavaScript မှာ variable တွေနဲ့ functi
 (Execution context တည်ဆောက်တဲ့အချိန်) memory ထဲမှာ နေရာကြိုယူထားတဲ့ သဘောတရားဖြစ်ပါတယ်။
 
 ရိုးရိုးရှင်းရှင်းပြောရရင် သင်က variable တစ်ခုကို မကြေညာခင် (Declare မလုပ်ခင်) အပေါ်ကနေ လှမ်းသုံးလိုက်ရင်တောင် 
-JavaScript က error မတက်စေဘဲ variable declaration ကို code ရဲ့ ထိပ်ဆုံးကို ဆွဲတင်လိုက်သလိုမျိုး ပြုမူတာကို ခေါ်တာပါ။
+JavaScript က error မတက်စေဘဲ variable declaration ကို code ရဲ့ ထိပ်ဆုံးကို ဆွဲတင်လိုက်သလိုမျိုး 
+ပြုမူတာကို ခေါ်တာပါ။
 
 ၁။ Function Hoisting
 Function တွေက Hoisting မှာ အထူးအခွင့်အရေးရပါတယ်။ Function တစ်ခုလုံးကို memory ထဲ ကြိုတင်သိမ်းထားတဲ့အတွက် 
@@ -5322,16 +5323,18 @@ function sayHello() {
 
 Variable တွေမှာတော့ သူတို့ကို ကြေညာတဲ့ keyword ပေါ်မူတည်ပြီး အလုပ်လုပ်ပုံ ကွာခြားပါတယ်။
 
-var: Hoisting ဖြစ်ပါတယ်။ ဒါပေမဲ့ variable ရဲ့ တန်ဖိုး (value) ကိုတော့ မသိသေးဘဲ undefined အဖြစ်ပဲ မှတ်ထားပါတယ်။
+var: Hoisting ဖြစ်ပါတယ်။ ဒါပေမဲ့ variable ရဲ့ တန်ဖိုး (value) ကိုတော့ မသိသေးဘဲ undefined 
+အဖြစ်ပဲ မှတ်ထားပါတယ်။
 
-let နှင့် const: သူတို့လည်း Hoisting ဖြစ်ပါတယ်။ ဒါပေမဲ့ သူတို့ကို memory ထဲမှာ နေရာယူထားရုံပဲ ရှိပြီး code က သူတို့ဆီ မရောက်မချင်း အသုံးပြုခွင့် မပေးပါဘူး။ ဒါကို Temporal Dead Zone (TDZ) လို့ ခေါ်ပါတယ်။
-
-
-```
+let နှင့် const: သူတို့လည်း Hoisting ဖြစ်ပါတယ်။ ဒါပေမဲ့ သူတို့ကို memory ထဲမှာ နေရာယူထားရုံပဲ
+ ရှိပြီး code က သူတို့ဆီ မရောက်မချင်း အသုံးပြုခွင့် မပေးပါဘူး။ ဒါကို Temporal Dead Zone (TDZ) လို့ ခေါ်ပါတယ်။
 
 | Keyword        | 	Hoisted ဖြစ်လား	    |   တန်ဖိုး (Initial Value)       |     	Error တက်လား              |
 |----------------|---------------------|-------------------------------|----------------------------------|
 | var	           |     ဖြစ်တယ်         |    undefined	                  |        မတက်ဘူး(undefined ပြမယ်) |
 |                |                     |                               |                                  |
 | let / const	   |     ဖြစ်တယ်	       |        မရှိဘူး (Uninitialized)   |    	ReferenceError တက်မယ်       |
+
+
+```
 
