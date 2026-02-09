@@ -24,7 +24,8 @@
 - [FetchAPI](#FetchAPI)
 - [ES6+(Modern JavaScript)](#ES6)
 - [Hoisting](#Hoisting)
-
+- [Scope](#scope)
+- [Scope Chain](#scope-chain)
 
 ## JavaScript Execution Model
 
@@ -5329,6 +5330,9 @@ var: Hoisting ဖြစ်ပါတယ်။ ဒါပေမဲ့ variable ရ�
 let နှင့် const: သူတို့လည်း Hoisting ဖြစ်ပါတယ်။ ဒါပေမဲ့ သူတို့ကို memory ထဲမှာ နေရာယူထားရုံပဲ
  ရှိပြီး code က သူတို့ဆီ မရောက်မချင်း အသုံးပြုခွင့် မပေးပါဘူး။ ဒါကို Temporal Dead Zone (TDZ) လို့ ခေါ်ပါတယ်။
 
+** Temporal Dead Zone (TDZ) ဆိုတာ let နဲ့ const variable တွေမှာ ဖြစ်လေ့ရှိတဲ့ အပြုအမူတစ်ခုပါ။
+variable ကို စတင်ကြေညာ (declare) တဲ့ code အကြောင်းဆီ မရောက်ခင် အပေါ်ကနေ လှမ်းသုံးမိရင်
+ReferenceError တက်စေတဲ့ နယ်မြေ (Area) ကို ခေါ်တာ ဖြစ်ပါတယ်။**
 
 ```
 | Keyword        | 	Hoisted ဖြစ်လား	    |   တန်ဖိုး (Initial Value)       |     	Error တက်လား              |
@@ -5338,3 +5342,154 @@ let နှင့် const: သူတို့လည်း Hoisting ဖြစ်�
 | let / const	   |     ဖြစ်တယ်	       |        မရှိဘူး (Uninitialized)   |    	ReferenceError တက်မယ်       |
 
 ---
+
+# Scope
+
+```
+Scope ဆိုတာ JavaScript မှာ variable တွေ၊ functions တွေနဲ့ objects တွေကို 
+"ဘယ်နေရာကနေ လှမ်းသုံးလို့ရသလဲ" ဆိုတဲ့ အတိုင်းအတာ သို့မဟုတ် နယ်နိမိတ်ကို ခေါ်တာ ဖြစ်ပါတယ်။
+
+ရိုးရိုးရှင်းရှင်းပြောရရင် Variable တစ်ခုရဲ့ "သက်တမ်း" နဲ့ "မြင်နိုင်စွမ်း" (Visibility) ကို Scope က ဆုံးဖြတ်ပေးတာပါ။
+
+၁။ Scope အမျိုးအစား (၃) မျိုး
+
+JavaScript မှာ အဓိကအားဖြင့် အောက်ပါ Scope ၃ ခု ရှိပါတယ်-
+
+(က) Global Scope
+
+မည်သည့် function သို့မဟုတ် block ရဲ့ အပြင်ဘက်မှာမဆို ကြေညာထားတဲ့ variable တွေပါ။
+
+ထူးခြားချက်: Code တစ်ခုလုံးရဲ့ ဘယ်နေရာကနေမဆို လှမ်းသုံးလို့ရပါတယ်။
+
+ဥပမာ: const website = "Google"; (ဒါကို function ထဲကနေလည်း လှမ်းခေါ်လို့ ရပါတယ်)
+
+
+(ခ) Function Scope (Local Scope)
+
+Function တစ်ခုရဲ့ { } အတွင်းမှာ ကြေညာထားတဲ့ variable တွေပါ။
+
+ထူးခြားချက်: အဲဒီ function အတွင်းမှာပဲ သုံးလို့ရပါတယ်။ Function အပြင်ဘက်ကနေ လှမ်းခေါ်ရင် Error တက်ပါလိမ့်မယ်။
+
+var keyword နဲ့ ကြေညာရင် Function Scope ဖြစ်ပါတယ်။
+
+(ဂ) Block Scope
+
+if statement, for loop သို့မဟုတ် ရိုးရိုး curly braces { } အတွင်းမှာ ရှိတဲ့ နေရာပါ။
+
+ထူးခြားချက်: let နဲ့ const ကို သုံးမှသာ Block Scope အလုပ်လုပ်ပါတယ်။ (အဲဒီ { } အပြင်ဘက်မှာ သုံးလို့မရပါ)
+
+သတိထားရန်: var နဲ့ ကြေညာရင် block scope မရှိပါဘူး (Global သို့မဟုတ် Function scope ဆီကို ပေါက်ထွက်သွားပါလိမ့်မယ်)။
+
+၂။ နှိုင်းယှဉ်ချက် ဥပမာ
+
+
+// --- Global Scope ---
+const user = "Aung Aung"; 
+
+function sayHi() {
+    // --- Function Scope ---
+    const message = "Hello"; 
+    
+    if (true) {
+        // --- Block Scope ---
+        const greeting = "Hi there";
+        var legacy = "I am everywhere"; // var သည် block scope ကို ဖောက်ထွက်နိုင်သည်
+        console.log(greeting); // အလုပ်လုပ်သည်
+    }
+
+    console.log(message);  // အလုပ်လုပ်သည်
+    // console.log(greeting); // Error! (Block Scope အပြင်ဘက်ဖြစ်နေ၍)
+    console.log(legacy);   // အလုပ်လုပ်သည် (var ဖြစ်သောကြောင့်)
+}
+
+sayHi();
+// console.log(message); // Error! (Function Scope အပြင်ဘက်ဖြစ်နေ၍)
+
+၃။ ဘာကြောင့် Scope က အရေးကြီးတာလဲ?
+
+Security (လုံခြုံမှု): Variable တွေကို လိုအပ်တဲ့ နေရာမှာပဲ ထားခြင်းဖြင့် အခြား code တွေက မတော်တဆ 
+လာပြင်တာမျိုးကို တားဆီးနိုင်ပါတယ်။
+
+Naming Collisions (နာမည်တူခြင်း): Scope မတူရင် variable နာမည်တူပေးလို့ ရပါတယ်။
+ (ဥပမာ- function A ထဲမှာလည်း x သုံး၊ function B ထဲမှာလည်း x သုံးလို့ ရတာမျိုး)
+
+Memory Management: Function တစ်ခု အလုပ်ပြီးသွားရင် သူ့ထဲက Local variables တွေကို
+ memory ထဲကနေ ဖျက်ထုတ်ပေးတဲ့အတွက် memory သက်သာစေပါတယ်။
+
+အနှစ်ချုပ်
+
+Global Scope: လူတိုင်း မြင်နိုင်တဲ့ "လမ်းမပေါ်က ဆိုင်းဘုတ်" လိုမျိုးပါ။
+
+Function Scope: အိမ်တစ်အိမ်ရဲ့ "ဧည့်ခန်း" လိုမျိုးပါ။ အိမ်ထဲဝင်မှ မြင်ရပါတယ်။
+
+Block Scope: အိမ်ထဲကမှ "သေတ္တာအသေးလေး" ထဲ ထည့်ထားသလိုမျိုးပါ။ အဲဒီသေတ္တာကို ဖွင့်မှပဲ မြင်ရတာပါ။
+
+```
+# Scope Chain
+
+```
+Scope Chain ဆိုတာ JavaScript မှာ variable တစ်ခုကို ရှာဖွေတဲ့ "လှေကားထစ်" လိုမျိုး စနစ်တစ်ခု ဖြစ်ပါတယ်။
+ လက်ရှိရှိနေတဲ့ နေရာမှာ variable ကို ရှာလို့မတွေ့ရင် သူ့ရဲ့ အပြင်ဘက် (Parent Scope) ဆီကို အဆင့်ဆင့် 
+ တက်ရှာသွားတဲ့ ဖြစ်စဉ်ကို ခေါ်တာပါ။
+
+ဒီ concept ကို နားလည်ဖို့ Scopes အမျိုးအစားတွေကို အရင်သိထားဖို့ လိုပါတယ်။
+
+၁။ Scopes အမျိုးအစား ၃ ခု
+Global Scope: Code တစ်ခုလုံးရဲ့ အပြင်ဘက်ဆုံးနေရာ။ ဘယ်နေရာကမဆို လှမ်းသုံးလို့ရတယ်။
+
+Function Scope: Function တစ်ခုအတွင်းမှာပဲ ရှိတဲ့နေရာ။
+
+Block Scope: if သို့မဟုတ် for loop ရဲ့ { } brackets အတွင်းမှာပဲ ရှိတဲ့နေရာ (let နဲ့ const အတွက်သာ)။
+
+၂။ Scope Chain ဘယ်လို အလုပ်လုပ်သလဲ?
+
+JavaScript Engine က variable တစ်ခုကို တွေ့တဲ့အခါ အောက်ပါအစီအစဉ်အတိုင်း ရှာဖွေပါတယ်-
+
+Local Scope: အရင်ဆုံး လက်ရှိ အလုပ်လုပ်နေတဲ့ နေရာ (Current Scope) မှာ ရှာပါတယ်။
+
+Outer Scope: မတွေ့ရင် သူ့ကို ဝန်းရံထားတဲ့ အပြင်ဘက် Scope (Parent) ဆီကို သွားရှာပါတယ်။
+
+Global Scope: အပြင်ဘက်အဆင့်ဆင့်မှာ ရှာရင်းနဲ့ နောက်ဆုံး Global Scope အထိ ရောက်သွားပါတယ်။ 
+အဲဒီမှာမှ မတွေ့တော့ဘူးဆိုရင်တော့ ReferenceError ပြပါလိမ့်မယ်။
+
+အရေးကြီးချက်: Scope Chain ဟာ အောက်ကနေ အပေါ်ကိုပဲ ရှာလို့ရပါတယ်။ အပေါ် (Global) ကနေ 
+အောက် (Local function) ထဲက variable ကို လှမ်းရှာလို့ မရပါဘူး။
+
+၃။ Code ဥပမာဖြင့် ကြည့်ခြင်း
+
+const globalVar = "Global";
+
+function outerFunction() {
+    const outerVar = "Outer";
+
+    function innerFunction() {
+        const innerVar = "Inner";
+
+        console.log(innerVar);  // ၁။ Local မှာတွေ့တယ် -> "Inner"
+        console.log(outerVar);  // ၂။ Local မှာမတွေ့လို့ Parent (outerFunction) မှာသွားရှာတယ် -> "Outer"
+        console.log(globalVar); // ၃။ Parent မှာမတွေ့လို့ Global မှာသွားရှာတယ် -> "Global"
+        console.log(unknown);   // ၄။ ဘယ်မှာမှမတွေ့လို့ -> ReferenceError
+    }
+
+    innerFunction();
+}
+
+outerFunction();
+
+၄။ Lexical Scoping
+Scope Chain ဟာ Lexical Scoping ပေါ်မှာ အခြေခံပါတယ်။ ဆိုလိုတာက variable တစ်ခုရဲ့ scope ကို
+code ရေးကတည်းက (ဘယ်နေရာမှာ ရေးထားသလဲဆိုတာကို ကြည့်ပြီး) ဆုံးဖြတ်လိုက်တာပါ။ Function ကို 
+ဘယ်နေရာမှာ "ခေါ်သလဲ" ဆိုတာထက် ဘယ်နေရာမှာ "ရေးထားသလဲ" ဆိုတာက ပိုအရေးကြီးပါတယ်။
+
+အကျဉ်းချုပ် (Analogy)
+
+အိမ်တစ်အိမ်မှာ ပစ္စည်းတစ်ခု ရှာသလိုပါပဲ-
+
+ကိုယ့်အခန်းထဲမှာ အရင်ရှာမယ် (Local Scope)။
+
+မတွေ့ရင် ဧည့်ခန်းထဲထွက်ရှာမယ် (Outer Scope)။
+
+မတွေ့ရင် အိမ်ရှေ့ကွင်းပြင်ထဲမှာ ထွက်ရှာမယ် (Global Scope)။
+
+အပြင်မှာမှ မတွေ့ရင်တော့ အဲဒီပစ္စည်း မရှိဘူးလို့ သတ်မှတ်လိုက်တာပါပဲ။
+```
