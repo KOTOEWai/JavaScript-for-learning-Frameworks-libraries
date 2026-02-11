@@ -29,6 +29,11 @@
 - [Scope Chain](#scope-chain)
 - [Lexical Scoping](#lexical-scoping)
 - [Closure](#closure)
+---
+# useful Links
+<a href="https://preparefrontend.com/blog/blog/25-javascript-best-practices-for-modern-development" title="25 JavaScript Best Practices for Modern Development">25 JavaScript Best Practices for Modern Development</a>
+
+
 ## JavaScript Execution Model
 
 <img width="691" height="478" alt="image" src="https://github.com/user-attachments/assets/7dd32f98-cae3-4ce2-9c47-967549653772" />
