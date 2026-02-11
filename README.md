@@ -1,11 +1,18 @@
 
+# 🚀 My JavaScript Journey
+
+JavaScript ရဲ့ အခြေခံကနေ Advanced concepts တွေအထိ စနစ်တကျ လေ့လာထားတဲ့ Practice Repository ဖြစ်ပါတယ်။
+
+---
+
 ## 📑 Table of Contents
+
 - [JavaScript Execution Model](#javaScript-execution-model)
-  - [Js Engine](#js-engine)
-  - [Web APIs](#web-apis)
-  - [Event Loop](#event-loop)
-  - [Callback Queue](#callback-queue)
- 
+  - [Js Engine](#js-engine)
+  - [Web APIs](#web-apis)
+  - [Event Loop](#event-loop)
+  - [Callback Queue](#callback-queue)
+ 
 - [LexicalStructure](#LexicalStructure)
 - [Expressions](#Expressions)
 - [DataTypes](#DataTypes)
@@ -29,10 +36,17 @@
 - [Scope Chain](#scope-chain)
 - [Lexical Scoping](#lexical-scoping)
 - [Closure](#closure)
+---
+ ## 🔗 Useful Links
+* <a href="https://preparefrontend.com/blog/blog/25-javascript-best-practices-for-modern-development" title="25 JavaScript Best Practices for Modern Development">25 JavaScript Best Practices for Modern Development</a>
+* [UsefulLink](https://playcode.io/javascript)
+---
+
+
 ## JavaScript Execution Model
 
 <img width="691" height="478" alt="image" src="https://github.com/user-attachments/assets/7dd32f98-cae3-4ce2-9c47-967549653772" />
-[UsefulLink](https://playcode.io/javascript)
+
 
 ## Js Engine
 
