@@ -2574,284 +2574,160 @@ Objects ဟာ data အချက်အလက် (Properties) နဲ့ ဆက်
 
 ## Asynchronous-JavaScript
 
-### Introduction
-
-JavaScript is **single-threaded**, but it can perform non-blocking operations using **asynchronous programming**.
-
-Async JS allows tasks like:
-
-* Fetching data from a server
-* Reading files
-* Timers
-* Events
-
-to run **without blocking** the main thread.
-
+JavaScript ဟာ မူလက **Single-threaded** (တစ်ကြိမ်မှာ အလုပ်တစ်ခုပဲ လုပ်နိုင်တဲ့) ဘာသာစကား ဖြစ်ပါတယ်။ ဒါပေမယ့် Server ဆီက ဒေတာလှမ်းတောင်းတာ၊ File ဖတ်တာ၊ Timer ပေးထားတာစတဲ့ အချိန်ကြာမယ့် အလုပ်တွေကို စောင့်နေရင်း ကျန်တဲ့ အလုပ်တွေပါ ရပ်တန့် (Block) မသွားစေဖို့ **Asynchronous (အပြိုင်လုပ်ဆောင်ခြင်း)** နည်းစနစ်တွေကို မဖြစ်မနေ သုံးရပါတယ်။
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### Why Asynchronous JavaScript?
+### **1. Synchronous vs Asynchronous (ကွာခြားချက်)**
 
-Without async code:
+- **Synchronous (ပုံမှန်အတိုင်း အလုပ်လုပ်ခြင်း):** အပေါ်ကကုတ် ပြီးမှ အောက်ကကုတ်ကို ဆက်လုပ်ပါတယ်။ အပေါ်ကကုတ် ကြာနေရင် တစ်ခုလုံး ရပ်စောင့်နေပါမယ်။
+- **Asynchronous (အပြိုင် အလုပ်လုပ်ခြင်း):** အချိန်ကြာမယ့်အလုပ် တစ်ခုကို နောက်ကွယ်မှာ သီးသန့်ပေးလုပ်ထားပြီး၊ ပြီးသွားဖို့ မစောင့်ဘဲ အောက်ကကုတ်တွေကို ဆက် run သွားပါတယ်။
 
-* Long operations freeze the page
-* UI becomes unresponsive
-* Slow APIs block execution
+**Synchronous ဥပမာ:**
+```js
+console.log("1");
+console.log("2");
+console.log("3");
+// Output: 1, 2, 3 (အစဉ်လိုက်ထွက်တယ်)
+```
 
-Async JS lets the browser handle tasks in the background.
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 1. The Event Loop
-
-The **Event Loop** is the system that manages asynchronous operations.
-
-JavaScript uses:
-
-* **Call Stack** → executes code
-* **Web APIs** → timers, fetch, DOM
-* **Callback Queue** → completed tasks
-* **Event Loop** → sends tasks to stack when it's empty
-
-This enables async behavior even though JS has one thread.
-
+**Asynchronous ဥပမာ (`setTimeout` ဖြင့်):**
+```js
+console.log("1");
+setTimeout(() => {
+  console.log("2 (After 2 seconds)");
+}, 2000);
+console.log("3");
+// Output: 1, 3 ပြီးမှ 2 ထွက်လာပါမယ်
+```
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 2. Callbacks
+### **2. Callbacks (အဟောင်းဆုံးနည်းလမ်း)**
 
-A **callback** is a function passed as an argument.
+Asynchronous အလုပ်တစ်ခု ပြီးသွားတဲ့အခါမှ ဆက်လုပ်ချင်တဲ့ အလုပ်ကို Parameter အနေနဲ့ Function ထဲ ထည့်ပေးလိုက်တာကို Callback လို့ ခေါ်ပါတယ်။
 
 ```js
-function getData(callback) {
+function fetchData(callback) {
   setTimeout(() => {
-    callback("Done!");
-  }, 1000);
+    let data = "Hello from server";
+    callback(data); // ဒေတာရပြီဆိုမှ callback ကို ပြန်ခေါ်တယ်
+  }, 2000);
 }
 
-getData(result => {
-  console.log(result);
+fetchData((result) => {
+  console.log(result); // 2 စက္ကန့်ကြာမှ ဒီစာပေါ်လာမယ်
 });
 ```
 
-### Callback Hell
+**Callback Hell (အားနည်းချက်):**
+Callback ထဲမှာ နောက်ထပ် Callback တွေ ထပ်ထည့်ရရင် Code တွေက ရှုပ်ထွေးပြီး ဖတ်ရခက်လာပါတယ်။ ဒါကို ဖြေရှင်းဖို့ Promises တွေ ပေါ်လာပါတယ်။
 
-Nested callbacks become hard to read:
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
+---
+
+### **3. Promises (ကတိကဝတ်များ)**
+
+Promise ဆိုတာ "ဒီအလုပ်ကို အခု ချက်ချင်းတော့ မရသေးဘူး။ ဒါပေမယ့် အောင်မြင်သွားရင်ဖြစ်ဖြစ် (`resolve`)၊ ကျရှုံးသွားရင်ဖြစ်ဖြစ် (`reject`) သေချာပေါက် အကြောင်းပြန်မယ်" ဆိုတဲ့ ကတိတစ်ခုပါ။
+
+**Promise အဆင့် ၃ ဆင့်:**
+1. **Pending** (စောင့်ဆိုင်းနေဆဲ)
+2. **Fulfilled / Resolved** (အောင်မြင်သွားပြီ)
+3. **Rejected** (တစ်ခုခု မှားယွင်းသွားပြီ)
+
+**ဥပမာ:**
 ```js
-a(() => {
-  b(() => {
-    c(() => {
-      d();
-    });
+let myPromise = new Promise((resolve, reject) => {
+  let success = true;
+
+  setTimeout(() => {
+    if (success) {
+      resolve("Data fetched successfully!");
+    } else {
+      reject("Error fetching data.");
+    }
+  }, 2000);
+});
+
+// Promise ကို ပြန်ဖမ်းယူခြင်း
+myPromise
+  .then((result) => {
+    console.log(result); // အောင်မြင်ရင် then နဲ့ ဖမ်းတယ်
+  })
+  .catch((error) => {
+    console.log(error); // ကျရှုံးရင် catch နဲ့ ဖမ်းတယ်
   });
-});
 ```
-
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 3. Promises
+### **4. Async / Await (ခေတ်အမီဆုံးနဲ့ အကောင်းဆုံးနည်း)**
 
-A **Promise** represents a value that will be available in the future.
+Promises တွေကို သုံးတဲ့နေရာမှာ `.then()` တွေ အများကြီး မရေးချင်တဲ့အခါ၊ ပုံမှန် Synchronous code ရေးသလိုမျိုး ဖတ်ရလွယ်ကူအောင် **`async`** နဲ့ **`await`** ကို ထပ်မံမိတ်ဆက်ပေးခဲ့ပါတယ်။
 
-### States:
+- **`async`**: Function ရဲ့ရှေ့မှာ ရေးရပါတယ်။ (ဒီ Function ပြန်ပေးမယ့်တန်ဖိုးဟာ အလိုအလျောက် Promise ဖြစ်သွားပါတယ်)
+- **`await`**: `async` Function ထဲမှာပဲ သုံးလို့ရပါတယ်။ Promise တစ်ခု ပြီးဆုံးတဲ့အထိ စောင့်ဆိုင်းပေးပါတယ်။
 
-* **pending**
-* **fulfilled**
-* **rejected**
-
-### Example
-
+**ဥပမာ:**
 ```js
-const promise = new Promise((resolve, reject) => {
-  setTimeout(() => resolve("Success"), 1000);
-});
-
-promise.then(result => console.log(result));
-```
-
-### `.catch()` for errors
-
-```js
-promise.catch(err => console.error(err));
-```
-
-### `.finally()`
-
-```js
-promise.finally(() => console.log("Done"));
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 4. Async / Await
-
-Introduced in ES2017, **async/await** lets you write asynchronous code like synchronous code.
-
-### Example
-
-```js
-async function loadData() {
-  const result = await fetch("/api/data");
-  const data = await result.json();
-  console.log(data);
+function fetchUserData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ name: "Ko Toe", age: 25 });
+    }, 2000);
+  });
 }
 
-loadData();
+// Async / Await ကိုသုံးခြင်း
+async function getUser() {
+  console.log("Fetching user...");
+  let user = await fetchUserData(); // ဒေတာရတဲ့အထိ စောင့်နေမယ်
+  console.log("User Data:", user);  // ဒေတာရမှ အောက်ကို ဆက်လုပ်မယ်
+}
+
+getUser();
 ```
 
-### Try/Catch for errors
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
+---
+
+### **5. Error Handling in Promise and Async/Await**
+
+Asynchronous အလုပ်တွေ လုပ်တဲ့အခါ Error တက်ရင် ဘယ်လိုဖမ်းမလဲ ဆိုတာ သိထားဖို့ လိုပါတယ်။
+
+**A. Promise မှာ Error ဖမ်းခြင်း (`.catch`):**
 ```js
-async function run() {
+fetch("https://invalidurl.com")
+  .then(response => response.json())
+  .catch(error => console.log("Failed to fetch:", error));
+```
+
+**B. Async/Await မှာ Error ဖမ်းခြင်း (`try...catch`):**
+```js
+async function getData() {
   try {
-    const res = await fetch("/invalid");
-  } catch (err) {
-    console.log("Error:", err);
+    let response = await fetch("https://invalidurl.com");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Failed to fetch:", error); // Error ကို ဒီမှာ ဖမ်းယူပါမယ်
   }
 }
-```
 
+getData();
+```
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
-
-### 5. Microtasks vs Macrotasks
-
-### Microtasks
-
-* Promise callbacks (`then`, `catch`)
-
-### Macrotasks
-
-* `setTimeout`
-* `setInterval`
-
-Execution order:
-
-1. Call Stack
-2. **All microtasks**
-3. One macrotask
-4. Repeat
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 6. Common Asynchronous Functions
-
-### `setTimeout`
-
-```js
-setTimeout(() => console.log("Hi"), 1000);
-```
-
-### `setInterval`
-
-```js
-setInterval(() => console.log("Tick"), 1000);
-```
-
-### `fetch`
-
-```js
-fetch("/api").then(res => res.json()).then(data => console.log(data));
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 7. Parallel, Sequential, and Race
-
-### Sequential
-
-```js
-await task1();
-await task2();
-```
-
-### Parallel
-
-```js
-await Promise.all([task1(), task2()]);
-```
-
-### Race
-
-```js
-Promise.race([task1(), task2()]);
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 8. Error Handling
-
-### Promise error
-
-```js
-promise.catch(err => console.error(err));
-```
-
-### Async/await error
-
-```js
-try {
-  await something();
-} catch (err) {
-  console.error(err);
-}
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 9. Real-World Examples
-
-### Fetching API Data
-
-```js
-async function getUsers() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  return res.json();
-}
-```
-
-### File Reading (Node.js)
-
-```js
-const fs = require("fs/promises");
-
-async function readFile() {
-  const data = await fs.readFile("text.txt", "utf8");
-  console.log(data);
-}
-```
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
-
 
 ## TypeCasting
 
