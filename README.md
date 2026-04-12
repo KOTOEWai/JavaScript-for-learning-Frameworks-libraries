@@ -2999,292 +2999,225 @@ Function တွေနဲ့ ပတ်သက်ပြီး သိထားရမ
 
 ## Objects
 
-JavaScript **objects** are one of the most important parts of the language. They let you store data in key-value pairs and model real-world entities.
-
+JavaScript မှာ **Object** တွေဟာ Array တွေလိုပဲ အရေးပါတဲ့ ဒေတာဖွဲ့စည်းပုံ (Data structure) ဖြစ်ပါတယ်။ Array ထဲမှာ data တွေကို index နဲ့ မှတ်သားသလိုပဲ Object မှာတော့ **Key-Value pairs** (နာမည်နဲ့ တန်ဖိုး တွဲဖက်) ဆိုတဲ့ ပုံစံနဲ့ မှတ်သားသိမ်းဆည်းပါတယ်။
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 1. What Is an Object?
+### **1. Object ဆိုတာ ဘာလဲ? (What Is an Object?)**
 
-An **object** is a collection of related data and functions.
+Object ဆိုတာ ပစ္စည်းတစ်ခု သို့မဟုတ် အရာဝတ္ထုတစ်ခုရဲ့ အချက်အလက် (Properties) တွေနဲ့ လုပ်ဆောင်ချက် (Methods) တွေကို စုစည်း သိမ်းဆည်းထားတဲ့ နေရာဖြစ်ပါတယ်။
+
+**ဥပမာ:**
 
 ```js
-const user = {
-  name: "Alex",
-  age: 18,
-  isStudent: true,
+const person = {
+  name: "Toe",
+  age: 20,
+  city: "Yangon",
+  isStudent: true
 };
 ```
-
-* **Keys** → `name`, `age`, `isStudent`
-* **Values** → "Alex", 18, true
-
+ဒီမှာဆိုရင် `name`, `age`, `city`, `isStudent` တွေက **Keys (Properties)** တွေဖြစ်ပြီး `"Toe"`, `20`, `"Yangon"`, `true` တွေက **Values (တန်ဖိုး)** တွေ ဖြစ်ပါတယ်။
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 2. Creating Objects
+### **2. Object တည်ဆောက်နည်းများ (Creating Objects)**
 
-### **A. Object Literal (most common)**
+Object တည်ဆောက်နည်း ၂ မျိုး အသုံးများပါတယ်။
+
+#### **A. Object Literal (အများဆုံး သုံးသည်)**
+Curly braces `{}` ကို သုံးပြီး တိုက်ရိုက် ကြေညာတာပါ။ (အလွယ်ကူဆုံးနဲ့ အမြန်ဆုံး နည်းလမ်းပါ)
 
 ```js
 const car = {
   brand: "Toyota",
-  model: "Vios",
-  year: 2020
+  model: "Corolla",
+  year: 2022
 };
 ```
 
-### **B. Using `new Object()`**
+#### **B. `new Object()` (Object Constructor သုံးခြင်း)**
+Object ကို ဖန်တီးပြီးမှ တစ်ဆင့်ချင်း Property တွေ ဖြည့်ထည့်တဲ့ ပုံစံပါ။ (ဒါသိပ်မသုံးကြပါဘူး)
 
 ```js
-const obj = new Object();
-obj.x = 10;
-obj.y = 20;
+const user = new Object();
+user.name = "Aung Aung";
+user.age = 25;
 ```
-
-### **C. Using a Constructor Function**
-
-```js
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
-}
-
-const p1 = new Person("John", 20);
-```
-
-### **D. Using Classes (ES6)**
-
-```js
-class User {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-}
-
-const u1 = new User("Alice", 25);
-```
-
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 3. Accessing Object Properties
+### **3. Property တွေကို ဖတ်ခြင်း (Accessing Properties)**
 
-### **Dot Notation**
+Object တစ်ခုရဲ့ data ကို လိုချင်တဲ့အခါ နည်းလမ်း ၂ မျိုး သုံးလို့ရပါတယ်။
 
-```js
-console.log(user.name);
-```
-
-### **Bracket Notation**
+#### **A. Dot Notation (`.`) (အသုံးများဆုံး)**
+Key ရဲ့ နာမည် အတိအကျသိရင် သုံးပါတယ်။
 
 ```js
-console.log(user["age"]);
+console.log(person.name); // "Toe"
+console.log(person.age);  // 20
 ```
 
-Useful when:
+#### **B. Bracket Notation (`[]`)**
+Key ရဲ့ နာမည်မှာ Space ပါနေရင် ဒါမှမဟုတ် Variable ကနေတစ်ဆင့် Key ကို လှမ်းခေါ်ချင်ရင် သုံးပါတယ်။
 
-* key contains spaces
-* key is dynamic
+```js
+console.log(person["city"]); // "Yangon"
 
+let keyName = "isStudent";
+console.log(person[keyName]); // true
+```
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 4. Adding / Updating Properties
+### **4. Property အသစ် ထည့်ခြင်း / ပြုပြင်ခြင်း / ဖျက်ခြင်း**
 
-### **Add new property**
-
-```js
-user.email = "alex@example.com";
-```
-
-### **Update existing property**
+#### **ထည့်ခြင်း နှင့် ပြုပြင်ခြင်း (Add / Update)**
+Key မရှိရင် အသစ်ရောက်သွားမယ်။ Key ရှိပြီးသားဆိုရင် အဟောင်းနေရာမှာ Value အသစ် ဝင်သွားမယ်။
 
 ```js
-user.age = 19;
+person.country = "Myanmar"; // အသစ်ထည့်တာ (Add)
+person.age = 21; // ရှိပြီးသားကို ပြင်တာ (Update)
 ```
 
+#### **ဖျက်ခြင်း (Delete)**
+`delete` keyword ကို သုံးပြီး ဖျက်လို့ရပါတယ်။
+
+```js
+delete person.isStudent; // isStudent ဆိုတဲ့ key ကို အမြစ်ပြတ် ဖျက်လိုက်ပြီ
+console.log(person); // isStudent မပါတော့ပါဘူး
+```
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 5. Deleting Properties
+### **5. Object တွေရဲ့ Methods (Functions inside Objects)**
+
+Object တွေထဲမှာ Function တွေကိုပါ Value အနေနဲ့ ထည့်ရေးလို့ရပါတယ်။ အဲဒီ Function လေးတွေကို **Methods** လို့ ခေါ်ပါတယ်။
 
 ```js
-delete user.isStudent;
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 6. Methods (Functions inside Objects)
-
-```js
-const person = {
-  name: "Leo",
-  greet() {
-    console.log(`Hi, I am ${this.name}`);
+const userProfile = {
+  username: "KoToe",
+  sayHi: function() {
+    console.log("Hello, I am " + this.username);
   }
 };
 
-person.greet();
+userProfile.sayHi(); // "Hello, I am KoToe"
 ```
-
-`this` refers to the current object.
-
+ဒီနေရာမှာ `this` က `userProfile` (မိမိကိုယ်တိုင် Object) ကို ရည်ညွှန်းပါတယ်။
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 7. Nested Objects
+### **6. Object ထဲက Key, Value တွေကို Array အဖြစ် ထုတ်ယူခြင်း (Object Methods)**
+
+Object တစ်ခုရဲ့ အချက်အလက်တွေကို Loop လှည့်ဖို့ ဒါမှမဟုတ် Count လုပ်ချင်တဲ့အခါမှာ အသုံးဝင်ပါတယ်။
 
 ```js
-const student = {
-  name: "Nyein",
-  address: {
-    city: "Yangon",
-    township: "Hlaing"
-  }
+const laptop = {
+  brand: "Apple",
+  model: "MacBook Pro",
+  year: 2023
 };
-```
 
+// 1. Keys တွေကို ယူချင်ရင် `Object.keys()`
+console.log(Object.keys(laptop)); 
+// Output: ["brand", "model", "year"]
+
+// 2. Values တွေကို ယူချင်ရင် `Object.values()`
+console.log(Object.values(laptop)); 
+// Output: ["Apple", "MacBook Pro", 2023]
+
+// 3. Key ရော Value ပါ တွဲလျက် ယူချင်ရင် `Object.entries()`
+console.log(Object.entries(laptop)); 
+// Output: [ ["brand", "Apple"], ["model", "MacBook Pro"], ["year", 2023] ]
+```
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 8. Looping Through Objects
+### **7. Object Destructuring (ခွဲထုတ်ခြင်း)**
 
-### **for…in**
+ES6 အခေါ် တိုတိုနဲ့ ရှင်းအောင် Object ထဲက Variable တွေကို ဆွဲထုတ်တဲ့ နည်းလမ်းပါ။
 
+**ရိုးရိုးရေးနည်း:**
 ```js
-for (let key in user) {
-  console.log(key, user[key]);
-}
+const mathScore = student.math;
+const engScore = student.english;
 ```
 
-### **Object.keys()**
-
+**Destructuring သုံးနည်း:**
 ```js
-console.log(Object.keys(user));
+const targetObj = { x: 10, y: 20 };
+const { x, y } = targetObj;
+
+console.log(x); // 10
+console.log(y); // 20
 ```
-
-### **Object.values()**
-
-```js
-console.log(Object.values(user));
-```
-
-### **Object.entries()**
-
-```js
-console.log(Object.entries(user));
-```
-
+Key နာမည်အတိုင်း တိုက်ရိုက် ဆွဲထုတ်လိုက်လို့ ရပိုင်ခွင့်ရှိတာပါ။
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 9. Copying Objects
+### **8. Spread Operator (`...`) နဲ့ Object များကို ပေါင်းစပ် မိတ္တူကူးခြင်း**
 
-### **Shallow Copy**
-
-```js
-const copy = { ...user };
-```
-
-### **Deep Copy**
+Object တစ်ခုကို Copy (မိတ္တူ) ပွားချင်ရင် ဒါမှမဟုတ် Object နှစ်ခုကို ပေါင်းချင်ရင် `...` ကို အသုံးများပါတယ်။
 
 ```js
-const deepCopy = JSON.parse(JSON.stringify(user));
-```
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3 };
 
+// কপি ကူးခြင်း (Clone)
+const cloneObj = { ...obj1 }; // { a: 1, b: 2 }
+
+// နှစ်ခုကို ပေါင်းခြင်း (Merge)
+const mergedObj = { ...obj1, ...obj2 }; // { a: 1, b: 2, c: 3 }
+```
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 10. Object Destructuring
+### **9. JSON (JavaScript Object Notation)**
+
+API တွေကနေ Data လှမ်းတောင်းတဲ့အခါ ရလာတဲ့ ပုံစံဟာ JSON ဖြစ်ပါတယ်။ JSON ဟာ Object နဲ့ ဆင်တူပေမယ့် **Key တွေအားလုံးကို Double Quotes `""` ထဲမှာ** ရေးရပါတယ်။
+
+- `JSON.stringify(obj)` ➜ JavaScript Object ကို JSON (String) အဖြစ် ပြောင်းပေးတယ်။
+- `JSON.parse(jsonString)` ➜ JSON string ကို JavaScript Object အဖြစ် ပြန်ပြောင်းပေးတယ်။
 
 ```js
-const { name, age } = user;
-console.log(name, age);
+const data = { name: "Toe", age: 20 };
+
+// Object to JSON
+const jsonString = JSON.stringify(data);
+console.log(jsonString); // '{"name":"Toe","age":20}'
+
+// JSON to Object
+const parsedObject = JSON.parse(jsonString);
+console.log(parsedObject.name); // "Toe"
 ```
 
-
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 11. Optional Chaining (?.)
+### **10. အနှစ်ချုပ် (Summary)**
 
-Prevents errors when a property might be missing.
-
-```js
-console.log(student.address?.city);
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 12. Useful Built-in Methods
-
-* `Object.keys(obj)` → returns keys
-* `Object.values(obj)` → returns values
-* `Object.entries(obj)` → returns key/value pairs
-* `Object.assign(target, source)` → merges objects
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 13. Real-Life Example
-
-```js
-const product = {
-  id: 1,
-  name: "Laptop",
-  price: 980000,
-  specs: {
-    cpu: "i5",
-    ram: "16GB"
-  },
-  getInfo() {
-    return `${this.name} - ${this.price} Ks`;
-  }
-};
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### Summary
-
-* Objects store data in key/value pairs
-* Methods = functions inside objects
-* Dot & bracket notation for access
-* Use destructuring for cleaner code
-* Objects are used everywhere in JS (React, APIs, Node.js)
-
+Objects ဟာ data အချက်အလက် (Properties) နဲ့ ဆက်စပ်လုပ်ဆောင်ချက် (Methods) တွေကို စနစ်တကျ ကြိုးချည်ပြီး ပေါင်းစုသိမ်းဆည်းရာမှာ မရှိမဖြစ် လိုအပ်ပါတယ်။ Database နဲ့ API (e.g. MongoDB, Firebase) အများစုက Data တွေကို Object နဲ့ JSON ပုံစံနဲ့ သိမ်းဆည်းကြတဲ့အတွက် Object အကြောင်းကို သေချာနားလည်ထားဖို့ အလွန်အရေးကြီးပါတယ်။
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
