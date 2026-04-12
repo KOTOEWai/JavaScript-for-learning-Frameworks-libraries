@@ -1133,434 +1133,159 @@ Understanding expressions helps you write more powerful and flexible code.
 
 ## DataTypes
 
-JavaScript has a flexible and dynamic type system. Every value in JavaScript belongs to a **data type**, and understanding them is essential for writing clean, predictable code.
-
----
-
-```
-JavaScript မှာ Data Types ဆိုတာ ကွန်ပျူတာက ဒေတာတွေကို ဘယ်လိုအမျိုးအစားအဖြစ် မှတ်သားမလဲဆိုတဲ့ သတ်မှတ်ချက် ဖြစ်ပါတယ်။ 
-JavaScript မှာ ဒေတာအမျိုးအစားတွေကို အဓိက အုပ်စုကြီး (၂) စု ခွဲထားပါတယ်။
-
-၁။ Primitive Data Types (အခြေခံ အမျိုးအစားများ)
-ဒါတွေက တန်ဖိုးတစ်ခုတည်းကိုပဲ သိမ်းဆည်းနိုင်ပြီး ပြောင်းလဲလို့မရတဲ့ (Immutable) အခြေခံအမျိုးအစား ၇ ခု ဖြစ်ပါတယ်။
-
-String: စာသားများ။ (ဥပမာ- "Hello", 'Mingalarbar')
-
-Number: ကိန်းဂဏန်းများ (Integer ရော Float ပါ ပါဝင်သည်)။ (ဥပမာ- 25, 3.14)
-
-Boolean: ဟုတ်/မဟုတ်။ (true သို့မဟုတ် false)
-
-Undefined: Variable တစ်ခုကို ကြေညာထားပြီး တန်ဖိုးမထည့်ရသေးတဲ့ အခြေအနေ။
-
-Null: တမင်တကာ "ဘာမှမရှိဘူး" လို့ သတ်မှတ်ထားတဲ့ တန်ဖိုး (Empty value)။
-
-Symbol: ထူးခြားပြီး တစ်ခုတည်းသော identifier အဖြစ် သုံးပါတယ်။ (ES6)
-
-BigInt: အလွန်ကြီးမားတဲ့ ကိန်းဂဏန်းတွေ သိမ်းဖို့ သုံးပါတယ်။
-
-
-၂။ Non-Primitive (Reference) Data Types
-
-ဒါတွေကတော့ ရှုပ်ထွေးတဲ့ ဒေတာပုံစံတွေဖြစ်ပြီး တန်ဖိုးအများကြီးကို စုစည်းသိမ်းဆည်းနိုင်ပါတယ်။
-
-1. Object: Key-value အတွဲလိုက် သိမ်းဆည်းတဲ့ ဒေတာပုံစံ။
-
-const person = { name: "Aung Aung", age: 20 };
-
-
-2. Array: စာရင်း (List) ပုံစံ သိမ်းဆည်းတာဖြစ်ပြီး တကယ်တော့ Object အမျိုးအစားထဲကပါပဲ။
-
-const fruits = ["Apple", "Banana", "Orange"];
-
-
-3. Function: အလုပ်လုပ်ဆောင်ချက်တွေကို သိမ်းဆည်းထားတဲ့ အမျိုးအစား။
-
-၃။ Static vs Dynamic Typing
-
-JavaScript ဟာ Dynamic Typed Language ဖြစ်ပါတယ်။ ဆိုလိုတာက Variable တစ်ခုကို ဘာ အမျိုးအစားလဲဆိုတာ ကြိုပြောစရာမလိုဘဲ ထည့်လိုက်တဲ့ တန်ဖိုးပေါ်မူတည်ပြီး အမျိုးအစားက အလိုအလျောက် ပြောင်းလဲသွားပါတယ်။
-
-let x = 5;       // x က Number ဖြစ်သွားပြီ
-x = "Hello";     // အခု x က String ဖြစ်သွားပြန်ပြီ
-
-၄။ typeof Operator
-
-Variable တစ်ခုက ဘာ Data Type လဲဆိုတာကို သိချင်ရင် typeof ကို သုံးပြီး စစ်ဆေးနိုင်ပါတယ်။
-
-typeof 10;        // "number"
-typeof "hi";     // "string"
-typeof true;      // "boolean"
-typeof undefined; // "undefined"
-typeof null;      // "object" (bug)
-typeof {};        // "object"
-typeof [];        // "object"
-typeof function(){}; // "function"
-
-
-Primitive တွေက ရိုးရှင်းပြီး Memory ထဲမှာ တိုက်ရိုက်သိမ်းတယ်။
-
-Reference (Objects) တွေက ရှုပ်ထွေးပြီး Memory ထဲမှာ Reference (လိပ်စာ) အနေနဲ့ သိမ်းတယ်။
-
-```
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
-
-### 1. Overview of Data Types
-
-JavaScript has **8 main data types**:
-
- **Primitive Data Types** (7 types)
-
-1. **Number**
-2. **String**
-3. **Boolean**
-4. **Undefined**
-5. **Null**
-6. **Symbol**
-7. **BigInt**
-
-**Non‑Primitive Data Type** (1 type)
-
-8. **Object**
-
+JavaScript မှာ ကိုယ်သိမ်းဆည်းမယ့် Data အမျိုးအစားပေါ် မူတည်ပြီး **Data Types (ဒေတာအမျိုးအစားများ)** ကွဲပြားသွားပါတယ်။ အကြမ်းဖျင်းအားဖြင့် **Primitive Types** (ရိုးရှင်းတဲ့ အခြေခံဒေတာများ) နဲ့ **Non-Primitive / Reference Types** (ရှုပ်ထွေးတဲ့ ဒေတာအစုအဝေးများ) ဆိုပြီး ၂ မျိုး ခွဲခြားထားပါတယ်။
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 2. Primitive Data Types
+### **1. Primitive Data Types (အခြေခံ ဒေတာအမျိုးအစားများ)**
 
-Primitive values:
+Primitive Types ဆိုတာ တန်ဖိုးတစ်ခုတည်းကိုပဲ တိုက်ရိုက် သိမ်းဆည်းပေးနိုင်တဲ့ Data Types တွေ ဖြစ်ပါတယ်။ စုစုပေါင်း ၇ မျိုး ရှိပါတယ်။
 
-* are **immutable**
-* compared by **value**
-* stored directly in memory
+#### **A. String (စာသားများ)**
+စာသားတွေကို သိမ်းချင်တဲ့အခါ အသုံးပြုပါတယ်။ Single Quotes `''`, Double Quotes `""`, ဒါမှမဟုတ် Backticks ` \` \` ` (အတွင်းထဲမှာ Variable တွေ တွဲရေးချင်ရင် အသုံးများတယ်) တွေနဲ့ ရေးရပါတယ်။
 
+```js
+let name = "Ko Toe"; // Double Quotes
+let greeting = 'Hello'; // Single Quotes
+let message = `My name is ${name}`; // Backticks (Template Literal)
+```
+
+#### **B. Number (ကိန်းဂဏန်းများ)**
+ကိန်းပြည့် (Integers) ဖြစ်ဖြစ်၊ ဒသမကိန်း (Decimals) ဖြစ်ဖြစ် JavaScript မှာ `Number` type တစ်မျိုးတည်းသာ ရှိပါတယ်။
+
+```js
+let age = 20; // ကိန်းပြည့်
+let price = 99.99; // ဒသမကိန်း
+```
+
+#### **C. Boolean (အမှန်/အမှား)**
+`true` (မှန်တယ်) သို့မဟုတ် `false` (မှားတယ်) ဆိုတဲ့ တန်ဖိုး ၂ မျိုးတည်းကိုပဲ သိမ်းဆည်းပေးပါတယ်။ Condition စစ်ဆေးတဲ့နေရာတွေမှာ အများဆုံး သုံးပါတယ်။
+
+```js
+let isStudent = true;
+let isMarried = false;
+```
+
+#### **D. Undefined (တန်ဖိုး မရှိသေးခြင်း)**
+Variable တစ်ခုကို ကြေညာထားပြီး တန်ဖိုး (Value) မထည့်ရသေးတဲ့ အခြေအနေကို `undefined` လို့ ခေါ်ပါတယ်။
+
+```js
+let car;
+console.log(car); // Output: undefined
+```
+
+#### **E. Null (ဘာမှမရှိခြင်း - အလွတ်)**
+`null` ဆိုတာက "ဘာမှမရှိဘူး (အလွတ်ပဲ)" လို့ ရည်ရွယ်ချက်ရှိရှိ သတ်မှတ်ပေးလိုက်တဲ့ တန်ဖိုးပါ။ `undefined` နဲ့ မတူတာက `null` ဟာ Programmer ကိုယ်တိုင်က "အလွတ်" လို့ ကြေညာထားတာ ဖြစ်ပါတယ်။
+
+```js
+let emptyValue = null;
+```
+
+#### **F. Symbol (ES6)**
+လုံးဝ တူညီမှုမရှိတဲ့ ထူးခြားတဲ့ (Unique) တန်ဖိုးတစ်ခု ဖန်တီးချင်တဲ့အခါ သုံးပါတယ်။ (Object တွေရဲ့ Key တွေမှာ သုံးလေ့ရှိပါတယ်)
+
+```js
+let sym1 = Symbol("id");
+let sym2 = Symbol("id");
+console.log(sym1 === sym2); // Output: false (တန်ဖိုး မတူပါ)
+```
+
+#### **G. BigInt (အလွန်ကြီးမားသော ကိန်းဂဏန်းများ)**
+ပုံမှန် `Number` က မခံနိုင်လောက်အောင် အလွန်ကြီးမားတဲ့ ကိန်းဂဏန်းတွေကို သိမ်းဖို့ `n` နောက်ကပ်ပြီး ရေးရပါတယ်။
+
+```js
+let bigNumber = 9007199254740991n;
+```
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-#### 2.1 Number
+### **2. Non-Primitive / Reference Types (အစုအဝေး ဒေတာများ)**
 
-Represents both integers and floating‑point numbers.
+Primitive Types တွေလို တန်ဖိုး တစ်ခုတည်း မဟုတ်ဘဲ၊ တန်ဖိုး အများကြီးကို စုစည်းသိမ်းဆည်းပေးတဲ့ အမျိုးအစားတွေ ဖြစ်ပါတယ်။ Data ကို တိုက်ရိုက် မသိမ်းဘဲ Memory နေရာ (Reference) ကိုသာ သိမ်းတာ ဖြစ်ပါတယ်။
 
-```js
-let age = 18;
-let price = 19.99;
-let infinity = Infinity;
-let notNumber = NaN;
-```
-
-JavaScript does **not** have separate types for int, float, double.
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-#### 2.2 String
-
-Represents text.
+#### **A. Object (အရာဝတ္ထုများ)**
+Key-Value (နာမည်-တန်ဖိုး) တွဲပြီး သိမ်းဆည်းတဲ့ Data Type ဖြစ်ပါတယ်။
 
 ```js
-let name = "Aye";
-let message = 'Hello';
-let greeting = `Hi ${name}`; // template literal
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-#### 2.3 Boolean
-
-Represents logical values.
-
-```js
-let isLoggedIn = true;
-let hasToken = false;
-```
-
-Common Boolean operations:
-
-```js
-true && false
-true || false
-!true
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-#### 2.4 Undefined
-
-A variable that has been declared but not assigned.
-
-```js
-let x;
-console.log(x); // undefined
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-#### 2.5 Null
-
-Represents an **intentional absence of value**.
-
-```js
-let user = null;
-```
-
-Note:
-
-```js
-typeof null; // "object" (JS historical bug)
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-#### 2.6 Symbol (ES6)
-
-Unique and immutable values, often used as object keys.
-
-```js
-let id = Symbol("id");
-let obj = {
-  [id]: 123,
+let person = {
+  name: "Aung Aung",
+  age: 25,
+  city: "Yangon"
 };
 ```
 
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-#### 2.7 BigInt (ES2020)
-
-Used for very large integers.
+#### **B. Array (စာရင်းများ)**
+အစီအစဉ်လိုက် ဒေတာ အများကြီးကို စုပြီး သိမ်းဆည်းချင်တဲ့အခါ သုံးပါတယ်။ (တကယ်တော့ Array ဟာလည်း Object ရဲ့ အမျိုးအစားခွဲ တစ်ခုသာ ဖြစ်ပါတယ်)
 
 ```js
-let big = 12345678901234567890n;
-let sum = big + 10n;
+let colors = ["Red", "Green", "Blue"];
 ```
 
-BigInts cannot mix with normal numbers:
+#### **C. Function**
+Function တွေဟာလည်း JavaScript မှာဆိုရင် Data အနေနဲ့ Variable ထဲ ထည့်သိမ်းလို့ရတဲ့ "First-Class Objects" တွေ ဖြစ်ကြပါတယ်။
 
 ```js
-10 + 10n; //  error
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-
-
-### 3. Non‑Primitive Data Type
-
-#### 3.1 Object
-
-Objects store key‑value pairs.
-
-```js
-let user = {
-  name: "Aye",
-  age: 20,
+let sayHi = function() {
+  console.log("Hi!");
 };
 ```
 
-Objects include:
-
-* arrays
-* functions
-* dates
-* regex
-* maps
-* sets
-
-Everything that is **not primitive** is an **object**.
-
-
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### 4. Special Object Types
+### **3. Data Type ကို စစ်ဆေးခြင်း (`typeof` Operator)**
 
-#### 4.1 Array
-
-Ordered list of values.
+ခုလက်ရှိ Variable ထဲမှာ ဘာအမျိုးအစား ရှိနေလဲ သိချင်ရင် `typeof` ကို အသုံးပြုပြီး စစ်ဆေးနိုင်ပါတယ်။
 
 ```js
-let arr = [1, 2, 3];
-```
+console.log(typeof "Hello"); // "string"
+console.log(typeof 100);     // "number"
+console.log(typeof true);    // "boolean"
+console.log(typeof undefined); // "undefined"
 
+// သတိပြုရန် (JavaScript Bug)
+console.log(typeof null);    // "object" လို့ ပြပါမယ်။ ဒါဟာ JS ရဲ့ အစောပိုင်း အမှားတစ်ခုပါ။
+
+console.log(typeof [1, 2, 3]); // "object" (Array လို့မပြပါဘူး)
+console.log(typeof function(){}); // "function"
+```
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-#### 4.2 Function
+### **4. Dynamic Typing (အလိုအလျောက် Data Type ပြောင်းလဲခြင်း)**
 
-Functions are objects with callable behavior.
+C++ ဒါမှမဟုတ် Java လို ဘာသာစကားတွေမှာ `int a = 10;` လို့ ကြေညာရင် `a` ထဲကို စာသား `Hello` ပြန်ထပ်ထည့်လို့ မရတော့ပါဘူး။ 
+
+ဒါပေမယ့် JavaScript ဟာ **Dynamic Typing** ဖြစ်တဲ့အတွက်၊ Variable တစ်ခုတည်းကနေ String အဖြစ် သိမ်းခဲ့ရာကနေ နောက်ပိုင်းမှာ Number, Boolean ကြိုက်တာ အားလုံးကို အလိုအလျောက် ပြောင်းလဲ ပြန်လည်သိမ်းဆည်းခွင့် (Reassign) ပြုပါတယ်။
 
 ```js
-function greet() {
-  return "Hello";
-}
+let data = "I am a string"; // အခု data ဟာ String type ဖြစ်တယ်
+data = 100; // အခု data ဟာ Number type ဖြစ်သွားတယ်
+data = true; // အခု Boolean ဖြစ်သွားပြန်တယ်
 ```
-
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-#### 4.3 Date
+### **5. အနှစ်ချုပ် (Summary)**
 
-Represents date and time.
+JavaScript မှာ Data Types တွေကို အဓိက ၂ ပိုင်းခွဲထားပါတယ်။
+1. **Primitive (Value Type):** `String`, `Number`, `Boolean`, `Undefined`, `Null`, `Symbol`, `BigInt` (အလွယ်ခေါ်ရင် ၇ မျိုး)
+2. **Non-Primitive (Reference Type):** `Object`, `Array`, `Function`
 
-```js
-let now = new Date();
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-#### 4.4 Map
-
-Stores key‑value pairs with any key type.
-
-```js
-let map = new Map();
-map.set("name", "Aye");
-```
-
+`typeof` ကိုသုံးပြီး Type စစ်လို့ရပါတယ်။ `null` ကို စစ်ရင် `"object"` လို့ ထွက်တာကတော့ မကြာခဏ အင်တာဗျူးတွေမှာ မေးလေ့ရှိတဲ့ JS ရဲ့ ထူးခြားချက် တစ်ခုပဲ ဖြစ်ပါတယ်။
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
-
-#### 4.5 Set
-
-Stores unique values.
-
-```js
-let set = new Set([1, 2, 2, 3]); // {1,2,3}
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 5. Dynamic Typing
-
-JavaScript is **dynamically typed**, meaning variables can change type at runtime.
-
-```js
-let x = 10;
-x = "ten";
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 6. Type Checking
-
-### typeof operator
-
-```js
-typeof 10;        // "number"
-typeof "hi";     // "string"
-typeof true;      // "boolean"
-typeof undefined; // "undefined"
-typeof null;      // "object" (bug)
-typeof {};        // "object"
-typeof [];        // "object"
-typeof function(){}; // "function"
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 7. Difference Between Primitive & Object
-
-| Feature     | Primitive            | Object                |
-| ----------- | -------------------- | --------------------- |
-| Storage     | Value                | Reference             |
-| Mutable?    | No                   | Yes                   |
-| Compared by | Value                | Reference             |
-| Examples    | `10`, `"hi"`, `true` | `{}`, `[]`, functions |
-
-Example:
-
-```js
-let a = { x: 1 };
-let b = { x: 1 };
-a === b; // false (different references)
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### 8. Type Conversion
-
-### Implicit Conversion (Coercion)
-
-```js
-"5" - 1  // 4
-"5" + 1  // "51"
-```
-
-### Explicit Conversion
-
-```js
-Number("5")
-String(123)
-Boolean(1)
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### Summary
-
-JavaScript data types include:
-
-* **7 primitive types**: Number, String, Boolean, Undefined, Null, Symbol, BigInt
-* **1 non‑primitive type**: Object
-* JavaScript is **dynamically typed**
-* Primitive values are simple and immutable
-* Objects are complex and mutable
-
-Understanding data types helps prevent bugs and write cleaner, more predictable code.
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
 
 ## Variables
 
