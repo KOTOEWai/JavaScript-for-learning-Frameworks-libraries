@@ -2460,11 +2460,11 @@ A complete guide to loops in JavaScript — how to repeat actions, iterate data,
 
 ---
 
-### **1. What Are Loops?**
+### **1. ထပ်ခါထပ်ခါ လုပ်ဆောင်ခြင်း (What Are Loops?)**
 
-Loops allow you to repeat code multiple times — automatically.
+Loops (ကွင်းဆက်များ) ဆိုတာ JavaScript မှာ ကုဒ်တစ်ခုတည်းကိုပဲ အကြိမ်ကြိမ် အခါခါ အလိုအလျောက် ပြန်လည်လုပ်ဆောင်ခိုင်းချင်တဲ့အခါ အသုံးပြုရတဲ့ နည်းလမ်းဖြစ်ပါတယ်။
 
-Example:
+**ဥပမာ -** ၁ ကနေ ၃ အထိ print ထုတ်ချင်တယ်ဆိုရင်:
 
 ```js
 for (let i = 1; i <= 3; i++) {
@@ -2472,94 +2472,84 @@ for (let i = 1; i <= 3; i++) {
 }
 ```
 
-Output:
-
-```
-1
-2
-3
-```
+အပေါ်ကကုဒ်ဟာ `1, 2, 3` လို့ အစဉ်လိုက် ထုတ်ပေးသွားမှာ ဖြစ်ပါတယ်။
 
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### **2. Types of Loops in JavaScript**
+### **2. Loop အမျိုးအစားများ (Types of Loops in JavaScript)**
 
-JavaScript supports several loop types:
+JavaScript မှာ Loop အမျိုးမျိုးရှိပါတယ်။ အဓိကအားဖြင့် အောက်ပါ ၅ မျိုးကို အသုံးများပါတယ်။
 
-1. **for** loop
-2. **while** loop
-3. **do...while** loop
-4. **for...of** loop (iterate arrays, strings, etc.)
-5. **for...in** loop (iterate object keys)
-6. Array iteration methods (not exactly loops but commonly used)
-
-   * `forEach`
-   * `map`
-   * `filter`
-   * `reduce`
+1. **`for` loop** (အကြိမ်အရေအတွက် အတိအကျ သိတဲ့အခါ)
+2. **`while` loop** (အကြိမ်ရေမသိဘဲ အခြေအနေ မှန်နေသရွေ့ အလုပ်လုပ်ချင်တဲ့အခါ)
+3. **`do...while` loop** (အခြေအနေကို နောက်မှစစ်ပြီး အနည်းဆုံး ၁ ကြိမ်တော့ အလုပ်လုပ်ချင်တဲ့အခါ)
+4. **`for...of` loop** (Array တွေနဲ့ String တွေရဲ့ တန်ဖိုးတွေကို ပတ်ချင်တဲ့အခါ)
+5. **`for...in` loop** (Object တွေရဲ့ Key တွေကို ပတ်ချင်တဲ့အခါ)
 
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### **3. The `for` Loop**
+### **3. The `for` Loop (`for` ကို အသုံးပြုခြင်း)**
 
-Most common and powerful loop.
+`for` loop ကို ကိုယ်က ဘယ်နှစ်ကြိမ် အလုပ်လုပ်ရမယ်ဆိုတာ အတိအကျ သိထားတဲ့အခါ အများဆုံး သုံးပါတယ်။
 
-### Syntax:
+**ပုံစံ (Syntax):**
 
 ```js
-for (initialization; condition; update) {
-  // code
+for (အစမှတ်လုပ်ခြင်း; အခြေအနေစစ်ဆေးခြင်း; တိုးခြင်းလျော့ခြင်း) {
+  // လုပ်ဆောင်မည့် ကုဒ်များ
 }
 ```
 
-### Example:
+**ဥပမာ:** 
 
 ```js
 for (let i = 0; i < 5; i++) {
-  console.log("Number:", i);
+  console.log("Number is:", i);
 }
 ```
+
+ဒီနေရာမှာ `let i = 0` (အစမှတ်), `i < 5` (၅ ထက်ငယ်နေသရွေ့ ဆက်လုပ်မယ်), `i++` (တစ်ကြိမ်ပြီးတိုင်း i ကို ၁ တိုးမယ်) ဆိုတဲ့ အဆင့် ၃ ဆင့်နဲ့ လုပ်ဆောင်ပါတယ်။
 
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### **4. The `while` Loop**
+### **4. The `while` Loop (`while` ကို အသုံးပြုခြင်း)**
 
-Runs as long as the condition is **true**.
+`while` loop ဟာ သူ့ရဲ့ အခြေအနေ (condition) အမှန် (true) ဖြစ်နေသရွေ့ အကြိမ်ကြိမ် ဆက်တိုက် အလုပ်လုပ်နေမယ့် loop အမျိုးအစားဖြစ်ပါတယ်။
 
 ```js
 let i = 0;
 while (i < 3) {
-  console.log(i);
-  i++;
+  console.log("While Loop:", i);
+  i++; // မပါရင် Infinite loop ဖြစ်သွားပါမယ်
 }
 ```
 
-Use when you don't know how many times to loop.
+*သတိပြုရန်:* အမြဲတမ်း condition အမြဲမှန်နေရင် "Infinite Loop" (မရပ်တဲ့ Loop) ဖြစ်သွားပြီး စက်ဟန်း (crash/hang) သွားနိုင်ပါတယ်။
 
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### **5. The `do...while` Loop**
+### **5. The `do...while` Loop (`do...while` ကို အသုံးပြုခြင်း)**
 
-Runs **at least once**, even if the condition is false.
+`do...while` loop ကတော့ `while` နဲ့ တူပေမယ့် **အခြေအနေ (condition) ကို မစစ်ခင်မှာ အနည်းဆုံး တစ်ကြိမ်တော့ အလုပ်လုပ်ပေးတာ** ကွာခြားချက်ဖြစ်ပါတယ်။
 
 ```js
-let i = 5;
+let count = 5;
 do {
-  console.log(i);
-  i++;
-} while (i < 3);
+  console.log("Count is:", count);
+  count++;
+} while (count < 3); // condition မှားနေပေမယ့် ပထမတစ်ကြိမ် အလုပ်လုပ်ပါတယ်
 ```
 
 
@@ -2569,19 +2559,14 @@ do {
 
 ### **6. The `for...of` Loop**
 
-Used for iterating **iterables**:
+Array တွေ၊ String တွေ စတဲ့ iterables (အစီအစဉ်လိုက် ရှိနေတဲ့ ဒေတာတွေ) ထဲက တန်ဖိုး (value) တစ်ခုချင်းစီကို တိုက်ရိုက်ယူပြီး ပတ်ချင်တဲ့အခါ သုံးရပါတယ်။
 
-* Arrays
-* Strings
-* Maps
-* Sets
-
-### Example:
+**ဥပမာ (Array ကို ပတ်ခြင်း):**
 
 ```js
-let colors = ["red", "green", "blue"];
-for (const c of colors) {
-  console.log(c);
+let fruits = ["Apple", "Mango", "Banana"];
+for (const fruit of fruits) {
+  console.log(fruit);
 }
 ```
 
@@ -2592,76 +2577,49 @@ for (const c of colors) {
 
 ### **7. The `for...in` Loop**
 
-Used to iterate **object keys**.
+Object တွေရဲ့ ဂုဏ်သတ္တိများ (Properties / Keys) ကို လိုက်ပြီး အရယူချင်တဲ့အခါ သုံးပါတယ်။
+
+**ဥပမာ (Object ကို ပတ်ခြင်း):**
 
 ```js
-let user = {
-  name: "Toe",
-  age: 18,
+let student = {
+  name: "Aung Aung",
+  age: 20,
+  major: "Computer Science"
 };
 
-for (const key in user) {
-  console.log(key, user[key]);
+for (const key in student) {
+  console.log(`${key}: ${student[key]}`);
 }
 ```
 
-️ Avoid using `for...in` for arrays.
+*သတိပြုရန်:* Array တွေအတွက် `for...in` ကို သုံးဖို့ မထောက်ခံပါဘူး (not recommended)။ Array နဲ့ဆိုရင် `for...of` ဒါမှမဟုတ် `forEach` သုံးပါ။
 
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### **8. Array Iteration Methods**
+### **8. Breaking and Continuing (ရုတ်တရက် ရပ်ခြင်း နှင့် ကျော်သွားခြင်း)**
 
-These are not loops but often replace loops.
+- **`break`**: Loop ကြီးတစ်ခုလုံးကနေ လုံးဝ ထွက်ချင်တဲ့အခါ သုံးပါတယ်။
+- **`continue`**: လက်ရှိအကြိမ် (iteration) ကို ကျော်ပြီး နောက်တစ်ကြိမ်ကနေ ဆက်လုပ်ချင်တဲ့အခါ သုံးပါတယ်။
 
-### **forEach** (loop through each item)
-
-```js
-[1, 2, 3].forEach(n => console.log(n));
-```
-
-### **map** (returns new array)
-
-```js
-let doubled = [1, 2, 3].map(n => n * 2);
-```
-
-### **filter** (filters values)
-
-```js
-let even = [1, 2, 3, 4].filter(n => n % 2 === 0);
-```
-
-### **reduce** (accumulates values)
-
-```js
-let sum = [1, 2, 3].reduce((a, b) => a + b, 0);
-```
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### **9. Loop Control: `break` and `continue`**
-
-### **break** → stops the loop completely.
+**`break` ဥပမာ:**
 
 ```js
 for (let i = 1; i <= 5; i++) {
-  if (i === 3) break;
-  console.log(i);
+  if (i === 3) break; // ၃ ရောက်ရင် Loop လုံးဝ ရပ်ပါမယ်
+  console.log("Break:", i); // Output: 1, 2
 }
 ```
 
-### **continue** → skips current iteration.
+**`continue` ဥပမာ:**
 
 ```js
 for (let i = 1; i <= 5; i++) {
-  if (i === 3) continue;
-  console.log(i);
+  if (i === 3) continue; // ၃ ရောက်ရင် အဲဒီအကြိမ်ကို ကျော်သွားပါမယ်
+  console.log("Continue:", i); // Output: 1, 2, 4, 5
 }
 ```
 
@@ -2670,29 +2628,17 @@ for (let i = 1; i <= 5; i++) {
 
 ---
 
-### **10. Infinite Loops (Be Careful!)**
+### **9. Labeled Loops (Loop များကို နာမည်ပေးခြင်း)**
+
+Nested Loop (Loop အထပ်ထပ်) တွေမှာ အပြင်ဘက် Loop ကို `break` သို့မဟုတ် `continue` လုပ်ချင်ရင် Label တွေ (Loop အမည်များ) တပ်ပေးရပါတယ်။
 
 ```js
-while (true) {
-  console.log("This never stops");
-}
-```
-
-Make sure your loop condition eventually becomes **false**.
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
-
-### **11. Nested Loops**
-
-Loop inside a loop.
-
-```js
-for (let i = 1; i <= 2; i++) {
+outerLoop: for (let i = 1; i <= 3; i++) {
   for (let j = 1; j <= 3; j++) {
-    console.log(i, j);
+    if (i === 2 && j === 2) {
+      break outerLoop; // i=2, j=2 ရောက်ရင် အပြင် Loop ကြီးပါ လုံးဝရပ်သွားမယ်
+    }
+    console.log(`i=${i}, j=${j}`);
   }
 }
 ```
@@ -2702,57 +2648,76 @@ for (let i = 1; i <= 2; i++) {
 
 ---
 
-### **12. When to Use Which Loop?**
+### **10. Nested Loops (Loop အထပ်ထပ် သုံးခြင်း)**
 
-| Loop Type    | Best Use                     |
+Loop တစ်ခုရဲ့ အထဲမှာ နောက်ထပ် Loop တစ်ခု ထည့်သုံးတာကို Nested Loop လို့ ခေါ်ပါတယ်။ Multi-dimensional array တို့ စစ်တုရင်ခုံပုံစံ Array တို့လို matrix-style မျိုးတွေမှာ အသုံးများပါတယ်။
+
+```js
+for (let i = 1; i <= 2; i++) {
+  console.log("Outer loop #", i);
+  for (let j = 1; j <= 2; j++) {
+    console.log("   --- Inner loop #", j);
+  }
+}
+```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+---
+
+### **11. Infinite Loops (အဆုံးမရှိ Loop များ)**
+
+Loop ရဲ့ အဆုံးသတ် ရပ်တန့်မယ့် Condition က ဘယ်တော့မှ အလုပ်မလုပ်ဘူးဆိုရင် အဲ့ဒီ Loop ဟာ "Infinite Loop" (စက်ဟန်းသွားစေမည့် လည်ပတ်မှု) ပြောင်းသွားပါမယ်။ သတိထားရှောင်ကြဉ်ရပါမယ်။
+
+```js
+// သတိပေးချက်: စမ်းမကြည့်ပါနှင့် (Browser ဟန်းသွားပါလိမ့်မည်)
+// while (true) {
+//   console.log("This will never stop");
+// }
+```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+---
+
+### **12. ဘယ် Loop ကို ဘယ်အချိန်မှာ သုံးသင့်လဲ? (When to Use Which Loop?)**
+
+| Loop အမျိုးအစား    | အသင့်တော်ဆုံး အသုံးပြုမှု                     |
 | ------------ | ---------------------------- |
-| `for`        | Known number of iterations   |
-| `while`      | Unknown number of iterations |
-| `do...while` | Run at least once            |
-| `for...of`   | Arrays, strings, iterables   |
-| `for...in`   | Object keys                  |
-| `forEach`    | Simple iteration (no break)  |
-| `map`        | Transform array              |
-| `filter`     | Filter array                 |
-| `reduce`     | Calculate a single value     |
+| `for`        | ပတ်မည့် အကြိမ်အရေအတွက် အတိအကျသိနေလျှင်  |
+| `while`      | အကြိမ်ရေမသိဘဲ အခြေအနေ တစ်ခုပေါ်မူတည်၍ ပတ်ချင်လျှင် |
+| `do...while` | အခြေအနေကို မစစ်ခင် အနည်းဆုံး ၁ ကြိမ်တော့ သေချာပေါက် ပတ်ချင်လျှင် |
+| `for...of`   | Array / String တို့၏ တန်ဖိုးများကို ပတ်ချင်လျှင်   |
+| `for...in`   | Object ၏ Property (Keys) များကို ပတ်ချင်လျှင် |
+| `forEach`    | Array တစ်ခုတည်းကိုသာ ရိုးရိုးပတ်ချင်လျှင်  |
 
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### **13. Common Mistakes**
+### **13. အဖြစ်များသော အမှားများ (Common Mistakes)**
 
- Forgetting to update the counter
- Creating infinite loops
- Using `for...in` for arrays
- Expecting `break` inside `forEach` (it does not work)
+- Condition အစစ်ခံရမယ့် ကိန်းဂဏန်း (counter) ကို `++` သို့မဟုတ် `--` နဲ့ Update မလုပ်မိဘဲ မေ့ကျန်ခဲ့ခြင်း (Infinite loop ဖြစ်စေနိုင်သည်)။
+- Array တွေကို ပတ်ဖို့အတွက် `for...in` ကို သုံးမိခြင်း (Array index တွေဟာ String တွေဖြစ်သွားတတ်လို့ ရှောင်ပါ)။
+- Array.forEach() ထဲမှာ `break` ဒါမှမဟုတ် `continue` သုံးဖို့ ကြိုးစားခြင်း (သုံးလို့မရပါ၊ error တက်တတ်ပါတယ်)။
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+---
+
+### **14. အနှစ်ချုပ် (Summary)**
+
+Loops ဟာ ပရိုဂရမ်တစ်ခုမှာ အချိန်ကုန်သက်သာစေပြီး အကြိမ်ကြိမ် လုပ်ရမယ့် အလုပ်တွေကို အလွယ်တကူ ကိုင်တွယ်နိုင်အောင် ကူညီပေးပါတယ်။ `for`, `while` တွေကို အခြေခံအားဖြင့် နားလည်ထားပြီး ၊ Array တွေ Object တွေပေါ် မူတည်ပြီး `for...of`, `for...in` နဲ့ Array method တွေဖြစ်တဲ့ `forEach()` ကဲ့သို့သော နည်းလမ်းတွေကို လိုအပ်သလို တွဲဖက် အသုံးပြုတတ်ပါစေ။
 
 
 <div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
-### **14. Summary**
-
-Loops help you:
-
-* Repeat actions
-* Work with collections
-* Automate repetitive tasks
-* Process arrays/objects
-
-You now know:
-
-* `for`, `while`, `do...while`
-* `for...of`, `for...in`
-* Array iteration methods
-* break/continue
-
-
-<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
-
----
 
 ## Functions
 
