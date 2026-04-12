@@ -47,6 +47,9 @@ JavaScript ရဲ့ အခြေခံကနေ Advanced concepts တွေအ�
 
 <img width="691" height="478" alt="image" src="https://github.com/user-attachments/assets/7dd32f98-cae3-4ce2-9c47-967549653772" />
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 
 ## Js Engine
 
@@ -59,6 +62,9 @@ JavaScript ရဲ့ အခြေခံကနေ Advanced concepts တွေအ�
 * Safari → JavaScriptCore (Nitro)
 
 * Node.js → V8 Engine ကိုပဲသုံးတယ်
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## JS Engine ရဲ့ အဓိက အစိတ်အပိုင်းများ
@@ -177,6 +183,9 @@ Call Stack နဲ့ Event Loop
 Event Loop က Callback Queue ထဲမှာ စောင့်နေတဲ့ အလုပ်တွေကို Stack ထဲကို ပို့ပေးတာ ဖြစ်ပါတယ်။
 ```
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 
 ## Web APIs
 
@@ -224,6 +233,9 @@ Web APIs မရှိဘူးဆိုရင် JavaScript ဟာ အရမ်�
  အသုံးပြုနိုင်နေတာ ဖြစ်ပါတယ်။
 
 ```
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ## Event Loop
 ```
 Event Loop ဆိုတာ JavaScript Runtime ရဲ့ "စပယ်ယာ" သို့မဟုတ် "ယာဉ်ထိန်းရဲ" လိုမျိုး အဓိကကျတဲ့
@@ -260,6 +272,9 @@ Concurrency: အလုပ်တွေကို တစ်ပြိုင်နက
 Web APIs တွေက အလုပ်လုပ်ပေးနေပြီး Event Loop က အဖြေတွေကို အစီအစဉ်တကျ ပြန်စီပေးနေတာ ဖြစ်ပါတယ်။
 
 ```
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ## Callback Queue
 
 ```
@@ -299,11 +314,17 @@ Callback Queue (Macrotask): setTimeout, setInterval နဲ့ DOM events တွ�
  (Microtask) ကို အရင်ယူပြီးမှ Timer အလုပ်ကို လုပ်ဆောင်ပေးမှာ ဖြစ်ပါတယ်။
 ```
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 
 
 # LexicalStructure
 
 JavaScript's **lexical structure** describes the basic building blocks of the language — the rules for writing code, forming tokens, naming variables, writing comments, and more. This document explains each part clearly.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -376,6 +397,9 @@ Lexical structure defines **how JavaScript source code is read and broken into t
 * Identifiers & keywords
 * Operators & punctuators
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 2. Character Set
@@ -390,6 +414,9 @@ let မြန်မာ = "Hello";
 let  = 10;
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 3. Case Sensitivity
@@ -402,6 +429,9 @@ let Name = "B"; // different variable
 ```
 
 Keywords are also case-sensitive.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -420,6 +450,9 @@ let  y    =    20;
 
 Both are valid.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 5. Line Terminators
@@ -437,6 +470,9 @@ Example (dangerous):
 return
   5; // returns undefined due to ASI
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -457,6 +493,9 @@ return
 ```
 
 **Note:** Comments do not nest.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -487,6 +526,9 @@ Invalid:
 let 1user; // cannot start with digit
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 8. Keywords
@@ -500,6 +542,9 @@ delete, do, else, export, extends, finally, for, function,
 if, import, in, instanceof, let, new, return, super,
 switch, this, throw, try, typeof, var, void, while, with, yield
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -537,6 +582,9 @@ null;
 undefined;
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 10. Operators & Punctuators
@@ -550,6 +598,9 @@ These include:
 * `, ; . ? :`
 
 JavaScript treats these as tokens during lexical scanning.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -572,6 +623,9 @@ Recommended:
   or
 * Follow JS formatting rules carefully.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 12. Escape Sequences
@@ -589,6 +643,9 @@ Example:
 let text = "Hello\nWorld";
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 13. Unicode Escapes
@@ -604,6 +661,9 @@ String Unicode:
 ```js
 "\u{1F600}"; // 
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -622,6 +682,9 @@ JavaScript lexical structure defines **how source code is read**, including:
 
 Understanding these rules helps you write cleaner and more predictable JavaScript.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 
@@ -630,6 +693,9 @@ Understanding these rules helps you write cleaner and more predictable JavaScrip
 JavaScript **expressions** are pieces of code that produce a value. They are the building blocks of statements and logic in JavaScript.
 
 JavaScript မှာ Expression ဆိုတာ တန်ဖိုးတစ်ခု (Value) ထွက်လာအောင် လုပ်ပေးတဲ့ Code အစိတ်အပိုင်းလေးတွေကို ခေါ်တာပါ။ လွယ်လွယ်ပြောရရင် တွက်ချက်မှုတစ်ခု လုပ်လိုက်လို့ဖြစ်စေ၊ ခေါ်ယူလိုက်လို့ဖြစ်စေ အဖြေတစ်ခုခု ထွက်လာရင် အဲဒါ Expression ပါပဲ။
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -714,6 +780,9 @@ x + y      // arithmetic expression
 sayHello() // function call expression
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 2. Primary Expressions
@@ -738,6 +807,9 @@ name;
 count;
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 3. Object & Array Initializer Expressions
@@ -757,6 +829,9 @@ let user = {
 let numbers = [1, 2, 3];
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 4. Arithmetic Expressions
@@ -772,6 +847,9 @@ x % 3
 x ** 2
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 5. String Expressions
@@ -782,6 +860,9 @@ Involves string concatenation or template literals.
 "Hello" + " World"
 `User: ${username}`
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -802,6 +883,9 @@ Logical operators return **values**, not booleans only.
 "A" || "B"  // "A"
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 7. Comparison Expressions
@@ -815,6 +899,9 @@ x !== y
 ```
 
 They return `true` or `false`.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -836,6 +923,9 @@ let a;
 console.log(a = 5); // prints 5
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 9. Function Call Expressions
@@ -854,6 +944,9 @@ Even methods:
 user.getName()
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 10. Optional Chaining Expression
@@ -863,6 +956,9 @@ Safely access nested properties.
 ```js
 user?.address?.city
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -882,6 +978,9 @@ user.name
 user["name"]
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 12. Conditional (Ternary) Expression
@@ -891,6 +990,9 @@ Short "if...else" that returns a value.
 ```js
 let status = age >= 18 ? "Adult" : "Child";
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -907,6 +1009,9 @@ Arrow function without body braces implicitly returns:
 ```js
 const double = x => x * 2;
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -926,6 +1031,9 @@ function sum(...nums) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 15. Comma Operator Expression
@@ -938,6 +1046,9 @@ let x = (1, 2, 3); // x = 3
 
 Rarely used.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 16. `new` Expression
@@ -948,6 +1059,9 @@ Used to create instances.
 let date = new Date();
 let user = new User("Aye");
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -971,6 +1085,9 @@ void 0 // undefined
 delete obj.key
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 18. Await Expression
@@ -981,6 +1098,9 @@ Used in async functions.
 let data = await fetch("/api");
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 19. Grouping Expressions
@@ -990,6 +1110,9 @@ Control evaluation order.
 ```js
 (2 + 3) * 4
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1002,6 +1125,9 @@ JavaScript expressions:
 * Form the core of JavaScript logic
 
 Understanding expressions helps you write more powerful and flexible code.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1076,6 +1202,9 @@ Reference (Objects) တွေက ရှုပ်ထွေးပြီး Memory 
 
 ```
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 ## 1. Overview of Data Types
 
 JavaScript has **8 main data types**:
@@ -1094,6 +1223,9 @@ JavaScript has **8 main data types**:
 
 8. **Object**
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 2. Primitive Data Types
@@ -1103,6 +1235,9 @@ Primitive values:
 * are **immutable**
 * compared by **value**
 * stored directly in memory
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1119,6 +1254,9 @@ let notNumber = NaN;
 
 JavaScript does **not** have separate types for int, float, double.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 2.2 String
@@ -1130,6 +1268,9 @@ let name = "Aye";
 let message = 'Hello';
 let greeting = `Hi ${name}`; // template literal
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1150,6 +1291,9 @@ true || false
 !true
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 2.4 Undefined
@@ -1160,6 +1304,9 @@ A variable that has been declared but not assigned.
 let x;
 console.log(x); // undefined
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1177,6 +1324,9 @@ Note:
 typeof null; // "object" (JS historical bug)
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 2.6 Symbol (ES6)
@@ -1189,6 +1339,9 @@ let obj = {
   [id]: 123,
 };
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1206,6 +1359,9 @@ BigInts cannot mix with normal numbers:
 ```js
 10 + 10n; //  error
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1235,6 +1391,9 @@ Objects include:
 
 Everything that is **not primitive** is an **object**.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 4. Special Object Types
@@ -1246,6 +1405,9 @@ Ordered list of values.
 ```js
 let arr = [1, 2, 3];
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1259,6 +1421,9 @@ function greet() {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 4.3 Date
@@ -1268,6 +1433,9 @@ Represents date and time.
 ```js
 let now = new Date();
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1280,6 +1448,9 @@ let map = new Map();
 map.set("name", "Aye");
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 4.5 Set
@@ -1289,6 +1460,9 @@ Stores unique values.
 ```js
 let set = new Set([1, 2, 2, 3]); // {1,2,3}
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1300,6 +1474,9 @@ JavaScript is **dynamically typed**, meaning variables can change type at runtim
 let x = 10;
 x = "ten";
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1317,6 +1494,9 @@ typeof {};        // "object"
 typeof [];        // "object"
 typeof function(){}; // "function"
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1337,6 +1517,9 @@ let b = { x: 1 };
 a === b; // false (different references)
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 8. Type Conversion
@@ -1356,6 +1539,9 @@ String(123)
 Boolean(1)
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # Summary
@@ -1370,12 +1556,18 @@ JavaScript data types include:
 
 Understanding data types helps prevent bugs and write cleaner, more predictable code.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 
 # Variables
 
 Variables are one of the most fundamental parts of JavaScript. They allow you to store, update, and reuse values inside your programs.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1386,6 +1578,9 @@ A **variable** is a named container for storing data.
 ```js
 let message = "Hello World";
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1400,6 +1595,9 @@ JavaScript has **3 ways** to declare variables:
 ###  `const`
 
 Each behaves differently.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1427,6 +1625,9 @@ if (true) {
 console.log(x); //  Error (x is block-scoped)
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 4. `const`
@@ -1452,6 +1653,9 @@ You cannot reassign a new object:
 ```js
 user = {}; //  not allowed
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1479,6 +1683,9 @@ console.log(x); //  10 (var ignores block scope)
 ```
 
 Use `let` or `const` instead.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1514,6 +1721,9 @@ console.log(globalVar); // Accessible here
 // console.log(functionVar); // Error: functionVar is not defined here
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 7. Hoisting
@@ -1538,6 +1748,9 @@ console.log(y); //  Error
 let y = 10;
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 8. Initialization vs Declaration
@@ -1548,6 +1761,9 @@ x = 5;       // initialization
 
 let y = 10;  // declared + initialized
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1577,6 +1793,9 @@ let @name;  // symbols not allowed
 * Use descriptive names → `totalPrice`
 * Constants in ALL_CAPS → `MAX_USERS`
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 10. `let` vs `const` vs `var`
@@ -1594,6 +1813,9 @@ let @name;  // symbols not allowed
 * Use **let** when value will change
 * Avoid **var**
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 11. Global Variables
@@ -1606,6 +1828,9 @@ let a = 10; // global
 
 Global variables can cause bugs — use only when needed.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 12. Reassignment Examples
@@ -1617,6 +1842,9 @@ count = 2; //  allowed
 const PI = 3.14;
 PI = 3.2; //  not allowed
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1632,6 +1860,9 @@ JavaScript variables:
 * Hoisting affects how variables behave
 
 Understanding variables helps you control data flow and avoid bugs.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1655,6 +1886,9 @@ Here:
 * `=` is an **assignment operator**
 * `+` is an **arithmetic operator**
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **2. Types of Operators**
@@ -1671,6 +1905,9 @@ JavaScript has several categories of operators:
 8. **Bitwise Operators**
 9. **Type Operators** (`typeof`, `instanceof`)
 10. **Optional Chaining & Nullish Coalescing Operators**
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1695,6 +1932,9 @@ a++;
 console.log(a); // 11
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **4. Assignment Operators**
@@ -1708,6 +1948,9 @@ console.log(a); // 11
 | `/=`     | Divide and assign   | `x /= 5`             |
 | `%=`     | Modulus and assign  | `x %= 5`             |
 | `**=`    | Power and assign    | `x **= 2`            |
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1732,6 +1975,9 @@ Example:
 console.log(5 === "5"); // false
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **6. Logical Operators**
@@ -1751,6 +1997,9 @@ let isAdmin = false;
 console.log(isLoggedIn && isAdmin); // false
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **7. Unary Operators**
@@ -1768,6 +2017,9 @@ Example:
 ```js
 console.log(typeof 123); // "number"
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1787,6 +2039,9 @@ let msg = age >= 18 ? "Adult" : "Minor";
 console.log(msg);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **9. String Operator**
@@ -1797,6 +2052,9 @@ The `+` operator is used for string concatenation.
 let name = "Toe" + "Wai";
 console.log(name); // "ToeWai"
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1809,6 +2067,9 @@ let user;
 console.log(user ?? "Guest"); // Guest
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **11. Optional Chaining Operator (`?.`)**
@@ -1819,6 +2080,9 @@ Avoids errors when accessing properties of `undefined` or `null`.
 let user = {};
 console.log(user.address?.street); // undefined, no error
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1836,6 +2100,9 @@ Advanced topic — used for low-level operations.
 | `>>`     | Right shift           |    
 | `>>>`    | Zero-fill right shift |    
 ```
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **13. Operator Precedence (Which Runs First?)**
@@ -1856,6 +2123,9 @@ Shortcut:
 * Then logical
 * Last: assignment
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 
@@ -1865,6 +2135,9 @@ Shortcut:
 # Conditions 
 
 A complete guide to how decisions are made in JavaScript — using `if`, `else`, `switch`, ternary, truthy/falsy, and more.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1881,6 +2154,9 @@ if (age >= 18) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **2. Types of Conditional Statements**
@@ -1894,6 +2170,9 @@ JavaScript supports:
 5. Ternary operator (`? :`)
 6. `&&` and `||` short‑circuit conditions
 7. Optional chaining (`?.`) with conditions
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1915,6 +2194,9 @@ if (score > 50) {
   console.log("Pass");
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1941,6 +2223,9 @@ if (isOnline) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **5. `else if` Chain**
@@ -1956,6 +2241,9 @@ if (temperature > 30) {
   console.log("Cold");
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -1983,6 +2271,9 @@ switch (day) {
 * Cleaner when many `else if` conditions
 * Great for checking a single variable
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **7. Ternary Operator (`? :`)**
@@ -2002,6 +2293,9 @@ console.log(message);
 ```
 
 Best used for simple decisions.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2026,6 +2320,9 @@ Example:
 if ("") console.log("This won't run");
 if ("hello") console.log("This will run");
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2061,6 +2358,9 @@ if (!isOnline) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **10. Optional Chaining in Conditions (`?.`)**
@@ -2072,6 +2372,9 @@ if (user?.address?.city) {
   console.log("City found");
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2087,6 +2390,9 @@ if (age >= 18 && hasID) {
   console.log("You may enter");
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2117,6 +2423,9 @@ switch(x) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **13. Summary**
@@ -2136,12 +2445,18 @@ Tools for conditions:
 * Logical operators
 * Truthy/falsy evaluation
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 
 #  Loops
 
 A complete guide to loops in JavaScript — how to repeat actions, iterate data, and control flow efficiently.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2165,6 +2480,9 @@ Output:
 3
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **2. Types of Loops in JavaScript**
@@ -2182,6 +2500,9 @@ JavaScript supports several loop types:
    * `map`
    * `filter`
    * `reduce`
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2205,6 +2526,9 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **4. The `while` Loop**
@@ -2221,6 +2545,9 @@ while (i < 3) {
 
 Use when you don't know how many times to loop.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **5. The `do...while` Loop**
@@ -2234,6 +2561,9 @@ do {
   i++;
 } while (i < 3);
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2255,6 +2585,9 @@ for (const c of colors) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **7. The `for...in` Loop**
@@ -2273,6 +2606,9 @@ for (const key in user) {
 ```
 
 ️ Avoid using `for...in` for arrays.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2304,6 +2640,9 @@ let even = [1, 2, 3, 4].filter(n => n % 2 === 0);
 let sum = [1, 2, 3].reduce((a, b) => a + b, 0);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **9. Loop Control: `break` and `continue`**
@@ -2326,6 +2665,9 @@ for (let i = 1; i <= 5; i++) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **10. Infinite Loops (Be Careful!)**
@@ -2337,6 +2679,9 @@ while (true) {
 ```
 
 Make sure your loop condition eventually becomes **false**.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2351,6 +2696,9 @@ for (let i = 1; i <= 2; i++) {
   }
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2368,6 +2716,9 @@ for (let i = 1; i <= 2; i++) {
 | `filter`     | Filter array                 |
 | `reduce`     | Calculate a single value     |
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **13. Common Mistakes**
@@ -2376,6 +2727,9 @@ for (let i = 1; i <= 2; i++) {
  Creating infinite loops
  Using `for...in` for arrays
  Expecting `break` inside `forEach` (it does not work)
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2395,11 +2749,17 @@ You now know:
 * Array iteration methods
 * break/continue
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  Functions
 
 A complete guide to JavaScript functions — definitions, types, parameters, return values, arrow functions, scopes, closures, and more.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2415,6 +2775,9 @@ function greet() {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **2. Why Use Functions?**
@@ -2426,6 +2789,9 @@ Functions help you:
 * Make code cleaner
 * Create modular programs
 * Return values from operations
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2445,6 +2811,9 @@ console.log(add(2, 3)); // 5
 
 * Hoisted (usable before declaration)
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **4. Function Expression**
@@ -2461,6 +2830,9 @@ const multiply = function (a, b) {
 
 * Not hoisted
 * Can be anonymous or named
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2486,6 +2858,9 @@ const square = n => n * n;
 * No `arguments` object
 * Great for callbacks
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **6. Parameters vs Arguments**
@@ -2503,6 +2878,9 @@ function hello(name) { // parameter
 hello("Toe"); // argument
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **7. Default Parameters**
@@ -2512,6 +2890,9 @@ function greet(name = "Guest") {
   console.log("Hello", name);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2524,6 +2905,9 @@ function sum(...numbers) {
   return numbers.reduce((a, b) => a + b, 0);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2539,6 +2923,9 @@ function add(a, b) {
 
 If no `return` → returns `undefined`.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **10. Anonymous Functions**
@@ -2553,6 +2940,9 @@ setTimeout(function () {
 }, 1000);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **11. Callback Functions**
@@ -2566,6 +2956,9 @@ function process(callback) {
 
 process(() => console.log("Running!"));
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2589,6 +2982,9 @@ const double = createMultiplier(2);
 console.log(double(5)); // 10
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **13. Function Scope**
@@ -2601,6 +2997,9 @@ function test() {
 }
 // x is not accessible here
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2616,6 +3015,9 @@ if (true) {
 }
 // b is still accessible
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2643,6 +3045,9 @@ Closures are used in:
 * Factory functions
 * Module patterns
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **16. Named vs Anonymous Functions**
@@ -2659,6 +3064,9 @@ function sayHi() {}
 const sayHi = function() {}
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **17. Immediately Invoked Function Expression (IIFE)**
@@ -2670,6 +3078,9 @@ Runs immediately after creation.
   console.log("I am an IIFE");
 })();
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2695,6 +3106,9 @@ function addToX(y) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## **19. Functions as Objects**
@@ -2704,6 +3118,9 @@ Functions in JavaScript are **first-class citizens**:
 * Can be stored in variables
 * Can be passed as arguments
 * Can be returned from functions
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2720,6 +3137,9 @@ You learned:
 
 Functions are the foundation of JavaScript. Mastering them = mastering JS.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 
@@ -2727,6 +3147,9 @@ Functions are the foundation of JavaScript. Mastering them = mastering JS.
 #  Objects 
 
 JavaScript **objects** are one of the most important parts of the language. They let you store data in key-value pairs and model real-world entities.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2744,6 +3167,9 @@ const user = {
 
 * **Keys** → `name`, `age`, `isStudent`
 * **Values** → "Alex", 18, true
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2791,6 +3217,9 @@ class User {
 const u1 = new User("Alice", 25);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  3. Accessing Object Properties
@@ -2812,6 +3241,9 @@ Useful when:
 * key contains spaces
 * key is dynamic
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  4. Adding / Updating Properties
@@ -2828,6 +3260,9 @@ user.email = "alex@example.com";
 user.age = 19;
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  5. Deleting Properties
@@ -2835,6 +3270,9 @@ user.age = 19;
 ```js
 delete user.isStudent;
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2853,6 +3291,9 @@ person.greet();
 
 `this` refers to the current object.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  7. Nested Objects
@@ -2866,6 +3307,9 @@ const student = {
   }
 };
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2897,6 +3341,9 @@ console.log(Object.values(user));
 console.log(Object.entries(user));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  9. Copying Objects
@@ -2913,6 +3360,9 @@ const copy = { ...user };
 const deepCopy = JSON.parse(JSON.stringify(user));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  10. Object Destructuring
@@ -2921,6 +3371,9 @@ const deepCopy = JSON.parse(JSON.stringify(user));
 const { name, age } = user;
 console.log(name, age);
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2932,6 +3385,9 @@ Prevents errors when a property might be missing.
 console.log(student.address?.city);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  12. Useful Built-in Methods
@@ -2940,6 +3396,9 @@ console.log(student.address?.city);
 * `Object.values(obj)` → returns values
 * `Object.entries(obj)` → returns key/value pairs
 * `Object.assign(target, source)` → merges objects
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2960,6 +3419,9 @@ const product = {
 };
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  Summary
@@ -2969,6 +3431,9 @@ const product = {
 * Dot & bracket notation for access
 * Use destructuring for cleaner code
 * Objects are used everywhere in JS (React, APIs, Node.js)
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -2985,6 +3450,9 @@ const mixed = ["Hello", 42, true, null];
 
 Arrays are **mutable**, **dynamic**, and **zero‑indexed**.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  Array Indexing
@@ -2998,6 +3466,9 @@ console.log(fruits[2]); // mango
 ```
 
 * Accessing an out‑of‑range index returns **undefined**.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3014,6 +3485,9 @@ const arr = [1, 2, 3];
 ```js
 const arr = new Array(5); // creates empty array of length 5
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3070,6 +3544,9 @@ colors.includes("blue"); // true
 [1, 2, 3].reduce((total, n) => total + n, 0); // 6
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  Looping Through Arrays
@@ -3096,6 +3573,9 @@ for (const item of arr) {
 arr.forEach(item => console.log(item));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  Array Destructuring
@@ -3110,6 +3590,9 @@ Skip items:
 ```js
 const [first, , third] = [1,2,3];
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3129,6 +3612,9 @@ function sum(...nums) {
   return nums.reduce((a, b) => a + b);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3164,6 +3650,9 @@ arr.splice(1, 1); // removes item at index 1
 [1,2,3].reverse(); // [3,2,1]
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  Multidimensional Arrays
@@ -3176,6 +3665,9 @@ const matrix = [
 console.log(matrix[1][0]); // 3
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  When to Use Arrays?
@@ -3187,6 +3679,9 @@ Use arrays when you need **ordered data**, such as:
 * user inputs
 * numeric operations
 * loops & transformations
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3206,6 +3701,9 @@ Async JS allows tasks like:
 
 to run **without blocking** the main thread.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  Why Asynchronous JavaScript?
@@ -3217,6 +3715,9 @@ Without async code:
 * Slow APIs block execution
 
 Async JS lets the browser handle tasks in the background.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3232,6 +3733,9 @@ JavaScript uses:
 * **Event Loop** → sends tasks to stack when it's empty
 
 This enables async behavior even though JS has one thread.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3264,6 +3768,9 @@ a(() => {
   });
 });
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3299,6 +3806,9 @@ promise.catch(err => console.error(err));
 promise.finally(() => console.log("Done"));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 4. Async / Await
@@ -3329,6 +3839,9 @@ async function run() {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 5. Microtasks vs Macrotasks
@@ -3348,6 +3861,9 @@ Execution order:
 2. **All microtasks**
 3. One macrotask
 4. Repeat
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3370,6 +3886,9 @@ setInterval(() => console.log("Tick"), 1000);
 ```js
 fetch("/api").then(res => res.json()).then(data => console.log(data));
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3394,6 +3913,9 @@ await Promise.all([task1(), task2()]);
 Promise.race([task1(), task2()]);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 8. Error Handling
@@ -3413,6 +3935,9 @@ try {
   console.error(err);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3438,6 +3963,9 @@ async function readFile() {
 }
 ```
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 
 # TypeCasting 
 
@@ -3451,11 +3979,17 @@ JavaScript performs two types of type casting:
 * **Implicit (Automatic) Type Coercion**
 * **Explicit (Manual) Type Conversion**
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 1. Implicit Type Coercion (Automatic)
 
 JavaScript automatically converts types during operations.
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 
 ##  String Coercion
 
@@ -3466,6 +4000,9 @@ When one operand is a string → JS converts the other to **string**.
 5 + "3";   // "53"
 ```
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 ##  Number Coercion
 
 When using `-`, `*`, `/`, `%`, JS converts both values to **numbers**.
@@ -3475,6 +4012,9 @@ When using `-`, `*`, `/`, `%`, JS converts both values to **numbers**.
 "6" * "2"; // 12
 "20" / 5;   // 4
 ```
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 
 ##  Boolean Coercion
 
@@ -3493,11 +4033,17 @@ Boolean(0);      // false
 Boolean("Hi");  // true
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 2. Explicit Type Conversion (Manual)
 
 You convert types using built-in functions.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3523,6 +4069,9 @@ parseFloat("9.5"); // 9.5
 Number("hello"); // NaN
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 2.2 Convert to String
@@ -3536,6 +4085,9 @@ Use:
 String(123);     // "123"
 (100).toString(); // "100"
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3551,6 +4103,9 @@ Boolean(1);  // true
 Boolean(0);  // false
 !!"hi";     // true
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3582,6 +4137,9 @@ No type coercion
 "5" === 5; // false
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 4. Type Coercion Table
@@ -3595,6 +4153,9 @@ No type coercion
 | `null + 1`      | 1      |
 | `undefined + 1` | NaN    |
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 5. Checking Types
@@ -3607,6 +4168,9 @@ typeof null;    // "object" (known JS bug)
 typeof []       // "object"
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 6. Best Practices
@@ -3616,6 +4180,9 @@ typeof []       // "object"
  Use strict equality (`===`)
  Use `Number()` instead of `parseInt()` when possible
  Be careful with `+` → it triggers string coercion
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3636,6 +4203,9 @@ Modules help with:
 
 Modern JavaScript uses **ES Modules (ESM)**.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 1. ES Modules (ESM)
@@ -3652,11 +4222,17 @@ Supported in:
 * Browsers (using `<script type="module">`)
 * Node.js (with `.mjs` or package.json type: module)
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 2. Exporting
 
 Exports allow a file to expose code so other files can import it.
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 
 ##  Named Exports
 
@@ -3670,6 +4246,9 @@ export function add(a, b) {
 }
 ```
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 ##  Default Export
 
 One file can have **only one default export**.
@@ -3680,6 +4259,9 @@ export default function greet(name) {
   console.log(`Hello, ${name}`);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3692,6 +4274,9 @@ import { PI, add } from "./math.js";
 console.log(add(2, 3));
 ```
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 ##  Import Default Export
 
 ```js
@@ -3699,11 +4284,17 @@ import greet from "./greet.js";
 greet("Koko");
 ```
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 ##  Rename Imports
 
 ```js
 import { add as sum } from "./math.js";
 ```
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 
 ##  Import Everything
 
@@ -3712,6 +4303,9 @@ import * as math from "./math.js";
 math.add(2, 3);
 math.PI;
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3731,6 +4325,9 @@ export const version = "1.0.0";
 import log, { version } from "./utils.js";
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 5. Module Execution
@@ -3738,6 +4335,9 @@ import log, { version } from "./utils.js";
 * A module is executed **only once**, even if imported multiple times.
 * Imports are read **before** code runs (top-level scope).
 * Modules always run in **strict mode**.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3751,6 +4351,9 @@ Features:
 
 * Modules load **deferred** automatically
 * `import` works inside scripts
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3775,6 +4378,9 @@ Then use:
 ```js
 import { add } from "./math.js";
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3801,6 +4407,9 @@ import fs from "fs";
 export default {};
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 9. Dynamic Imports
@@ -3813,6 +4422,9 @@ if (true) {
   console.log(module.add(2, 3));
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3843,6 +4455,9 @@ import { multiply } from "./utils/math.js";
 console.log(multiply(4, 5));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 11. Best Practices
@@ -3853,6 +4468,9 @@ console.log(multiply(4, 5));
  Group similar modules into folders
  Avoid circular imports
  Prefer ES Modules over CommonJS for new projects
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3870,6 +4488,9 @@ Errors can happen due to:
 * Missing files (Node.js)
 
 JavaScript provides tools like **try/catch**, **throw**, **finally**, and **error objects** to manage these situations safely.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3916,6 +4537,9 @@ You can throw your own custom errors.
 throw new Error("Something went wrong!");
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 2. try / catch
@@ -3929,6 +4553,9 @@ try {
   console.log("Error happened:", error);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3946,6 +4573,9 @@ try {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 4. Throwing Custom Errors
@@ -3960,6 +4590,9 @@ function divide(a, b) {
   return a / b;
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -3986,6 +4619,9 @@ Common error types:
 * RangeError
 * EvalError
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 6. Error Handling in Asynchronous Code
@@ -3999,6 +4635,9 @@ fs.readFile("test.txt", (err, data) => {
 });
 ```
 
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
+
 ##  Promises
 
 ```js
@@ -4006,6 +4645,9 @@ fetch("/api")
   .then(res => res.json())
   .catch(err => console.log("Error:", err));
 ```
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 
 ##  async / await with try/catch
 
@@ -4019,6 +4661,9 @@ async function loadData() {
   }
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4040,6 +4685,9 @@ process.on("uncaughtException", (err) => {
 });
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 8. Validation Errors
@@ -4054,6 +4702,9 @@ function register(user) {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 9. Error Logging (Best Practices)
@@ -4063,6 +4714,9 @@ function register(user) {
  Never show internal errors to users
  Use monitoring tools (Sentry, LogRocket, Datadog)
  Use custom error classes for clarity
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4079,6 +4733,9 @@ class ValidationError extends Error {
 throw new ValidationError("Invalid email format");
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # 11. Best Practices
@@ -4090,6 +4747,9 @@ throw new ValidationError("Invalid email format");
  Avoid silent error handling
  Use custom errors for validation and logic problems
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 
@@ -4097,6 +4757,9 @@ throw new ValidationError("Invalid email format");
 #  OOPConpects
 
 JavaScript supports **Object-Oriented Programming (OOP)** using prototypes and ES6 classes.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4110,6 +4773,9 @@ JavaScript implements OOP using:
 * **Prototypes**
 * **Constructor functions**
 * **Classes (ES6)**
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4135,6 +4801,9 @@ const p1 = new Person("John", 20);
 p1.greet();
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 2. **Objects**
@@ -4144,6 +4813,9 @@ Objects are instances created from classes.
 ```js
 const user = new Person("Alice", 25);
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4159,6 +4831,9 @@ class Car {
   }
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4182,6 +4857,9 @@ class BankAccount {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 5. **Abstraction**
@@ -4200,6 +4878,9 @@ class CoffeeMachine {
   }
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4223,6 +4904,9 @@ class Dog extends Animal {
 const d = new Dog();
 d.speak();
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4253,6 +4937,9 @@ class Circle extends Shape {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 8. **The "this" Keyword**
@@ -4266,6 +4953,9 @@ class User {
   }
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4283,6 +4973,9 @@ class MathUtils {
 MathUtils.add(5, 3); // OK
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 10. **Prototypes (Behind the Scenes)**
@@ -4299,6 +4992,9 @@ Person.prototype.greet = function () {
 };
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  Summary Table
@@ -4314,6 +5010,9 @@ Person.prototype.greet = function () {
 | Polymorphism   | Overriding methods                |
 | Static methods | Methods used on class, not object |
 | Prototype      | JS's underlying OOP system        |
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4343,6 +5042,9 @@ admin.login();
 admin.deleteUser(user);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 
@@ -4350,6 +5052,9 @@ admin.deleteUser(user);
 
 JSON is one of the most important data formats in modern web development.
 It is used to store, exchange, and transport data between servers, APIs, and applications.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4375,6 +5080,9 @@ Example JSON:
   "skills": ["HTML", "CSS", "JavaScript"]
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4408,6 +5116,9 @@ const user = {
 * Keys can be without quotes
 * Can contain methods & variables
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ##  Valid JSON Data Types
@@ -4427,6 +5138,9 @@ const user = {
 * Comments
 * Undefined
 * Date objects (must be a string)
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4450,6 +5164,9 @@ This is often used when:
 * Sending data to a server
 * Saving data in localStorage
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## 2. `JSON.parse()` → Convert JSON string to JS object
@@ -4466,6 +5183,9 @@ Used when:
 * Receiving data from API
 * Reading from localStorage
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 ## ️ Real API Example
@@ -4475,6 +5195,9 @@ fetch("https://api.example.com/user")
   .then(res => res.json()) // parse JSON response
   .then(data => console.log(data));
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4490,6 +5213,9 @@ localStorage.setItem("user", JSON.stringify(user));
 const data = JSON.parse(localStorage.getItem("user"));
 console.log(data.name);
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4526,6 +5252,9 @@ JSON requires **double quotes**.
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  JSON.stringify Additional Options
@@ -4546,6 +5275,9 @@ Output:
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  Summary
@@ -4558,12 +5290,18 @@ Output:
 | Data types  | string, number, object, array, boolean, null |
 | Used in     | APIs, databases, configs, localStorage       |
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # FetchAPI 
 
 The **Fetch API** is a modern, promise-based way to make HTTP requests in JavaScript.
 It is widely used in web development for calling APIs, sending data to servers, and retrieving JSON.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4580,6 +5318,9 @@ fetch(url, options?)
   .catch(error => console.error(error));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  1. Basic GET Request
@@ -4590,6 +5331,9 @@ fetch("https://api.example.com/users")
   .then(data => console.log(data))
   .catch(err => console.log(err));
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4606,6 +5350,9 @@ async function getUsers() {
   }
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4631,6 +5378,9 @@ async function createUser() {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  4. PUT Request (Update Data)
@@ -4645,6 +5395,9 @@ fetch("https://api.example.com/users/1", {
   .then(data => console.log(data));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  5. DELETE Request
@@ -4654,6 +5407,9 @@ await fetch("https://api.example.com/users/1", {
   method: "DELETE"
 });
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4679,6 +5435,9 @@ async function loadData() {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  7. Sending Headers
@@ -4691,6 +5450,9 @@ fetch(url, {
   }
 });
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4722,6 +5484,9 @@ await fetch("/upload", {
 });
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  9. Abort Fetch Request
@@ -4736,6 +5501,9 @@ fetch(url, { signal: controller.signal });
 controller.abort();
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  10. Fetch Options Summary
@@ -4746,6 +5514,9 @@ controller.abort();
 | headers | Additional metadata (JSON, Auth, etc.) |
 | body    | Request payload                        |
 | signal  | AbortController for canceling          |
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4758,6 +5529,9 @@ async function loadPage(page) {
   console.log(data);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4773,6 +5547,9 @@ export async function GET() {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  Summary
@@ -4784,11 +5561,17 @@ export async function GET() {
 * Supports headers, FormData, Blob, File uploads
 * Works great with async/await
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 # ES6
 
 ES6+ refers to **ECMAScript 2015 (ES6) and all versions after it**.
 It introduced many powerful features that make JavaScript cleaner, faster, and easier to write.
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4813,6 +5596,9 @@ age = 21;
 const name = "Alex";
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  2. Arrow Functions
@@ -4825,6 +5611,9 @@ const add = (a, b) => a + b;
 
 Arrow functions **do not have their own `this`**.
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  3. Template Literals
@@ -4836,6 +5625,9 @@ const name = "John";
 console.log(`Hello ${name}!`);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  4. Default Parameters
@@ -4845,6 +5637,9 @@ function greet(name = "Guest") {
   console.log(`Hello ${name}`);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4864,6 +5659,9 @@ const nums = [10, 20, 30];
 const [a, b] = nums;
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  6. Spread Operator `...`
@@ -4882,6 +5680,9 @@ const user = { name: "Alice" };
 const newUser = { ...user, age: 22 };
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  7. Rest Parameters
@@ -4891,6 +5692,9 @@ function sum(...nums) {
   return nums.reduce((a, b) => a + b);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4909,6 +5713,9 @@ const user = {
 };
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  9. Modules (import/export)
@@ -4920,6 +5727,9 @@ export function add(a, b) { return a + b; }
 // app.js
 import { add } from "./math.js";
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4937,6 +5747,9 @@ class Person {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  11. Promises
@@ -4946,6 +5759,9 @@ const getData = () => new Promise((resolve) => {
   resolve("Done");
 });
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4959,6 +5775,9 @@ async function load() {
 }
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  13. Optional Chaining `?.`
@@ -4969,6 +5788,9 @@ Safer property access.
 console.log(user?.address?.city);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  14. Nullish Coalescing `??`
@@ -4978,6 +5800,9 @@ Returns right value only if left is `null` or `undefined`.
 ```js
 const username = input ?? "Guest";
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -4996,6 +5821,9 @@ const map = new Map();
 map.set("name", "John");
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  16. Iterators & for...of
@@ -5005,6 +5833,9 @@ for (const value of [10,20,30]) {
   console.log(value);
 }
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5016,6 +5847,9 @@ Unique identifier.
 const id = Symbol("id");
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  18. BigInt
@@ -5025,6 +5859,9 @@ Large integers.
 ```js
 const n = 12345678901234567890n;
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5036,6 +5873,9 @@ import("./module.js").then(module => {
 });
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  20. Promise.all, Promise.any, Promise.race
@@ -5043,6 +5883,9 @@ import("./module.js").then(module => {
 ```js
 await Promise.all([p1, p2]);
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5061,6 +5904,9 @@ await Promise.all([p1, p2]);
 | Optional chaining | Safe access            |
 | Modules           | import/export          |
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # BrowserAPIs 
@@ -5075,6 +5921,9 @@ They let you:
 * Work with multimedia
 * Access device features
 * Fetch network resources
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5105,6 +5954,9 @@ div.textContent = "Hello";
 document.body.appendChild(div);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  2. Events API
@@ -5116,6 +5968,9 @@ document.querySelector("button").addEventListener("click", () => {
   console.log("Button clicked!");
 });
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5138,6 +5993,9 @@ localStorage.getItem("theme");
 sessionStorage.setItem("token", "123");
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  4. Fetch API
@@ -5149,6 +6007,9 @@ fetch("/api/data")
   .then(res => res.json())
   .then(data => console.log(data));
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5164,6 +6025,9 @@ setInterval(() => {
 }, 1000);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  6. Geolocation API
@@ -5176,6 +6040,9 @@ navigator.geolocation.getCurrentPosition(pos => {
 });
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  7. Media Devices & Camera API
@@ -5187,6 +6054,9 @@ navigator.mediaDevices.getUserMedia({ video: true })
   .then(stream => console.log(stream));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  8. Audio & Video API
@@ -5197,6 +6067,9 @@ Control audio and video elements.
 document.querySelector("video").play();
 document.querySelector("audio").pause();
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5214,6 +6087,9 @@ Paste (with permission):
 navigator.clipboard.readText().then(text => console.log(text));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 # ️ 10. Canvas API
@@ -5227,6 +6103,9 @@ ctx.fillStyle = "red";
 ctx.fillRect(10, 10, 100, 100);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  11. History API
@@ -5237,6 +6116,9 @@ Manage browser navigation.
 history.pushState({ page: 1 }, "Title", "?page=1");
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  12. Web Storage API
@@ -5246,6 +6128,9 @@ Includes:
 * `localStorage`
 * `sessionStorage`
 * `Cookies` (via document.cookie)
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5258,6 +6143,9 @@ const socket = new WebSocket("ws://example.com");
 socket.onmessage = event => console.log(event.data);
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  14. Notification API
@@ -5269,6 +6157,9 @@ Notification.requestPermission().then(() => {
   new Notification("Hello!");
 });
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5286,6 +6177,9 @@ const observer = new IntersectionObserver(entries => {
 observer.observe(document.querySelector("#target"));
 ```
 
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 ---
 
 #  16. URL & URLSearchParams API
@@ -5294,6 +6188,9 @@ observer.observe(document.querySelector("#target"));
 const url = new URL(window.location);
 console.log(url.searchParams.get("id"));
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5312,6 +6209,9 @@ console.log(url.searchParams.get("id"));
 | Notification | System notifications          |
 | Timers       | setTimeout, setInterval       |
 | URL API      | Parse/manipulate URLs         |
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 
@@ -5357,6 +6257,9 @@ ReferenceError တက်စေတဲ့ နယ်မြေ (Area) ကို ခ�
 | var	           |     ဖြစ်တယ်         |    undefined	                  |        မတက်ဘူး(undefined ပြမယ်) |
 |                |                     |                               |                                  |
 | let / const	   |     ဖြစ်တယ်	       |        မရှိဘူး (Uninitialized)   |    	ReferenceError တက်မယ်       |
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
 
 ---
 # Scope
@@ -5441,6 +6344,9 @@ Function Scope: အိမ်တစ်အိမ်ရဲ့ "ဧည့်ခန�
 Block Scope: အိမ်ထဲကမှ "သေတ္တာအသေးလေး" ထဲ ထည့်ထားသလိုမျိုးပါ။ အဲဒီသေတ္တာကို ဖွင့်မှပဲ မြင်ရတာပါ။
 
 ```
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 # Scope Chain
 
 ```
@@ -5509,6 +6415,9 @@ code ရေးကတည်းက (ဘယ်နေရာမှာ ရေးထာ
 
 အပြင်မှာမှ မတွေ့ရင်တော့ အဲဒီပစ္စည်း မရှိဘူးလို့ သတ်မှတ်လိုက်တာပါပဲ။
 ```
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 # Lexical Scoping
 ```
 JavaScript မှာ Lexical Scope (သို့မဟုတ် Static Scope) ဆိုသည်မှာ variable တစ်ခု၏ 
@@ -5571,6 +6480,9 @@ Lexical Scoping ကို "မျိုးရိုးဗီဇ" လို မ�
 သင် ဘယ်မြို့ကိုပဲ ရောက်သွားရောက်သွား (Function ကို ဘယ်မှာပဲ ခေါ်ခေါ်)၊ သင့်ရဲ့ မိဘက ဘယ်သူလဲဆိုတာ (Lexical Parent) မပြောင်းလဲတဲ့အတွက် အဲဒီအမွေတွေကို သင် ဆက်ပြီး သုံးစွဲခွင့် ရှိနေမှာ ဖြစ်ပါတယ်။
 
 ```
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
+
 # Closure
 ```
 JavaScript မှာ Closure  ဆိုတာက Function တစ်ခုဟာ သူ့ရဲ့အပြင်ဘက် scope (outer function scope)
@@ -5626,3 +6538,6 @@ Closure ဆိုတာ "ကျောပိုးအိတ်" နဲ့ တူ�
 
 
 ```
+
+
+<div align="right"><a href="#table-of-contents">↑ Back to Top</a></div>
