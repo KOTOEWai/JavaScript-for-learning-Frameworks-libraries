@@ -1,11 +1,11 @@
 
-# 🚀 My JavaScript Journey
+#  My JavaScript Journey
 
 JavaScript ရဲ့ အခြေခံကနေ Advanced concepts တွေအထိ စနစ်တကျ လေ့လာထားတဲ့ Practice Repository ဖြစ်ပါတယ်။
 
 ---
 
-## 📑 Table of Contents
+##  Table of Contents
 
 - [JavaScript Execution Model](#javaScript-execution-model)
   - [Js Engine](#js-engine)
@@ -37,7 +37,7 @@ JavaScript ရဲ့ အခြေခံကနေ Advanced concepts တွေအ�
 - [Lexical Scoping](#lexical-scoping)
 - [Closure](#closure)
 ---
- ## 🔗 Useful Links
+ ##  Useful Links
 * <a href="https://preparefrontend.com/blog/blog/25-javascript-best-practices-for-modern-development" title="25 JavaScript Best Practices for Modern Development">25 JavaScript Best Practices for Modern Development</a>
 * [UsefulLink](https://playcode.io/javascript)
 ---
@@ -387,7 +387,7 @@ JavaScript uses the **Unicode** character set.
 
 ```js
 let မြန်မာ = "Hello";
-let 🚀 = 10;
+let  = 10;
 ```
 
 ---
@@ -602,7 +602,7 @@ let \u006Eame = "John"; // same as "name"
 String Unicode:
 
 ```js
-"\u{1F600}"; // 😀
+"\u{1F600}"; // 
 ```
 
 ---
@@ -1204,7 +1204,7 @@ let sum = big + 10n;
 BigInts cannot mix with normal numbers:
 
 ```js
-10 + 10n; // ❌ error
+10 + 10n; //  error
 ```
 
 ---
@@ -1393,11 +1393,11 @@ let message = "Hello World";
 
 JavaScript has **3 ways** to declare variables:
 
-### ✔ `var`
+###  `var`
 
-### ✔ `let`
+###  `let`
 
-### ✔ `const`
+###  `const`
 
 Each behaves differently.
 
@@ -1424,7 +1424,7 @@ Example:
 if (true) {
   let x = 10;
 }
-console.log(x); // ❌ Error (x is block-scoped)
+console.log(x); //  Error (x is block-scoped)
 ```
 
 ---
@@ -1435,7 +1435,7 @@ Also block-scoped, but **cannot be reassigned**.
 
 ```js
 const PI = 3.14;
-// PI = 3.15; ❌ Error
+// PI = 3.15;  Error
 ```
 
 ### Important:
@@ -1444,13 +1444,13 @@ const PI = 3.14;
 
 ```js
 const user = { name: "Aye" };
-user.name = "Ko"; // ✔ allowed
+user.name = "Ko"; //  allowed
 ```
 
 You cannot reassign a new object:
 
 ```js
-user = {}; // ❌ not allowed
+user = {}; //  not allowed
 ```
 
 ---
@@ -1475,7 +1475,7 @@ Example:
 if (true) {
   var x = 10;
 }
-console.log(x); // ✔ 10 (var ignores block scope)
+console.log(x); //  10 (var ignores block scope)
 ```
 
 Use `let` or `const` instead.
@@ -1519,9 +1519,9 @@ console.log(globalVar); // Accessible here
 ## 7. Hoisting
 
 Hoisting ဆိုတာ
-➡️ JavaScript engine က code run မလုပ်ခင်
-➡️ variable declarations (var, let, const)
-➡️ function declarations
+️ JavaScript engine က code run မလုပ်ခင်
+️ variable declarations (var, let, const)
+️ function declarations
 တွေကို memory ထဲကို အရင် ထားသွားတဲ့ behavior ကို ဆိုလိုတာပါ။
 
 ### `var` is hoisted with **undefined** value:
@@ -1534,7 +1534,7 @@ var x = 10;
 ### `let` and `const` are hoisted but in **Temporal Dead Zone (TDZ)**:
 
 ```js
-console.log(y); // ❌ Error
+console.log(y); //  Error
 let y = 10;
 ```
 
@@ -1584,8 +1584,8 @@ let @name;  // symbols not allowed
 | Feature    | var             | let   | const |
 | ---------- | --------------- | ----- | ----- |
 | Scope      | Function        | Block | Block |
-| Redeclare? | ✔ Yes           | ❌ No  | ❌ No  |
-| Reassign?  | ✔ Yes           | ✔ Yes | ❌ No  |
+| Redeclare? |  Yes           |  No  |  No  |
+| Reassign?  |  Yes           |  Yes |  No  |
 | Hoisting   | Yes (undefined) | TDZ   | TDZ   |
 
 ### Recommended:
@@ -1612,10 +1612,10 @@ Global variables can cause bugs — use only when needed.
 
 ```js
 let count = 1;
-count = 2; // ✔ allowed
+count = 2; //  allowed
 
 const PI = 3.14;
-PI = 3.2; // ❌ not allowed
+PI = 3.2; //  not allowed
 ```
 
 ---
@@ -2113,7 +2113,7 @@ switch(x) {
   case 1:
     console.log("One");
   case 2:
-    console.log("Two"); // Both run ❌
+    console.log("Two"); // Both run 
 }
 ```
 
@@ -2272,7 +2272,7 @@ for (const key in user) {
 }
 ```
 
-⚠️ Avoid using `for...in` for arrays.
+️ Avoid using `for...in` for arrays.
 
 ---
 
@@ -2372,10 +2372,10 @@ for (let i = 1; i <= 2; i++) {
 
 ## **13. Common Mistakes**
 
-❌ Forgetting to update the counter
-❌ Creating infinite loops
-❌ Using `for...in` for arrays
-❌ Expecting `break` inside `forEach` (it does not work)
+ Forgetting to update the counter
+ Creating infinite loops
+ Using `for...in` for arrays
+ Expecting `break` inside `forEach` (it does not work)
 
 ---
 
@@ -2730,7 +2730,7 @@ JavaScript **objects** are one of the most important parts of the language. They
 
 ---
 
-## 📌 1. What Is an Object?
+##  1. What Is an Object?
 
 An **object** is a collection of related data and functions.
 
@@ -2747,7 +2747,7 @@ const user = {
 
 ---
 
-## 📌 2. Creating Objects
+##  2. Creating Objects
 
 ### **A. Object Literal (most common)**
 
@@ -2793,7 +2793,7 @@ const u1 = new User("Alice", 25);
 
 ---
 
-## 📌 3. Accessing Object Properties
+##  3. Accessing Object Properties
 
 ### **Dot Notation**
 
@@ -2814,7 +2814,7 @@ Useful when:
 
 ---
 
-## 📌 4. Adding / Updating Properties
+##  4. Adding / Updating Properties
 
 ### **Add new property**
 
@@ -2830,7 +2830,7 @@ user.age = 19;
 
 ---
 
-## 📌 5. Deleting Properties
+##  5. Deleting Properties
 
 ```js
 delete user.isStudent;
@@ -2838,7 +2838,7 @@ delete user.isStudent;
 
 ---
 
-## 📌 6. Methods (Functions inside Objects)
+##  6. Methods (Functions inside Objects)
 
 ```js
 const person = {
@@ -2855,7 +2855,7 @@ person.greet();
 
 ---
 
-## 📌 7. Nested Objects
+##  7. Nested Objects
 
 ```js
 const student = {
@@ -2869,7 +2869,7 @@ const student = {
 
 ---
 
-## 📌 8. Looping Through Objects
+##  8. Looping Through Objects
 
 ### **for…in**
 
@@ -2899,7 +2899,7 @@ console.log(Object.entries(user));
 
 ---
 
-## 📌 9. Copying Objects
+##  9. Copying Objects
 
 ### **Shallow Copy**
 
@@ -2915,7 +2915,7 @@ const deepCopy = JSON.parse(JSON.stringify(user));
 
 ---
 
-## 📌 10. Object Destructuring
+##  10. Object Destructuring
 
 ```js
 const { name, age } = user;
@@ -2924,7 +2924,7 @@ console.log(name, age);
 
 ---
 
-## 📌 11. Optional Chaining (?.)
+##  11. Optional Chaining (?.)
 
 Prevents errors when a property might be missing.
 
@@ -2934,7 +2934,7 @@ console.log(student.address?.city);
 
 ---
 
-## 📌 12. Useful Built-in Methods
+##  12. Useful Built-in Methods
 
 * `Object.keys(obj)` → returns keys
 * `Object.values(obj)` → returns values
@@ -2943,7 +2943,7 @@ console.log(student.address?.city);
 
 ---
 
-## 📌 13. Real-Life Example
+##  13. Real-Life Example
 
 ```js
 const product = {
@@ -2962,7 +2962,7 @@ const product = {
 
 ---
 
-## 📌 Summary
+##  Summary
 
 * Objects store data in key/value pairs
 * Methods = functions inside objects
@@ -2974,7 +2974,7 @@ const product = {
 
 # Arrays
 
-## 📌 What is an Array?
+##  What is an Array?
 
 An **array** is a special data structure in JavaScript used to store **ordered collections** of values.
 
@@ -2987,7 +2987,7 @@ Arrays are **mutable**, **dynamic**, and **zero‑indexed**.
 
 ---
 
-## 📌 Array Indexing
+##  Array Indexing
 
 * Index starts from **0**
 
@@ -3001,7 +3001,7 @@ console.log(fruits[2]); // mango
 
 ---
 
-## 📌 Creating Arrays
+##  Creating Arrays
 
 ### 1. Using Array literal (recommended)
 
@@ -3017,9 +3017,9 @@ const arr = new Array(5); // creates empty array of length 5
 
 ---
 
-## 📌 Common Array Methods
+##  Common Array Methods
 
-### 🔹 Add & Remove
+###  Add & Remove
 
 | Action       | Method      | Example          |
 | ------------ | ----------- | ---------------- |
@@ -3036,7 +3036,7 @@ nums.pop();        // [1,2,3]
 
 ---
 
-### 🔹 Searching
+###  Searching
 
 | Method       | Description            |
 | ------------ | ---------------------- |
@@ -3050,7 +3050,7 @@ colors.includes("blue"); // true
 
 ---
 
-### 🔹 Transforming Arrays
+###  Transforming Arrays
 
 #### `map()` – returns new array
 
@@ -3072,7 +3072,7 @@ colors.includes("blue"); // true
 
 ---
 
-## 📌 Looping Through Arrays
+##  Looping Through Arrays
 
 ### 1. `for` loop
 
@@ -3098,7 +3098,7 @@ arr.forEach(item => console.log(item));
 
 ---
 
-## 📌 Array Destructuring
+##  Array Destructuring
 
 ```js
 const [a, b] = [10, 20];
@@ -3113,7 +3113,7 @@ const [first, , third] = [1,2,3];
 
 ---
 
-## 📌 Spread & Rest
+##  Spread & Rest
 
 ### Spread (expand array)
 
@@ -3132,7 +3132,7 @@ function sum(...nums) {
 
 ---
 
-## 📌 Useful Utility Methods
+##  Useful Utility Methods
 
 ### `slice()` – non-destructive
 
@@ -3166,7 +3166,7 @@ arr.splice(1, 1); // removes item at index 1
 
 ---
 
-## 📌 Multidimensional Arrays
+##  Multidimensional Arrays
 
 ```js
 const matrix = [
@@ -3178,7 +3178,7 @@ console.log(matrix[1][0]); // 3
 
 ---
 
-## 📌 When to Use Arrays?
+##  When to Use Arrays?
 
 Use arrays when you need **ordered data**, such as:
 
@@ -3193,7 +3193,7 @@ Use arrays when you need **ordered data**, such as:
 
 # Asynchronous-JavaScript
 
-## 📌 Introduction
+##  Introduction
 
 JavaScript is **single-threaded**, but it can perform non-blocking operations using **asynchronous programming**.
 
@@ -3208,7 +3208,7 @@ to run **without blocking** the main thread.
 
 ---
 
-## 📌 Why Asynchronous JavaScript?
+##  Why Asynchronous JavaScript?
 
 Without async code:
 
@@ -3251,7 +3251,7 @@ getData(result => {
 });
 ```
 
-### ❌ Callback Hell
+###  Callback Hell
 
 Nested callbacks become hard to read:
 
@@ -3441,7 +3441,7 @@ async function readFile() {
 
 # TypeCasting 
 
-## 📌 Introduction
+##  Introduction
 
 JavaScript is a **dynamically typed language**, meaning variables can change their type at runtime.
 Type casting (also called **type coercion**) is the process of **converting one data type to another**.
@@ -3457,7 +3457,7 @@ JavaScript performs two types of type casting:
 
 JavaScript automatically converts types during operations.
 
-## 🔹 String Coercion
+##  String Coercion
 
 When one operand is a string → JS converts the other to **string**.
 
@@ -3466,7 +3466,7 @@ When one operand is a string → JS converts the other to **string**.
 5 + "3";   // "53"
 ```
 
-## 🔹 Number Coercion
+##  Number Coercion
 
 When using `-`, `*`, `/`, `%`, JS converts both values to **numbers**.
 
@@ -3476,7 +3476,7 @@ When using `-`, `*`, `/`, `%`, JS converts both values to **numbers**.
 "20" / 5;   // 4
 ```
 
-## 🔹 Boolean Coercion
+##  Boolean Coercion
 
 Values are converted to **true/false** in logical contexts.
 
@@ -3517,7 +3517,7 @@ parseFloat("9.5"); // 9.5
 +"5";             // 5
 ```
 
-### ❗ Invalid conversions
+###  Invalid conversions
 
 ```js
 Number("hello"); // NaN
@@ -3556,7 +3556,7 @@ Boolean(0);  // false
 
 # 3. Common Coercion Scenarios
 
-### 🔹 With `+` operator
+###  With `+` operator
 
 * If one operand = string → convert to string
 
@@ -3564,7 +3564,7 @@ Boolean(0);  // false
 1 + "2"; // "12"
 ```
 
-### 🔹 With comparison `==`
+###  With comparison `==`
 
 JavaScript tries to convert values to the same type
 
@@ -3574,7 +3574,7 @@ true == 1; // true
 false == 0; // true
 ```
 
-### 🔹 Strict comparison `===`
+###  Strict comparison `===`
 
 No type coercion
 
@@ -3611,18 +3611,18 @@ typeof []       // "object"
 
 # 6. Best Practices
 
-✔ Use **explicit conversion** instead of relying on coercion
-✔ Avoid using loose equality (`==`)
-✔ Use strict equality (`===`)
-✔ Use `Number()` instead of `parseInt()` when possible
-✔ Be careful with `+` → it triggers string coercion
+ Use **explicit conversion** instead of relying on coercion
+ Avoid using loose equality (`==`)
+ Use strict equality (`===`)
+ Use `Number()` instead of `parseInt()` when possible
+ Be careful with `+` → it triggers string coercion
 
 ---
 
 
 # Modules 
 
-## 📌 Introduction
+##  Introduction
 
 JavaScript **modules** allow you to split your code into reusable, maintainable files. Each module can **export** variables/functions/classes and another file can **import** them.
 
@@ -3658,7 +3658,7 @@ Supported in:
 
 Exports allow a file to expose code so other files can import it.
 
-## 🔹 Named Exports
+##  Named Exports
 
 You can export multiple items.
 
@@ -3670,7 +3670,7 @@ export function add(a, b) {
 }
 ```
 
-## 🔹 Default Export
+##  Default Export
 
 One file can have **only one default export**.
 
@@ -3685,27 +3685,27 @@ export default function greet(name) {
 
 # 3. Importing
 
-## 🔹 Import Named Exports
+##  Import Named Exports
 
 ```js
 import { PI, add } from "./math.js";
 console.log(add(2, 3));
 ```
 
-## 🔹 Import Default Export
+##  Import Default Export
 
 ```js
 import greet from "./greet.js";
 greet("Koko");
 ```
 
-## 🔹 Rename Imports
+##  Rename Imports
 
 ```js
 import { add as sum } from "./math.js";
 ```
 
-## 🔹 Import Everything
+##  Import Everything
 
 ```js
 import * as math from "./math.js";
@@ -3847,18 +3847,18 @@ console.log(multiply(4, 5));
 
 # 11. Best Practices
 
-✔ Use **named exports** when exporting many items
-✔ Use **default export** when exporting a single main value
-✔ Keep file names **descriptive**
-✔ Group similar modules into folders
-✔ Avoid circular imports
-✔ Prefer ES Modules over CommonJS for new projects
+ Use **named exports** when exporting many items
+ Use **default export** when exporting a single main value
+ Keep file names **descriptive**
+ Group similar modules into folders
+ Avoid circular imports
+ Prefer ES Modules over CommonJS for new projects
 
 ---
 
 # ErrorHandling 
 
-## 📌 Introduction
+##  Introduction
 
 **Error handling** in JavaScript allows you to catch and manage errors so your program doesn’t crash unexpectedly.
 Errors can happen due to:
@@ -3875,7 +3875,7 @@ JavaScript provides tools like **try/catch**, **throw**, **finally**, and **erro
 
 # 1. Types of Errors in JavaScript
 
-### 🔹 Syntax Error
+###  Syntax Error
 
 Code cannot run due to incorrect syntax.
 
@@ -3883,7 +3883,7 @@ Code cannot run due to incorrect syntax.
 console.log("Hello"   // missing parenthesis
 ```
 
-### 🔹 Reference Error
+###  Reference Error
 
 Using a variable that does not exist.
 
@@ -3891,7 +3891,7 @@ Using a variable that does not exist.
 console.log(x); // x is not defined
 ```
 
-### 🔹 Type Error
+###  Type Error
 
 Wrong operation on the wrong data type.
 
@@ -3900,7 +3900,7 @@ const num = 5;
 num.toUpperCase(); // TypeError
 ```
 
-### 🔹 Range Error
+###  Range Error
 
 Invalid length or number range.
 
@@ -3908,7 +3908,7 @@ Invalid length or number range.
 new Array(-2); // RangeError
 ```
 
-### 🔹 Custom Errors (using throw)
+###  Custom Errors (using throw)
 
 You can throw your own custom errors.
 
@@ -3990,7 +3990,7 @@ Common error types:
 
 # 6. Error Handling in Asynchronous Code
 
-## 🔹 Callbacks
+##  Callbacks
 
 ```js
 fs.readFile("test.txt", (err, data) => {
@@ -3999,7 +3999,7 @@ fs.readFile("test.txt", (err, data) => {
 });
 ```
 
-## 🔹 Promises
+##  Promises
 
 ```js
 fetch("/api")
@@ -4007,7 +4007,7 @@ fetch("/api")
   .catch(err => console.log("Error:", err));
 ```
 
-## 🔹 async / await with try/catch
+##  async / await with try/catch
 
 ```js
 async function loadData() {
@@ -4024,7 +4024,7 @@ async function loadData() {
 
 # 7. Global Error Handling
 
-### 🔹 Browser
+###  Browser
 
 ```js
 window.onerror = function(message, source, line, column, error) {
@@ -4032,7 +4032,7 @@ window.onerror = function(message, source, line, column, error) {
 };
 ```
 
-### 🔹 Node.js
+###  Node.js
 
 ```js
 process.on("uncaughtException", (err) => {
@@ -4058,11 +4058,11 @@ function register(user) {
 
 # 9. Error Logging (Best Practices)
 
-✔ Log errors clearly
-✔ Include timestamp
-✔ Never show internal errors to users
-✔ Use monitoring tools (Sentry, LogRocket, Datadog)
-✔ Use custom error classes for clarity
+ Log errors clearly
+ Include timestamp
+ Never show internal errors to users
+ Use monitoring tools (Sentry, LogRocket, Datadog)
+ Use custom error classes for clarity
 
 ---
 
@@ -4083,12 +4083,12 @@ throw new ValidationError("Invalid email format");
 
 # 11. Best Practices
 
-✔ Use try/catch only where needed
-✔ Throw meaningful error messages
-✔ Clean and consistent error structure
-✔ Handle async errors with `try/catch` or `.catch()`
-✔ Avoid silent error handling
-✔ Use custom errors for validation and logic problems
+ Use try/catch only where needed
+ Throw meaningful error messages
+ Clean and consistent error structure
+ Handle async errors with `try/catch` or `.catch()`
+ Avoid silent error handling
+ Use custom errors for validation and logic problems
 
 ---
 
@@ -4100,7 +4100,7 @@ JavaScript supports **Object-Oriented Programming (OOP)** using prototypes and E
 
 ---
 
-## 🚀 What is OOP?
+##  What is OOP?
 
 OOP is a programming paradigm that organizes code into **objects** — each object contains data (properties) and behavior (methods).
 
@@ -4113,7 +4113,7 @@ JavaScript implements OOP using:
 
 ---
 
-# ✅ Core OOP Concepts
+#  Core OOP Concepts
 
 ## 1. **Classes**
 
@@ -4301,7 +4301,7 @@ Person.prototype.greet = function () {
 
 ---
 
-# 🔥 Summary Table
+#  Summary Table
 
 | Concept        | Description                       |
 | -------------- | --------------------------------- |
@@ -4317,7 +4317,7 @@ Person.prototype.greet = function () {
 
 ---
 
-# 📘 Real-World Example
+#  Real-World Example
 
 ```js
 class User {
@@ -4353,7 +4353,7 @@ It is used to store, exchange, and transport data between servers, APIs, and app
 
 ---
 
-## 📌 What is JSON?
+##  What is JSON?
 
 JSON stands for **JavaScript Object Notation**.
 
@@ -4378,7 +4378,7 @@ Example JSON:
 
 ---
 
-## 📦 JSON vs JavaScript Object
+##  JSON vs JavaScript Object
 
 ### JSON
 
@@ -4410,7 +4410,7 @@ const user = {
 
 ---
 
-## 💡 Valid JSON Data Types
+##  Valid JSON Data Types
 
 | Type    | Example      |
 | ------- | ------------ |
@@ -4421,7 +4421,7 @@ const user = {
 | Array   | [1, 2, 3]    |
 | Null    | null         |
 
-⛔ JSON does **not** support:
+ JSON does **not** support:
 
 * Functions
 * Comments
@@ -4430,7 +4430,7 @@ const user = {
 
 ---
 
-# 🔄 Converting JSON in JavaScript
+#  Converting JSON in JavaScript
 
 ## 1. `JSON.stringify()` → Convert JS object to JSON string
 
@@ -4468,7 +4468,7 @@ Used when:
 
 ---
 
-## 🖥️ Real API Example
+## ️ Real API Example
 
 ```js
 fetch("https://api.example.com/user")
@@ -4478,7 +4478,7 @@ fetch("https://api.example.com/user")
 
 ---
 
-# 📁 JSON in Local Storage
+#  JSON in Local Storage
 
 ```js
 const user = { name: "Tom", age: 30 };
@@ -4493,13 +4493,13 @@ console.log(data.name);
 
 ---
 
-# 🚫 Common Errors
+#  Common Errors
 
-### ❌ 1. Using single quotes in JSON
+###  1. Using single quotes in JSON
 
 ```json
 {
-  'name': 'John'  // ❌ invalid
+  'name': 'John'  //  invalid
 }
 ```
 
@@ -4507,28 +4507,28 @@ JSON requires **double quotes**.
 
 ---
 
-### ❌ 2. Trailing commas
+###  2. Trailing commas
 
 ```json
 {
   "name": "John",
-  "age": 30,   // ❌ invalid
+  "age": 30,   //  invalid
 }
 ```
 
 ---
 
-### ❌ 3. Comments not allowed
+###  3. Comments not allowed
 
 ```json
 {
-  "name": "John" // ❌ comments not allowed
+  "name": "John" //  comments not allowed
 }
 ```
 
 ---
 
-# 📌 JSON.stringify Additional Options
+#  JSON.stringify Additional Options
 
 ### Pretty Format
 
@@ -4548,7 +4548,7 @@ Output:
 
 ---
 
-# 🔥 Summary
+#  Summary
 
 | Feature     | Description                                  |
 | ----------- | -------------------------------------------- |
@@ -4567,7 +4567,7 @@ It is widely used in web development for calling APIs, sending data to servers, 
 
 ---
 
-# 🚀 What is Fetch API?
+#  What is Fetch API?
 
 `fetch()` is a built-in browser function that allows you to request resources over the network.
 
@@ -4582,7 +4582,7 @@ fetch(url, options?)
 
 ---
 
-# 📌 1. Basic GET Request
+#  1. Basic GET Request
 
 ```js
 fetch("https://api.example.com/users")
@@ -4593,7 +4593,7 @@ fetch("https://api.example.com/users")
 
 ---
 
-# 📌 2. Using Async/Await (Recommended)
+#  2. Using Async/Await (Recommended)
 
 ```js
 async function getUsers() {
@@ -4609,7 +4609,7 @@ async function getUsers() {
 
 ---
 
-# 📌 3. POST Request (Send Data)
+#  3. POST Request (Send Data)
 
 ```js
 async function createUser() {
@@ -4633,7 +4633,7 @@ async function createUser() {
 
 ---
 
-# 📌 4. PUT Request (Update Data)
+#  4. PUT Request (Update Data)
 
 ```js
 fetch("https://api.example.com/users/1", {
@@ -4647,7 +4647,7 @@ fetch("https://api.example.com/users/1", {
 
 ---
 
-# 📌 5. DELETE Request
+#  5. DELETE Request
 
 ```js
 await fetch("https://api.example.com/users/1", {
@@ -4657,7 +4657,7 @@ await fetch("https://api.example.com/users/1", {
 
 ---
 
-# 📌 6. Handling Errors Correctly
+#  6. Handling Errors Correctly
 
 `fetch()` **does NOT** throw errors for HTTP status codes like `404` or `500`.
 You must check them manually:
@@ -4681,7 +4681,7 @@ async function loadData() {
 
 ---
 
-# 📌 7. Sending Headers
+#  7. Sending Headers
 
 ```js
 fetch(url, {
@@ -4694,7 +4694,7 @@ fetch(url, {
 
 ---
 
-# 📌 8. Fetching Text, Blob, FormData, etc.
+#  8. Fetching Text, Blob, FormData, etc.
 
 ### Text
 
@@ -4724,7 +4724,7 @@ await fetch("/upload", {
 
 ---
 
-# 📌 9. Abort Fetch Request
+#  9. Abort Fetch Request
 
 Cancel a long-running request:
 
@@ -4738,7 +4738,7 @@ controller.abort();
 
 ---
 
-# 📌 10. Fetch Options Summary
+#  10. Fetch Options Summary
 
 | Option  | Description                            |
 | ------- | -------------------------------------- |
@@ -4749,7 +4749,7 @@ controller.abort();
 
 ---
 
-# 📌 11. Real-World Example: Pagination
+#  11. Real-World Example: Pagination
 
 ```js
 async function loadPage(page) {
@@ -4761,7 +4761,7 @@ async function loadPage(page) {
 
 ---
 
-# 📦 12. Fetch in Next.js (App Router)
+#  12. Fetch in Next.js (App Router)
 
 ```js
 export async function GET() {
@@ -4775,7 +4775,7 @@ export async function GET() {
 
 ---
 
-# 🔥 Summary
+#  Summary
 
 * `fetch()` is Promise-based
 * Supports GET, POST, PUT, DELETE
@@ -4792,7 +4792,7 @@ It introduced many powerful features that make JavaScript cleaner, faster, and e
 
 ---
 
-# 🚀 1. `let` and `const`
+#  1. `let` and `const`
 
 ### `let`
 
@@ -4815,7 +4815,7 @@ const name = "Alex";
 
 ---
 
-# 🚀 2. Arrow Functions
+#  2. Arrow Functions
 
 Shorter, cleaner syntax.
 
@@ -4827,7 +4827,7 @@ Arrow functions **do not have their own `this`**.
 
 ---
 
-# 🚀 3. Template Literals
+#  3. Template Literals
 
 Use backticks `` ` ``, variable interpolation, and multiline strings.
 
@@ -4838,7 +4838,7 @@ console.log(`Hello ${name}!`);
 
 ---
 
-# 🚀 4. Default Parameters
+#  4. Default Parameters
 
 ```js
 function greet(name = "Guest") {
@@ -4848,7 +4848,7 @@ function greet(name = "Guest") {
 
 ---
 
-# 🚀 5. Destructuring
+#  5. Destructuring
 
 ### Object Destructuring
 
@@ -4866,7 +4866,7 @@ const [a, b] = nums;
 
 ---
 
-# 🚀 6. Spread Operator `...`
+#  6. Spread Operator `...`
 
 ### Spread into arrays
 
@@ -4884,7 +4884,7 @@ const newUser = { ...user, age: 22 };
 
 ---
 
-# 🚀 7. Rest Parameters
+#  7. Rest Parameters
 
 ```js
 function sum(...nums) {
@@ -4894,7 +4894,7 @@ function sum(...nums) {
 
 ---
 
-# 🚀 8. Enhanced Object Literals
+#  8. Enhanced Object Literals
 
 ```js
 const name = "John";
@@ -4911,7 +4911,7 @@ const user = {
 
 ---
 
-# 🚀 9. Modules (import/export)
+#  9. Modules (import/export)
 
 ```js
 // math.js
@@ -4923,7 +4923,7 @@ import { add } from "./math.js";
 
 ---
 
-# 🚀 10. Classes
+#  10. Classes
 
 ```js
 class Person {
@@ -4939,7 +4939,7 @@ class Person {
 
 ---
 
-# 🚀 11. Promises
+#  11. Promises
 
 ```js
 const getData = () => new Promise((resolve) => {
@@ -4949,7 +4949,7 @@ const getData = () => new Promise((resolve) => {
 
 ---
 
-# 🚀 12. Async/Await
+#  12. Async/Await
 
 Cleaner way to handle asynchronous code.
 
@@ -4961,7 +4961,7 @@ async function load() {
 
 ---
 
-# 🚀 13. Optional Chaining `?.`
+#  13. Optional Chaining `?.`
 
 Safer property access.
 
@@ -4971,7 +4971,7 @@ console.log(user?.address?.city);
 
 ---
 
-# 🚀 14. Nullish Coalescing `??`
+#  14. Nullish Coalescing `??`
 
 Returns right value only if left is `null` or `undefined`.
 
@@ -4981,7 +4981,7 @@ const username = input ?? "Guest";
 
 ---
 
-# 🚀 15. `Map` and `Set`
+#  15. `Map` and `Set`
 
 ### Set
 
@@ -4998,7 +4998,7 @@ map.set("name", "John");
 
 ---
 
-# 🚀 16. Iterators & for...of
+#  16. Iterators & for...of
 
 ```js
 for (const value of [10,20,30]) {
@@ -5008,7 +5008,7 @@ for (const value of [10,20,30]) {
 
 ---
 
-# 🚀 17. Symbol
+#  17. Symbol
 
 Unique identifier.
 
@@ -5018,7 +5018,7 @@ const id = Symbol("id");
 
 ---
 
-# 🚀 18. BigInt
+#  18. BigInt
 
 Large integers.
 
@@ -5028,7 +5028,7 @@ const n = 12345678901234567890n;
 
 ---
 
-# 🚀 19. Dynamic Import
+#  19. Dynamic Import
 
 ```js
 import("./module.js").then(module => {
@@ -5038,7 +5038,7 @@ import("./module.js").then(module => {
 
 ---
 
-# 🚀 20. Promise.all, Promise.any, Promise.race
+#  20. Promise.all, Promise.any, Promise.race
 
 ```js
 await Promise.all([p1, p2]);
@@ -5046,7 +5046,7 @@ await Promise.all([p1, p2]);
 
 ---
 
-# 🔥 Summary Table
+#  Summary Table
 
 | Feature           | Description            |
 | ----------------- | ---------------------- |
@@ -5078,7 +5078,7 @@ They let you:
 
 ---
 
-# 🌳 1. DOM (Document Object Model) API
+#  1. DOM (Document Object Model) API
 
 The DOM API lets JavaScript interact with HTML elements.
 
@@ -5107,7 +5107,7 @@ document.body.appendChild(div);
 
 ---
 
-# 🎯 2. Events API
+#  2. Events API
 
 Handle clicks, input, submit, keyboard, scroll, etc.
 
@@ -5119,7 +5119,7 @@ document.querySelector("button").addEventListener("click", () => {
 
 ---
 
-# 💾 3. Storage API (localStorage & sessionStorage)
+#  3. Storage API (localStorage & sessionStorage)
 
 ### localStorage
 
@@ -5140,7 +5140,7 @@ sessionStorage.setItem("token", "123");
 
 ---
 
-# 🌐 4. Fetch API
+#  4. Fetch API
 
 Used to make HTTP requests.
 
@@ -5152,7 +5152,7 @@ fetch("/api/data")
 
 ---
 
-# ⏱️ 5. Timers (setTimeout, setInterval)
+# ️ 5. Timers (setTimeout, setInterval)
 
 ```js
 setTimeout(() => {
@@ -5166,7 +5166,7 @@ setInterval(() => {
 
 ---
 
-# 🎥 6. Geolocation API
+#  6. Geolocation API
 
 Retrieve user location (with permission).
 
@@ -5178,7 +5178,7 @@ navigator.geolocation.getCurrentPosition(pos => {
 
 ---
 
-# 🎤 7. Media Devices & Camera API
+#  7. Media Devices & Camera API
 
 Access camera/microphone.
 
@@ -5189,7 +5189,7 @@ navigator.mediaDevices.getUserMedia({ video: true })
 
 ---
 
-# 🔊 8. Audio & Video API
+#  8. Audio & Video API
 
 Control audio and video elements.
 
@@ -5200,7 +5200,7 @@ document.querySelector("audio").pause();
 
 ---
 
-# 🗂️ 9. Clipboard API
+# ️ 9. Clipboard API
 
 Copy text to clipboard.
 
@@ -5216,7 +5216,7 @@ navigator.clipboard.readText().then(text => console.log(text));
 
 ---
 
-# 🖼️ 10. Canvas API
+# ️ 10. Canvas API
 
 Used for drawing graphics.
 
@@ -5229,7 +5229,7 @@ ctx.fillRect(10, 10, 100, 100);
 
 ---
 
-# 🌐 11. History API
+#  11. History API
 
 Manage browser navigation.
 
@@ -5239,7 +5239,7 @@ history.pushState({ page: 1 }, "Title", "?page=1");
 
 ---
 
-# 💨 12. Web Storage API
+#  12. Web Storage API
 
 Includes:
 
@@ -5249,7 +5249,7 @@ Includes:
 
 ---
 
-# 🕸️ 13. WebSocket API
+# ️ 13. WebSocket API
 
 Real-time communication.
 
@@ -5260,7 +5260,7 @@ socket.onmessage = event => console.log(event.data);
 
 ---
 
-# 🔔 14. Notification API
+#  14. Notification API
 
 Show system notifications.
 
@@ -5272,7 +5272,7 @@ Notification.requestPermission().then(() => {
 
 ---
 
-# 🔄 15. Intersection Observer API
+#  15. Intersection Observer API
 
 Detect when elements enter the viewport.
 
@@ -5288,7 +5288,7 @@ observer.observe(document.querySelector("#target"));
 
 ---
 
-# 🧭 16. URL & URLSearchParams API
+#  16. URL & URLSearchParams API
 
 ```js
 const url = new URL(window.location);
@@ -5297,7 +5297,7 @@ console.log(url.searchParams.get("id"));
 
 ---
 
-# 🔥 Summary Table
+#  Summary Table
 
 | API          | Purpose                       |
 | ------------ | ----------------------------- |
