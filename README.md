@@ -2541,6 +2541,85 @@ const mergedObj = { ...obj1, ...obj2 }; // { a: 1, b: 2, c: 3 }
 
 ---
 
+### Object Methods
+
+Object ထဲမှာ `property` တွေတင်မကဘဲ **function** တွေကိုပါ ထည့်နိုင်ပါတယ်။ Object ထဲက function ကို `method` လို့ ခေါ်ပါတယ်။
+
+```js
+const user = {
+  name: "Kyaw Kyaw",
+  age: 22,
+  greet() {
+    return `Hi, I am ${this.name}`;
+  }
+};
+
+console.log(user.greet()); // Hi, I am Kyaw Kyaw
+```
+
+အပေါ်က `this.name` ဆိုတာ **အဲ့ဒီ object ကိုယ်တိုင်** (`user`) ကို ရည်ညွှန်းတာပါ။
+
+### **အသုံးများတဲ့ Object Built-in Methods**
+
+`Object` class ကနေ တိုက်ရိုက်သုံးလို့ရတဲ့ method တွေကိုလည်း သိထားသင့်ပါတယ်။
+
+1. **`Object.keys(obj)`** - key အမည်များ array အဖြစ်ပြန်ပေးတယ်
+2. **`Object.values(obj)`** - value များ array အဖြစ်ပြန်ပေးတယ်
+3. **`Object.entries(obj)`** - `[key, value]` pair array အဖြစ်ပြန်ပေးတယ်
+4. **`Object.assign(target, source)`** - object တွေကိုပေါင်းတယ် / copy လုပ်တယ်
+5. **`Object.hasOwn(obj, key)`** - object ကိုယ်ပိုင် key ရှိ/မရှိ စစ်တယ်
+6. **`Object.freeze(obj)`** - object ကို lock ချ (ပြင်/ဖျက်/ထည့် မရတော့)
+7. **`Object.seal(obj)`** - key အသစ်မထည့်နိုင်၊ key မဖျက်နိုင်၊ ရှိပြီးသား value ကိုပဲပြင်နိုင်
+
+```js
+const student = {
+  name: "Aye Aye",
+  age: 20
+};
+
+console.log(Object.keys(student)); // ["name", "age"]
+console.log(Object.values(student)); // ["Aye Aye", 20]
+console.log(Object.entries(student)); // [["name", "Aye Aye"], ["age", 20]]
+console.log(Object.hasOwn(student, "name")); // true
+```
+
+### **`Object.assign()` ဥပမာ**
+
+```js
+const base = { a: 1 };
+const extra = { b: 2 };
+
+const result = Object.assign({}, base, extra);
+console.log(result); // { a: 1, b: 2 }
+```
+
+### **`freeze` နဲ့ `seal` ကွာခြားချက်**
+
+```js
+const car = { brand: "Toyota", year: 2020 };
+Object.freeze(car);
+car.year = 2024; // မပြောင်းနိုင်
+console.log(car.year); // 2020
+
+const phone = { brand: "Apple", model: "iPhone 14" };
+Object.seal(phone);
+phone.model = "iPhone 15"; // ပြင်လို့ရ
+phone.color = "Black"; // အသစ်မထည့်နိုင်
+delete phone.brand; // ဖျက်မရ
+console.log(phone); // { brand: "Apple", model: "iPhone 15" }
+```
+
+### **Method ရေးရာမှာ သတိထားစရာ**
+
+- `method` ထဲမှာ object ရဲ့ value ကိုသုံးမယ်ဆို `this` ကိုသုံးပါ
+- `this` ကိုလိုတဲ့နေရာတွေမှာ `arrow function` သုံးရင် context လွဲနိုင်လို့ သာမန် method syntax သုံးတာ ပိုသင့်တော်တယ်
+- Data structure ကို immutable ထားချင်ရင် `Object.freeze()` က အသုံးဝင်တယ်
+
+
+
+
+
+
 ### **9. JSON (JavaScript Object Notation)**
 
 API တွေကနေ Data လှမ်းတောင်းတဲ့အခါ ရလာတဲ့ ပုံစံဟာ JSON ဖြစ်ပါတယ်။ JSON ဟာ Object နဲ့ ဆင်တူပေမယ့် **Key တွေအားလုံးကို Double Quotes `""` ထဲမှာ** ရေးရပါတယ်။
